@@ -1,4 +1,7 @@
-Show code will go here.
+<h2>Preview Image</h2>
+<%= image_tag @video.preview.url %>
+
+<embed src="<%= @video.file.url %>" type="video/quicktime" autoplay="false" pluginspage="http://www.apple.com/quicktime/download" enablejavascript="true" id="movie" />
 
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>
