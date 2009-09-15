@@ -1,0 +1,10 @@
+<h1>New image</h1>
+
+<% form_for(@image, :html => { :multipart => true }) do |f| %>
+  <fieldset>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <p>
+      <%= f.submit 'Create' %> - or - <%= link_to 'Cancel', images_path %>
+    </p>
+  </fieldset>
+<% end %>

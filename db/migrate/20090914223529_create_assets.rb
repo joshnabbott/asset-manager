@@ -3,17 +3,15 @@ class CreateAssets < ActiveRecord::Migration
     create_table :assets do |t|
       t.belongs_to :owner
       t.string :owner_type
-      t.string :type
-      t.string :file_file_name
-      t.string :file_content_type
+      t.string :type, :file_file_name, :file_content_type
       t.integer :file_file_size
-      t.integer :height
-      t.integer :width
+      t.datetime :file_updated_at
       t.string :title
       t.text :description
-      t.string :author
-      t.date :date_taken
-      t.string :aspect_ratio
+      t.integer :width
+      t.integer :height
+      t.decimal :aspect_ratio, :precision => 6, :scale => 6
+      t.text :meta_data
 
       t.timestamps
     end
