@@ -1,11 +1,12 @@
-<h1>Editing video</h1>
+<h1>Editing Video</h1>
 
-<% form_for(@video) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+<% form_for(@video, :html => { :multipart => true }) do |f| %>
+	<fieldset>
+		<%= render :partial => 'form', :locals => { :f => f } %>
+		<div>
+    		<%= f.submit 'Update' %>
+  		</div>
+	</fieldset>
 <% end %>
 
 <%= link_to 'Show', @video %> |
