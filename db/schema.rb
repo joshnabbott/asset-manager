@@ -18,13 +18,13 @@ ActiveRecord::Schema.define(:version => 20090914223529) do
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"
+    t.datetime "file_updated_at"
     t.string   "title"
     t.text     "description"
-    t.datetime "file_updated_at"
-    t.decimal  "file_width",        :precision => 8, :scale => 3
-    t.decimal  "file_height",       :precision => 8, :scale => 3
-    t.decimal  "file_aspect_ratio", :precision => 6, :scale => 6
-    t.text     "file_meta_data"
+    t.integer  "width"
+    t.integer  "height"
+    t.decimal  "aspect_ratio",      :precision => 6, :scale => 6
+    t.text     "meta_data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
