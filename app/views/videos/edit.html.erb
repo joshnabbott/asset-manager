@@ -4,10 +4,7 @@
 	<fieldset>
 		<%= render :partial => 'form', :locals => { :f => f } %>
 		<div>
-    		<%= f.submit 'Update' %>
+    		<%= f.submit 'Update' %> - or - <%= link_to 'Cancel', videos_path %>
   		</div>
 	</fieldset>
 <% end %>
-
-<%= link_to 'Show', @video %> |
-<%= link_to 'Back', videos_path %>
