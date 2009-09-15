@@ -1,0 +1,22 @@
+<h1>Listing images</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Thumbnail</th>
+  </tr>
+
+<% @images.each do |image| %>
+  <tr>
+    <td><%= image.file_file_name %></td>
+    <td><%= image_tag(image.file.url, :width => 100) %></td>
+    <td><%= link_to 'Show', image %></td>
+    <td><%= link_to 'Edit', edit_image_path(image) %></td>
+    <td><%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New image', new_image_path %>

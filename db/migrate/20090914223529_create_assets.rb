@@ -4,16 +4,14 @@ class CreateAssets < ActiveRecord::Migration
       t.belongs_to :owner
       t.string :owner_type
       t.string :type
-      t.string :file_file_name
-      t.string :file_content_type
-      t.integer :file_file_size
-      t.integer :height
-      t.integer :width
       t.string :title
       t.text :description
       t.string :author
       t.date :date_taken
-      t.string :aspect_ratio
+      t.string :file_file_name
+      t.string :file_content_type
+      t.integer :file_file_size
+      t.datetime :file_updated_at
 
       t.timestamps
     end
