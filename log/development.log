@@ -3187,3 +3187,1172 @@ ActionController::RoutingError (No route matches "/rubyrun_rss/perf_summary.xml"
   
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.7ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.5ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 00:14:43) [GET]
+
+ActionController::RoutingError (No route matches "/rubyrun_rss/perf_summary.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 09:56:29) [GET]
+
+ActionController::RoutingError (No route matches "/rubyrun_rss/perf_summary.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 09:56:34) [GET]
+
+ActionController::RoutingError (No route matches "/rubyrun_rss/perf_summary.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 10:01:19) [GET]
+
+ActionController::RoutingError (No route matches "/rubyrun_rss/perf_summary.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mImage Load (0.0ms)[0m   [0;1mMysql::Error: MySQL server has gone away: SELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mMysql::Error: MySQL server has gone away: SELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.5ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;36;1mImage Load (0.3ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#edit (for 127.0.0.1 at 2009-09-15 10:29:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mImage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (1.5ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/edit
+Rendered images/_form (1.8ms)
+Completed in 15ms (View: 6, DB: 3) | 200 OK [http://localhost/images/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#update (for 127.0.0.1 at 2009-09-15 10:29:25) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "id"=>"1", "image"=>{"file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.0>}}
+  [4;35;1mImage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (0.4ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mImage Update (0.3ms)[0m   [0;1mUPDATE `assets` SET `file_file_name` = 'outfit.jpg', `file_file_size` = 1310788, `updated_at` = '2009-09-15 17:29:25', `file_updated_at` = '2009-09-15 17:29:25' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+[paperclip] deleting /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/IMG_0001.JPG
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/outfit.jpg
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/images/1
+Completed in 67ms (DB: 3) | 302 Found [http://localhost/images/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2009-09-15 10:29:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.5ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/show
+Completed in 13ms (View: 4, DB: 2) | 200 OK [http://localhost/images/1]
+  [4;35;1mImage Load (0.4ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#edit (for 127.0.0.1 at 2009-09-15 10:34:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mImage Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.4ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/edit
+Rendered images/_form (2.4ms)
+Completed in 18ms (View: 7, DB: 4) | 200 OK [http://localhost/images/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#update (for 127.0.0.1 at 2009-09-15 10:34:46) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "id"=>"1", "image"=>{"file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.0>}}
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.4ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mImage Update (0.3ms)[0m   [0mUPDATE `assets` SET `file_file_name` = 'IMG_0716.JPG', `file_file_size` = 1458639, `updated_at` = '2009-09-15 17:34:46', `file_updated_at` = '2009-09-15 17:34:46' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+[paperclip] deleting /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/outfit.jpg
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/IMG_0716.JPG
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/images/1
+Completed in 83ms (DB: 3) | 302 Found [http://localhost/images/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2009-09-15 10:34:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mImage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (0.3ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/show
+Completed in 12ms (View: 4, DB: 2) | 200 OK [http://localhost/images/1]
+  [4;36;1mImage Load (0.4ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 10:36:34) [GET]
+
+ActionController::RoutingError (No route matches "/rubyrun_rss/perf_summary.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mImage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.2ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.4ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.2ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 11:16:35) [GET]
+
+ActionController::RoutingError (No route matches "/rubyrun_rss/perf_summary.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#edit (for 127.0.0.1 at 2009-09-15 11:19:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mImage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (1.3ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/edit
+Rendered images/_form (1.8ms)
+Completed in 15ms (View: 5, DB: 3) | 200 OK [http://localhost/images/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#update (for 127.0.0.1 at 2009-09-15 11:20:23) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "id"=>"1", "image"=>{"file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.1>}}
+  [4;35;1mImage Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (0.4ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mImage Update (0.3ms)[0m   [0;1mUPDATE `assets` SET `file_file_name` = 'Photo_9.jpg', `file_file_size` = 78586, `updated_at` = '2009-09-15 18:20:23', `file_updated_at` = '2009-09-15 18:20:23' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+[paperclip] deleting /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/IMG_0716.JPG
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_9.jpg
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/images/1
+Completed in 22ms (DB: 4) | 302 Found [http://localhost/images/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2009-09-15 11:20:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.4ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/show
+Completed in 13ms (View: 4, DB: 2) | 200 OK [http://localhost/images/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.7ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (48.8ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAssets (20090914223529)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: For float(M,D), double(M,D) or decimal(M,D), M must be >= D (column 'file_aspect_ratio').: CREATE TABLE `assets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `owner_id` int(11), `owner_type` varchar(255), `type` varchar(255), `file_file_name` varchar(255), `file_content_type` varchar(255), `file_file_size` int(11), `file_updated_at` datetime, `file_width` float, `file_height` float, `file_aspect_ratio` decimal(8,10), `file_meta_data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAssets (20090914223529)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: For float(M,D), double(M,D) or decimal(M,D), M must be >= D (column 'file_aspect_ratio').: CREATE TABLE `assets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `owner_id` int(11), `owner_type` varchar(255), `type` varchar(255), `file_file_name` varchar(255), `file_content_type` varchar(255), `file_file_size` int(11), `file_updated_at` datetime, `file_width` decimal(8,4), `file_height` decimal(8,4), `file_aspect_ratio` decimal(8,10), `file_meta_data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (56.1ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAssets (20090914223529)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: For float(M,D), double(M,D) or decimal(M,D), M must be >= D (column 'file_aspect_ratio').: CREATE TABLE `assets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `owner_id` int(11), `owner_type` varchar(255), `type` varchar(255), `file_file_name` varchar(255), `file_content_type` varchar(255), `file_file_size` int(11), `file_updated_at` datetime, `file_width` decimal(8,4), `file_height` decimal(8,4), `file_aspect_ratio` decimal(8,10), `file_meta_data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (69.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAssets (20090914223529)
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: For float(M,D), double(M,D) or decimal(M,D), M must be >= D (column 'file_aspect_ratio').: CREATE TABLE `assets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `owner_id` int(11), `owner_type` varchar(255), `type` varchar(255), `file_file_name` varchar(255), `file_content_type` varchar(255), `file_file_size` int(11), `file_updated_at` datetime, `file_width` decimal(8,4), `file_height` decimal(8,4), `file_aspect_ratio` decimal(4,10), `file_meta_data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (59.6ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (5.7ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAssets (20090914223529)
+  [4;35;1mSQL (9.1ms)[0m   [0mCREATE TABLE `assets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `owner_id` int(11), `owner_type` varchar(255), `type` varchar(255), `file_file_name` varchar(255), `file_content_type` varchar(255), `file_file_size` int(11), `file_updated_at` datetime, `file_width` decimal(8,8), `file_height` decimal(8,8), `file_aspect_ratio` decimal(10,10), `file_meta_data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090914223529')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `assets`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `assets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAssets (20090914223529)
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE `assets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `owner_id` int(11), `owner_type` varchar(255), `type` varchar(255), `file_file_name` varchar(255), `file_content_type` varchar(255), `file_file_size` int(11), `file_updated_at` datetime, `file_width` decimal(8,4), `file_height` decimal(8,4), `file_aspect_ratio` decimal(6,6), `file_meta_data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090914223529')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `assets`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW KEYS FROM `assets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 11:47:53) [GET]
+  [4;36;1mImage Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.4ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 11ms (View: 1, DB: 3) | 200 OK [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2009-09-15 11:47:54) [GET]
+  [4;36;1mImage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+Rendering template within layouts/images
+Rendering images/new
+Rendered images/_form (1.8ms)
+Completed in 13ms (View: 5, DB: 2) | 200 OK [http://localhost/images/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 11:48:00) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.0>}}
+  [4;35;1mImage Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mImage Create (0.2ms)[0m   [0mINSERT INTO `assets` (`updated_at`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 18:48:00', 'image/jpeg', NULL, 'Image', 'Photo_1.jpg', '2009-09-15 18:48:00', 78213, NULL, NULL, NULL, NULL, NULL, '2009-09-15 18:48:00')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_1.jpg
+  [4;36;1mSQL (104.3ms)[0m   [0;1mROLLBACK[0m
+
+NoMethodError (Attempt to call private method):
+  app/models/image.rb:9:in `save_meta_data'
+  app/controllers/images_controller.rb:46:in `create'
+  app/controllers/images_controller.rb:45:in `create'
+
+Rendered rescues/_trace (49.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 11:48:29) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.2>}}
+  [4;35;1mImage Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mImage Create (0.2ms)[0m   [0mINSERT INTO `assets` (`updated_at`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 18:48:29', 'image/jpeg', NULL, 'Image', 'Photo_1.jpg', '2009-09-15 18:48:29', 78213, NULL, NULL, NULL, NULL, NULL, '2009-09-15 18:48:29')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/2/original/Photo_1.jpg
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+
+NoMethodError (undefined method `_send_' for #<Image:0x2600390>):
+  app/models/image.rb:9:in `save_meta_data'
+  app/controllers/images_controller.rb:46:in `create'
+  app/controllers/images_controller.rb:45:in `create'
+
+Rendered rescues/_trace (48.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 11:48:37) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.0>}}
+  [4;35;1mImage Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mImage Create (0.2ms)[0m   [0mINSERT INTO `assets` (`updated_at`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 18:48:37', 'image/jpeg', NULL, 'Image', 'Photo_1.jpg', '2009-09-15 18:48:37', 78213, NULL, NULL, NULL, NULL, NULL, '2009-09-15 18:48:37')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/3/original/Photo_1.jpg
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/models/image.rb:9:in `__send__'
+  app/models/image.rb:9:in `save_meta_data'
+  app/controllers/images_controller.rb:46:in `create'
+  app/controllers/images_controller.rb:45:in `create'
+
+Rendered rescues/_trace (48.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 11:49:07) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.1>}}
+  [4;35;1mImage Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mImage Create (0.2ms)[0m   [0mINSERT INTO `assets` (`updated_at`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 18:49:07', 'image/jpeg', NULL, 'Image', 'Photo_1.jpg', '2009-09-15 18:49:07', 78213, NULL, NULL, NULL, NULL, NULL, '2009-09-15 18:49:07')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/4/original/Photo_1.jpg
+  [4;36;1mImage Update (0.4ms)[0m   [0;1mUPDATE `assets` SET `created_at` = '2009-09-15 18:49:07', `file_content_type` = 'image/jpeg', `file_file_name` = 'Photo_1.jpg', `type` = 'Image', `file_meta_data` = '--- \nExifOffset: \"26\"\nExifImageWidth: \"640\"\nExifImageLength: \"480\"\n', `file_file_size` = 78213, `updated_at` = '2009-09-15 18:49:08', `file_updated_at` = '2009-09-15 18:49:07' WHERE `id` = 4[0m
+  [4;35;1mSQL (38.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/images/4
+Completed in 83ms (DB: 42) | 302 Found [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2009-09-15 11:49:08) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mImage Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.3ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 4) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/show
+Completed in 19ms (View: 6, DB: 3) | 200 OK [http://localhost/images/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#edit (for 127.0.0.1 at 2009-09-15 11:51:52) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.3ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 4) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/edit
+Rendered images/_form (2.3ms)
+Completed in 18ms (View: 7, DB: 3) | 200 OK [http://localhost/images/4/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#update (for 127.0.0.1 at 2009-09-15 11:52:03) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "id"=>"4", "image"=>{"file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.2>}}
+  [4;36;1mImage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.2ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 4) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mImage Update (0.3ms)[0m   [0mUPDATE `assets` SET `file_file_name` = 'Photo_7.jpg', `file_file_size` = 86624, `file_meta_data` = '--- \nExifOffset: \"26\"\nExifImageWidth: \"640\"\nExifImageLength: \"480\"\n', `updated_at` = '2009-09-15 18:52:03', `file_updated_at` = '2009-09-15 18:52:03' WHERE `id` = 4[0m
+[paperclip] Saving attachments.
+[paperclip] deleting /Users/joshnabbott/rails/asset-manager/public/system/files/4/original/Photo_1.jpg
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/4/original/Photo_7.jpg
+  [4;36;1mImage Update (0.4ms)[0m   [0;1mUPDATE `assets` SET `file_width` = 640.0, `file_height` = 480.0, `file_aspect_ratio` = 1.33333333333333, `file_file_name` = 'Photo_7.jpg', `file_file_size` = 86624, `file_meta_data` = '--- \nExifOffset: \"26\"\nExifImageWidth: \"640\"\nExifImageLength: \"480\"\n', `updated_at` = '2009-09-15 18:52:04', `file_updated_at` = '2009-09-15 18:52:03' WHERE `id` = 4[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/images/4
+Completed in 132ms (DB: 4) | 302 Found [http://localhost/images/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2009-09-15 11:52:04) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.5ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 4) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/show
+Completed in 14ms (View: 4, DB: 2) | 200 OK [http://localhost/images/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (211.1ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAssets (20090914223529)
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE TABLE `assets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `owner_id` int(11), `owner_type` varchar(255), `type` varchar(255), `file_file_name` varchar(255), `file_content_type` varchar(255), `file_file_size` int(11), `file_updated_at` datetime, `file_width` decimal(8,3), `file_height` decimal(8,3), `file_aspect_ratio` decimal(6,6), `file_meta_data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090914223529')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `assets`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `assets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 11:52:38) [GET]
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.9ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 13ms (View: 1, DB: 3) | 200 OK [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2009-09-15 11:52:40) [GET]
+  [4;36;1mImage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+Rendering template within layouts/images
+Rendering images/new
+Rendered images/_form (2.4ms)
+Completed in 16ms (View: 6, DB: 2) | 200 OK [http://localhost/images/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 11:52:47) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.3>}}
+  [4;35;1mImage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mImage Create (0.2ms)[0m   [0mINSERT INTO `assets` (`updated_at`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 18:52:47', 'image/jpeg', NULL, 'Image', 'Photo_5.jpg', '2009-09-15 18:52:47', 85268, NULL, NULL, NULL, NULL, NULL, '2009-09-15 18:52:47')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_5.jpg
+  [4;36;1mImage Update (0.4ms)[0m   [0;1mUPDATE `assets` SET `created_at` = '2009-09-15 18:52:47', `file_width` = 640.0, `file_height` = 480.0, `file_content_type` = 'image/jpeg', `file_aspect_ratio` = 1.33333333333333, `file_file_name` = 'Photo_5.jpg', `type` = 'Image', `file_meta_data` = '--- \nExifOffset: \"26\"\nExifImageWidth: \"640\"\nExifImageLength: \"480\"\n', `file_file_size` = 85268, `updated_at` = '2009-09-15 18:52:47', `file_updated_at` = '2009-09-15 18:52:47' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/images/1
+Completed in 185ms (DB: 3) | 302 Found [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2009-09-15 11:52:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.3ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/show
+Completed in 15ms (View: 5, DB: 2) | 200 OK [http://localhost/images/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.5ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 11:56:35) [GET]
+
+ActionController::RoutingError (No route matches "/rubyrun_rss/perf_summary.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.0ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.0ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 12:10:08) [GET]
+  [4;36;1mImage Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.2ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 20ms (View: 9, DB: 3) | 200 OK [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#destroy (for 127.0.0.1 at 2009-09-15 12:10:10) [DELETE]
+  Parameters: {"authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "id"=>"1"}
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.2ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_5.jpg
+  [4;35;1mImage Destroy (0.2ms)[0m   [0mDELETE FROM `assets` WHERE `id` = 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/images
+Completed in 18ms (DB: 4) | 302 Found [http://localhost/images/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 12:10:10) [GET]
+  [4;35;1mImage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (0.2ms)[0m   [0;1mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 12ms (View: 1, DB: 2) | 200 OK [http://localhost/images]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2009-09-15 12:10:11) [GET]
+  [4;35;1mImage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+Rendering template within layouts/images
+Rendering images/new
+Rendered images/_form (1.9ms)
+Completed in 14ms (View: 5, DB: 2) | 200 OK [http://localhost/images/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 12:10:16) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.0>}}
+  [4;36;1mImage Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mImage Create (0.2ms)[0m   [0;1mINSERT INTO `assets` (`updated_at`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 19:10:16', 'image/jpeg', NULL, 'Image', 'Photo_5.jpg', '2009-09-15 19:10:16', 85268, NULL, NULL, NULL, NULL, NULL, '2009-09-15 19:10:16')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/2/original/Photo_5.jpg
+  [4;35;1mImage Update (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''--- \n- Iterations\n- \"0\"\n','--- \n- Channel statistics\n- \n','--- \n- Geom' at line 1: UPDATE `assets` SET `file_aspect_ratio` = 1.33333333333333, `file_meta_data` = '--- \n- Filesize\n- 83.3kb\n','--- \n- Iterations\n- \"0\"\n','--- \n- Channel statistics\n- \n','--- \n- Geometry\n- 640x480+0+0\n','--- \n- Artifacts\n- \n','--- \n- modify-date\n- 2009-09-15T19\n','--- \n- Image statistics\n- \n','--- \n- skewness\n- \"1.29635\"\n','--- \n- standard deviation\n- 52.5785 (0.20619)\n','--- \n- Format\n- JPEG (Joint Photographic Experts Group JFIF format)\n','--- \n- Version\n- ImageMagick 6.4.8-9 2009-01-31 Q8 http\n','--- \n- unknown[2,0]\n- \"\"\n','--- \n- signature\n- c909b984dc43bcd9de6f312b555db0972e41b6cd2ad70c582a45c578451fa44c\n','--- \n- create-date\n- 2009-09-15T19\n','--- \n- Matte color\n- grey74\n','--- \n- Print size\n- 8.88889x6.66667\n','--- \n- Keyword[2,25]\n- Photo Booth\n','--- \n- green\n- \n','--- \n- Endianess\n- Undefined\n','--- \n- Number pixels\n- 300kb\n','--- \n- Profile-iptc\n- 31 bytes\n','--- \n- Border color\n- rgb(223,223,223)\n','--- \n- kurtosis\n- \"1.82682\"\n','--- \n- max\n- 255 (1)\n','--- \n- blue\n- \n','--- \n- Tainted\n- \"False\"\n','--- \n- City[1,90]\n- \"0x00000000\"\n','--- \n- mean\n- 52.0113 (0.203966)\n','--- \n- Resolution\n- 72x72\n','--- \n- Image\n- /Users/joshnabbott/rails/asset-manager/public/system/files/2/original/Photo_5.jpg\n','--- \n- verbose\n- \"true\"\n','--- \n- Background color\n- white\n','--- \n- OverAll\n- \n','--- \n- red\n- \n','--- \n- Channel depth\n- \n','--- \n- Class\n- DirectClass\n','--- \n- Profile-8bim\n- 44 bytes\n','--- \n- Page geometry\n- 640x480+0+0\n','--- \n- min\n- 0 (0)\n','--- \n- Depth\n- 8-bit\n','--- \n- Colorspace\n- RGB\n','--- \n- jpeg\n- sampling-factor\n','--- \n- Properties\n- \n','--- \n- Interlace\n- None\n','--- \n- Type\n- TrueColor\n','--- \n- Units\n- Undefined\n','--- \n- Profile-exif\n- 62 bytes\n','--- \n- exif\n- ExifOffset\n','--- \n- Orientation\n- Undefined\n','--- \n- Quality\n- \"93\"\n','--- \n- Dispose\n- Undefined\n','--- \n- Rendering intent\n- Undefined\n','--- \n- Profiles\n- \n','--- \n- Compression\n- JPEG\n','--- \n- Transparent color\n- black\n', `file_width` = 640.0, `file_height` = 480.0 WHERE (`assets`.`id` = 2) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''--- \n- Iterations\n- \"0\"\n','--- \n- Channel statistics\n- \n','--- \n- Geom' at line 1: UPDATE `assets` SET `file_aspect_ratio` = 1.33333333333333, `file_meta_data` = '--- \n- Filesize\n- 83.3kb\n','--- \n- Iterations\n- \"0\"\n','--- \n- Channel statistics\n- \n','--- \n- Geometry\n- 640x480+0+0\n','--- \n- Artifacts\n- \n','--- \n- modify-date\n- 2009-09-15T19\n','--- \n- Image statistics\n- \n','--- \n- skewness\n- \"1.29635\"\n','--- \n- standard deviation\n- 52.5785 (0.20619)\n','--- \n- Format\n- JPEG (Joint Photographic Experts Group JFIF format)\n','--- \n- Version\n- ImageMagick 6.4.8-9 2009-01-31 Q8 http\n','--- \n- unknown[2,0]\n- \"\"\n','--- \n- signature\n- c909b984dc43bcd9de6f312b555db0972e41b6cd2ad70c582a45c578451fa44c\n','--- \n- create-date\n- 2009-09-15T19\n','--- \n- Matte color\n- grey74\n','--- \n- Print size\n- 8.88889x6.66667\n','--- \n- Keyword[2,25]\n- Photo Booth\n','--- \n- green\n- \n','--- \n- Endianess\n- Undefined\n','--- \n- Number pixels\n- 300kb\n','--- \n- Profile-iptc\n- 31 bytes\n','--- \n- Border color\n- rgb(223,223,223)\n','--- \n- kurtosis\n- \"1.82682\"\n','--- \n- max\n- 255 (1)\n','--- \n- blue\n- \n','--- \n- Tainted\n- \"False\"\n','--- \n- City[1,90]\n- \"0x00000000\"\n','--- \n- mean\n- 52.0113 (0.203966)\n','--- \n- Resolution\n- 72x72\n','--- \n- Image\n- /Users/joshnabbott/rails/asset-manager/public/system/files/2/original/Photo_5.jpg\n','--- \n- verbose\n- \"true\"\n','--- \n- Background color\n- white\n','--- \n- OverAll\n- \n','--- \n- red\n- \n','--- \n- Channel depth\n- \n','--- \n- Class\n- DirectClass\n','--- \n- Profile-8bim\n- 44 bytes\n','--- \n- Page geometry\n- 640x480+0+0\n','--- \n- min\n- 0 (0)\n','--- \n- Depth\n- 8-bit\n','--- \n- Colorspace\n- RGB\n','--- \n- jpeg\n- sampling-factor\n','--- \n- Properties\n- \n','--- \n- Interlace\n- None\n','--- \n- Type\n- TrueColor\n','--- \n- Units\n- Undefined\n','--- \n- Profile-exif\n- 62 bytes\n','--- \n- exif\n- ExifOffset\n','--- \n- Orientation\n- Undefined\n','--- \n- Quality\n- \"93\"\n','--- \n- Dispose\n- Undefined\n','--- \n- Rendering intent\n- Undefined\n','--- \n- Profiles\n- \n','--- \n- Compression\n- JPEG\n','--- \n- Transparent color\n- black\n', `file_width` = 640.0, `file_height` = 480.0 WHERE (`assets`.`id` = 2) AND ( (`assets`.`type` = 'Image' ) ) ):
+  app/models/image.rb:16:in `update_additional_file_columns'
+  app/controllers/images_controller.rb:46:in `create'
+  app/controllers/images_controller.rb:45:in `create'
+
+Rendered rescues/_trace (40.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 12:25:58) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.1>}}
+  [4;35;1mImage Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mImage Create (0.4ms)[0m   [0mINSERT INTO `assets` (`updated_at`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 19:25:58', 'image/jpeg', NULL, 'Image', 'Photo_5.jpg', '2009-09-15 19:25:58', 85268, NULL, NULL, NULL, NULL, NULL, '2009-09-15 19:25:58')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/3/original/Photo_5.jpg
+  [4;36;1mImage Update (0.4ms)[0m   [0;1mUPDATE `assets` SET `created_at` = '2009-09-15 19:25:58', `file_width` = 640.0, `file_height` = 480.0, `file_content_type` = 'image/jpeg', `file_aspect_ratio` = 1.33333333333333, `file_file_name` = 'Photo_5.jpg', `type` = 'Image', `file_meta_data` = '--- \nFilesize: 83.3kb\nIterations: \"0\"\nChannel statistics: \nGeometry: 640x480+0+0\nArtifacts: \nmodify-date: 2009-09-15T19\nImage statistics: \nskewness: \"1.29635\"\nstandard deviation: 52.5785 (0.20619)\nFormat: JPEG (Joint Photographic Experts Group JFIF format)\nVersion: ImageMagick 6.4.8-9 2009-01-31 Q8 http\nunknown[2,0]: \"\"\nsignature: c909b984dc43bcd9de6f312b555db0972e41b6cd2ad70c582a45c578451fa44c\ncreate-date: 2009-09-15T19\nMatte color: grey74\nPrint size: 8.88889x6.66667\nKeyword[2,25]: Photo Booth\ngreen: \nEndianess: Undefined\nNumber pixels: 300kb\nProfile-iptc: 31 bytes\nBorder color: rgb(223,223,223)\nkurtosis: \"1.82682\"\nmax: 255 (1)\nblue: \nTainted: \"False\"\nCity[1,90]: \"0x00000000\"\nmean: 52.0113 (0.203966)\nResolution: 72x72\nImage: /Users/joshnabbott/rails/asset-manager/public/system/files/3/original/Photo_5.jpg\nverbose: \"true\"\nBackground color: white\nOverAll: \nred: \nChannel depth: \nClass: DirectClass\nProfile-8bim: 44 bytes\nPage geometry: 640x480+0+0\nmin: 0 (0)\nDepth: 8-bit\nColorspace: RGB\njpeg: sampling-factor\nProperties: \nInterlace: None\nType: TrueColor\nUnits: Undefined\nProfile-exif: 62 bytes\nexif: ExifOffset\nOrientation: Undefined\nQuality: \"93\"\nDispose: Undefined\nRendering intent: Undefined\nProfiles: \nCompression: JPEG\nTransparent color: black\n', `file_file_size` = 85268, `updated_at` = '2009-09-15 19:25:58', `file_updated_at` = '2009-09-15 19:25:58' WHERE `id` = 3[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/images/3
+Completed in 209ms (DB: 4) | 302 Found [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2009-09-15 12:25:58) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.6ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 3) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/show
+Completed in 14ms (View: 4, DB: 2) | 200 OK [http://localhost/images/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (67.8ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAssets (20090914223529)
+  [4;35;1mSQL (2.2ms)[0m   [0mCREATE TABLE `assets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `owner_id` int(11), `owner_type` varchar(255), `type` varchar(255), `file_file_name` varchar(255), `file_content_type` varchar(255), `file_file_size` int(11), `title` varchar(255), `description` text, `file_updated_at` datetime, `file_width` decimal(8,3), `file_height` decimal(8,3), `file_aspect_ratio` decimal(6,6), `file_meta_data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090914223529')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mdescribe `assets`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `assets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.2ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 12:27:02) [GET]
+  [4;36;1mImage Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.9ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 13ms (View: 1, DB: 3) | 200 OK [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2009-09-15 12:27:05) [GET]
+  [4;36;1mImage Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+Rendering template within layouts/images
+Rendering images/new
+Rendered images/_form (2.1ms)
+Completed in 13ms (View: 5, DB: 2) | 200 OK [http://localhost/images/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 12:27:11) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.0>}}
+  [4;35;1mImage Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mImage Create (0.2ms)[0m   [0mINSERT INTO `assets` (`updated_at`, `title`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `description`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 19:27:11', NULL, 'image/jpeg', NULL, 'Image', 'Photo_3.jpg', '2009-09-15 19:27:11', 80914, NULL, NULL, NULL, NULL, NULL, NULL, '2009-09-15 19:27:11')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_3.jpg
+  [4;36;1mImage Update (0.4ms)[0m   [0;1mUPDATE `assets` SET `created_at` = '2009-09-15 19:27:11', `file_width` = 640.0, `file_height` = 480.0, `file_content_type` = 'image/jpeg', `file_aspect_ratio` = 1.33333333333333, `file_file_name` = 'Photo_3.jpg', `type` = 'Image', `file_meta_data` = '--- \nFilesize: 79kb\nIterations: \"0\"\nChannel statistics: \nGeometry: 640x480+0+0\nArtifacts: \nmodify-date: 2009-09-15T19\nImage statistics: \nskewness: \"0.310403\"\nstandard deviation: 50.6275 (0.198539)\nFormat: JPEG (Joint Photographic Experts Group JFIF format)\nVersion: ImageMagick 6.4.8-9 2009-01-31 Q8 http\nunknown[2,0]: \"\"\nsignature: 6cb77ee85e19459588174b6371dd708fc9ce1aed232ada0d1acd1cbee746927d\ncreate-date: 2009-09-15T19\nMatte color: grey74\nPrint size: 8.88889x6.66667\nKeyword[2,25]: Photo Booth\ngreen: \nEndianess: Undefined\nNumber pixels: 300kb\nProfile-iptc: 31 bytes\nBorder color: rgb(223,223,223)\nkurtosis: \"-1.46581\"\nmax: 228 (0.894118)\nblue: \nTainted: \"False\"\nCity[1,90]: \"0x00000000\"\nmean: 52.8618 (0.207301)\nResolution: 72x72\nImage: /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_3.jpg\nverbose: \"true\"\nBackground color: white\nOverAll: \nred: \nChannel depth: \nClass: DirectClass\nProfile-8bim: 44 bytes\nPage geometry: 640x480+0+0\nmin: 0 (0)\nDepth: 8-bit\nColorspace: RGB\njpeg: sampling-factor\nProperties: \nInterlace: None\nType: TrueColor\nUnits: Undefined\nProfile-exif: 62 bytes\nexif: ExifOffset\nOrientation: Undefined\nQuality: \"93\"\nDispose: Undefined\nRendering intent: Undefined\nProfiles: \nCompression: JPEG\nTransparent color: black\n', `file_file_size` = 80914, `updated_at` = '2009-09-15 19:27:11', `file_updated_at` = '2009-09-15 19:27:11' WHERE `id` = 1[0m
+  [4;35;1mSQL (58.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/images/1
+Completed in 277ms (DB: 62) | 302 Found [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2009-09-15 12:27:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.4ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/show
+Completed in 15ms (View: 5, DB: 2) | 200 OK [http://localhost/images/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#edit (for 127.0.0.1 at 2009-09-15 12:27:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mImage Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/edit
+Rendered images/_form (2.6ms)
+Completed in 19ms (View: 7, DB: 3) | 200 OK [http://localhost/images/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#update (for 127.0.0.1 at 2009-09-15 12:27:20) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "id"=>"1", "image"=>{"file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.1>}}
+  [4;36;1mImage Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.2ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mImage Update (0.4ms)[0m   [0mUPDATE `assets` SET `file_file_name` = 'Photo_8.jpg', `file_file_size` = 83222, `file_meta_data` = '--- \nGeometry: 640x480+0+0\nChannel statistics: \nIterations: \"0\"\nFilesize: 79kb\nFormat: JPEG (Joint Photographic Experts Group JFIF format)\nstandard deviation: 50.6275 (0.198539)\nskewness: \"0.310403\"\nImage statistics: \nmodify-date: 2009-09-15T19\nArtifacts: \nPrint size: 8.88889x6.66667\nMatte color: grey74\ncreate-date: 2009-09-15T19\nsignature: 6cb77ee85e19459588174b6371dd708fc9ce1aed232ada0d1acd1cbee746927d\nunknown[2,0]: \"\"\nVersion: ImageMagick 6.4.8-9 2009-01-31 Q8 http\nEndianess: Undefined\ngreen: \nKeyword[2,25]: Photo Booth\nblue: \nmax: 228 (0.894118)\nkurtosis: \"-1.46581\"\nBorder color: rgb(223,223,223)\nProfile-iptc: 31 bytes\nNumber pixels: 300kb\nImage: /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_3.jpg\nResolution: 72x72\nmean: 52.8618 (0.207301)\nCity[1,90]: \"0x00000000\"\nTainted: \"False\"\nClass: DirectClass\nChannel depth: \nred: \nOverAll: \nBackground color: white\nverbose: \"true\"\nColorspace: RGB\nDepth: 8-bit\nmin: 0 (0)\nPage geometry: 640x480+0+0\nProfile-8bim: 44 bytes\nUnits: Undefined\nType: TrueColor\nInterlace: None\nProperties: \njpeg: sampling-factor\nRendering intent: Undefined\nDispose: Undefined\nQuality: \"93\"\nOrientation: Undefined\nexif: ExifOffset\nProfile-exif: 62 bytes\nTransparent color: black\nCompression: JPEG\nProfiles: \n', `updated_at` = '2009-09-15 19:27:20', `file_updated_at` = '2009-09-15 19:27:20' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+[paperclip] deleting /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_3.jpg
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_8.jpg
+  [4;36;1mImage Update (0.4ms)[0m   [0;1mUPDATE `assets` SET `file_aspect_ratio` = 1.33333333333333, `file_file_name` = 'Photo_8.jpg', `file_meta_data` = '--- \nFilesize: 81.3kb\nIterations: \"0\"\nChannel statistics: \nGeometry: 640x480+0+0\nArtifacts: \nmodify-date: 2009-09-15T19\nImage statistics: \nskewness: \"0.567623\"\nstandard deviation: 42.7343 (0.167586)\nFormat: JPEG (Joint Photographic Experts Group JFIF format)\nVersion: ImageMagick 6.4.8-9 2009-01-31 Q8 http\nunknown[2,0]: \"\"\nsignature: 109b34855f2ef2cd75d8d036ee485d8040aec3f5d0aebcb5a722a47c27c244c0\ncreate-date: 2009-09-15T19\nMatte color: grey74\nPrint size: 8.88889x6.66667\nKeyword[2,25]: Photo Booth\ngreen: \nEndianess: Undefined\nNumber pixels: 300kb\nProfile-iptc: 31 bytes\nBorder color: rgb(223,223,223)\nkurtosis: \"-0.634819\"\nmax: 255 (1)\nblue: \nTainted: \"False\"\nCity[1,90]: \"0x00000000\"\nmean: 45.7826 (0.17954)\nResolution: 72x72\nImage: /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_8.jpg\nverbose: \"true\"\nBackground color: white\nOverAll: \nred: \nChannel depth: \nClass: DirectClass\nProfile-8bim: 44 bytes\nPage geometry: 640x480+0+0\nmin: 0 (0)\nDepth: 8-bit\nColorspace: RGB\njpeg: sampling-factor\nProperties: \nInterlace: None\nType: TrueColor\nUnits: Undefined\nProfile-exif: 62 bytes\nexif: ExifOffset\nOrientation: Undefined\nQuality: \"93\"\nDispose: Undefined\nRendering intent: Undefined\nProfiles: \nCompression: JPEG\nTransparent color: black\n', `file_file_size` = 83222, `updated_at` = '2009-09-15 19:27:20', `file_updated_at` = '2009-09-15 19:27:20' WHERE `id` = 1[0m
+  [4;35;1mSQL (40.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/images/1
+Completed in 337ms (DB: 44) | 302 Found [http://localhost/images/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2009-09-15 12:27:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mImage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.5ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/show
+Completed in 14ms (View: 5, DB: 2) | 200 OK [http://localhost/images/1]
+  [4;36;1mImage Load (0.4ms)[0m   [0;1mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 12:34:52) [GET]
+  [4;36;1mImage Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.9ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 17ms (View: 7, DB: 3) | 200 OK [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#edit (for 127.0.0.1 at 2009-09-15 12:34:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mImage Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.8ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/edit
+Rendered images/_form (4.2ms)
+Completed in 23ms (View: 12, DB: 3) | 200 OK [http://localhost/images/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#update (for 127.0.0.1 at 2009-09-15 12:35:10) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "id"=>"1", "image"=>{"title"=>"Me with Motley", "description"=>"Me holding motley", "file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.0>}}
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.3ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mImage Update (0.4ms)[0m   [0mUPDATE `assets` SET `title` = 'Me with Motley', `file_file_name` = 'Photo_12.jpg', `description` = 'Me holding motley', `file_file_size` = 80765, `file_meta_data` = '--- \nGeometry: 640x480+0+0\nChannel statistics: \nIterations: \"0\"\nFilesize: 81.3kb\nFormat: JPEG (Joint Photographic Experts Group JFIF format)\nstandard deviation: 42.7343 (0.167586)\nskewness: \"0.567623\"\nImage statistics: \nmodify-date: 2009-09-15T19\nArtifacts: \nPrint size: 8.88889x6.66667\nMatte color: grey74\ncreate-date: 2009-09-15T19\nsignature: 109b34855f2ef2cd75d8d036ee485d8040aec3f5d0aebcb5a722a47c27c244c0\nunknown[2,0]: \"\"\nVersion: ImageMagick 6.4.8-9 2009-01-31 Q8 http\nEndianess: Undefined\ngreen: \nKeyword[2,25]: Photo Booth\nblue: \nmax: 255 (1)\nkurtosis: \"-0.634819\"\nBorder color: rgb(223,223,223)\nProfile-iptc: 31 bytes\nNumber pixels: 300kb\nImage: /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_8.jpg\nResolution: 72x72\nmean: 45.7826 (0.17954)\nCity[1,90]: \"0x00000000\"\nTainted: \"False\"\nClass: DirectClass\nChannel depth: \nred: \nOverAll: \nBackground color: white\nverbose: \"true\"\nColorspace: RGB\nDepth: 8-bit\nmin: 0 (0)\nPage geometry: 640x480+0+0\nProfile-8bim: 44 bytes\nUnits: Undefined\nType: TrueColor\nInterlace: None\nProperties: \njpeg: sampling-factor\nRendering intent: Undefined\nDispose: Undefined\nQuality: \"93\"\nOrientation: Undefined\nexif: ExifOffset\nProfile-exif: 62 bytes\nTransparent color: black\nCompression: JPEG\nProfiles: \n', `updated_at` = '2009-09-15 19:35:10', `file_updated_at` = '2009-09-15 19:35:10' WHERE `id` = 1[0m
+[paperclip] Saving attachments.
+[paperclip] deleting /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_8.jpg
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_12.jpg
+  [4;36;1mImage Update (0.4ms)[0m   [0;1mUPDATE `assets` SET `title` = 'Me with Motley', `file_aspect_ratio` = 1.33333333333333, `file_file_name` = 'Photo_12.jpg', `description` = 'Me holding motley', `file_meta_data` = '--- \nFilesize: 78.9kb\nIterations: \"0\"\nChannel statistics: \nGeometry: 640x480+0+0\nArtifacts: \nmodify-date: 2009-09-15T19\nImage statistics: \nskewness: \"1.05377\"\nstandard deviation: 39.4516 (0.154712)\nFormat: JPEG (Joint Photographic Experts Group JFIF format)\nVersion: ImageMagick 6.4.8-9 2009-01-31 Q8 http\nunknown[2,0]: \"\"\nsignature: b82af8ff1d53192f2c60760fdf03f948ad1e487e2c989594ff570827abf00c4d\ncreate-date: 2009-09-15T19\nMatte color: grey74\nPrint size: 8.88889x6.66667\nKeyword[2,25]: Photo Booth\ngreen: \nEndianess: Undefined\nNumber pixels: 300kb\nProfile-iptc: 31 bytes\nBorder color: rgb(223,223,223)\nkurtosis: \"0.473745\"\nmax: 255 (1)\nblue: \nTainted: \"False\"\nCity[1,90]: \"0x00000000\"\nmean: 33.6458 (0.131944)\nResolution: 72x72\nImage: /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_12.jpg\nverbose: \"true\"\nBackground color: white\nOverAll: \nred: \nChannel depth: \nClass: DirectClass\nProfile-8bim: 44 bytes\nPage geometry: 640x480+0+0\nmin: 0 (0)\nDepth: 8-bit\nColorspace: RGB\njpeg: sampling-factor\nProperties: \nInterlace: None\nType: TrueColor\nUnits: Undefined\nProfile-exif: 62 bytes\nexif: ExifOffset\nOrientation: Undefined\nQuality: \"93\"\nDispose: Undefined\nRendering intent: Undefined\nProfiles: \nCompression: JPEG\nTransparent color: black\n', `file_file_size` = 80765, `updated_at` = '2009-09-15 19:35:11', `file_updated_at` = '2009-09-15 19:35:10' WHERE `id` = 1[0m
+  [4;35;1mSQL (33.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/images/1
+Completed in 248ms (DB: 37) | 302 Found [http://localhost/images/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2009-09-15 12:35:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mImage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.6ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/show
+Completed in 96ms (View: 86, DB: 3) | 200 OK [http://localhost/images/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#edit (for 127.0.0.1 at 2009-09-15 12:35:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mImage Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.8ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/edit
+Rendered images/_form (3.8ms)
+Completed in 19ms (View: 8, DB: 3) | 200 OK [http://localhost/images/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 12:35:15) [GET]
+  [4;36;1mImage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.8ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 19ms (View: 9, DB: 3) | 200 OK [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 12:36:35) [GET]
+
+ActionController::RoutingError (No route matches "/rubyrun_rss/perf_summary.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 12:37:20) [GET]
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.4ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 22ms (View: 12, DB: 3) | 200 OK [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2009-09-15 12:37:25) [GET]
+  [4;36;1mImage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+Rendering template within layouts/images
+Rendering images/new
+Rendered images/_form (3.2ms)
+Completed in 16ms (View: 7, DB: 2) | 200 OK [http://localhost/images/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 12:38:05) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"title"=>"Me again", "description"=>"Doing something", "file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.1>}}
+  [4;35;1mImage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mImage Create (0.3ms)[0m   [0mINSERT INTO `assets` (`updated_at`, `title`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `description`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 19:38:05', 'Me again', 'image/jpeg', NULL, 'Image', 'S7300536.JPG', '2009-09-15 19:38:05', 1925110, NULL, 'Doing something', NULL, NULL, NULL, NULL, '2009-09-15 19:38:05')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/2/original/S7300536.JPG
+  [4;36;1mImage Update (0.4ms)[0m   [0;1mUPDATE `assets` SET `created_at` = '2009-09-15 19:38:05', `file_width` = 3072.0, `file_height` = 2304.0, `file_content_type` = 'image/jpeg', `title` = 'Me again', `file_aspect_ratio` = 1.33333333333333, `file_file_name` = 'S7300536.JPG', `type` = 'Image', `description` = 'Doing something', `file_meta_data` = '--- \nFilesize: 1.836mb\nIterations: \"0\"\nChannel statistics: \nGeometry: 3072x2304+0+0\nArtifacts: \nmodify-date: 2009-09-15T19\nImage statistics: \nskewness: \"0.236751\"\nstandard deviation: 68.8018 (0.269811)\nFormat: JPEG (Joint Photographic Experts Group JFIF format)\nVersion: ImageMagick 6.4.8-9 2009-01-31 Q8 http\nUser time: 0.330u\nsignature: 71ea7df7d9956889e128138652db395dc78452fec5c25df1cd0801b6436f613d\ncreate-date: 2009-09-15T19\nMatte color: grey74\nPrint size: 32x24\ngreen: \nEndianess: Undefined\nNumber pixels: 6.75mb\nBorder color: rgb(223,223,223)\nkurtosis: \"-1.13541\"\nmax: 255 (1)\nblue: \nTainted: \"False\"\nmean: 83.8747 (0.32892)\nResolution: 96x96\nImage: /Users/joshnabbott/rails/asset-manager/public/system/files/2/original/S7300536.JPG\nverbose: \"true\"\nBackground color: white\nOverAll: \nred: \nChannel depth: \nClass: DirectClass\nPage geometry: 3072x2304+0+0\nmin: 0 (0)\nDepth: 8-bit\nColorspace: RGB\njpeg: sampling-factor\nProperties: \nInterlace: None\nType: TrueColor\nUnits: PixelsPerInch\nProfile-exif: 34920 bytes\nexif: YResolution\nOrientation: TopLeft\nDispose: Undefined\nRendering intent: Undefined\nElapsed time: \"0\"\nPixels per second: 6.75mb\nProfiles: \nCompression: JPEG\nTransparent color: black\n', `file_file_size` = 1925110, `updated_at` = '2009-09-15 19:38:07', `file_updated_at` = '2009-09-15 19:38:05' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/images/2
+Completed in 2365ms (DB: 3) | 302 Found [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2009-09-15 12:38:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mImage Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.4ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 2) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/show
+Completed in 17ms (View: 5, DB: 4) | 200 OK [http://localhost/images/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 12:40:18) [GET]
+  [4;36;1mImage Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.0ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 28ms (View: 16, DB: 3) | 200 OK [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2009-09-15 12:40:21) [GET]
+  [4;36;1mImage Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+Rendering template within layouts/images
+Rendering images/new
+Rendered images/_form (3.3ms)
+Completed in 16ms (View: 7, DB: 2) | 200 OK [http://localhost/images/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 12:41:01) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"title"=>"", "description"=>"", "file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.0>}}
+  [4;35;1mImage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mImage Create (0.2ms)[0m   [0mINSERT INTO `assets` (`updated_at`, `title`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `description`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 19:41:01', '', 'image/jpeg', NULL, 'Image', 'P1020085.JPG', '2009-09-15 19:41:01', 1729229, NULL, '', NULL, NULL, NULL, NULL, '2009-09-15 19:41:01')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/3/original/P1020085.JPG
+  [4;36;1mImage Update (0.0ms)[0m   [0;1mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''--- \n- Iterations\n- \"0\"\n','--- \n- Channel statistics\n- \n','--- \n- Geom' at line 1: UPDATE `assets` SET `file_aspect_ratio` = 1.77777777777778, `file_meta_data` = '--- \n- Filesize\n- 1.649mb\n','--- \n- Iterations\n- \"0\"\n','--- \n- Channel statistics\n- \n','--- \n- Geometry\n- 2816x1584+0+0\n','--- \n- Artifacts\n- \n','--- \n- modify-date\n- 2009-09-15T19\n','--- \n- Image statistics\n- \n','--- \n- skewness\n- \"-0.30778\"\n','--- \n- standard deviation\n- 101.835 (0.399352)\n','--- \n- Format\n- JPEG (Joint Photographic Experts Group JFIF format)\n','--- \n- Version\n- ImageMagick 6.4.8-9 2009-01-31 Q8 http\n','--- \n- signature\n- e56d799991cc93ca1ae5856f928f82050bc42a15a0a16644293099f83aee8e1e\n','--- \n- create-date\n- 2009-09-15T19\n','--- \n- Matte color\n- grey74\n','--- \n- Print size\n- 39.1111x22\n','--- \n- green\n- \n','--- \n- Endianess\n- Undefined\n','--- \n- Number pixels\n- 4.254mb\n','--- \n- Border color\n- rgb(223,223,223)\n','--- \n- kurtosis\n- \"-1.60004\"\n','--- \n- max\n- 255 (1)\n','--- \n- blue\n- \n','--- \n- Tainted\n- \"False\"\n','--- \n- mean\n- 140.015 (0.549078)\n','--- \n- Resolution\n- 72x72\n','--- \n- Image\n- /Users/joshnabbott/rails/asset-manager/public/system/files/3/original/P1020085.JPG\n','--- \n- verbose\n- \"true\"\n','--- \n- Background color\n- white\n','--- \n- OverAll\n- \n','--- \n- red\n- \n','--- \n- Channel depth\n- \n','--- \n- Class\n- DirectClass\n','--- \n- Page geometry\n- 2816x1584+0+0\n','--- \n- min\n- 0 (0)\n','--- \n- Depth\n- 8-bit\n','--- \n- Colorspace\n- RGB\n','--- \n- jpeg\n- sampling-factor\n','--- \n- Properties\n- \n','--- \n- Interlace\n- None\n','--- \n- Type\n- TrueColor\n','--- \n- Units\n- PixelsPerInch\n','--- \n- Profile-icc\n- 1352 bytes\n','--- \n- Profile-exif\n- 28572 bytes\n','--- \n- exif\n- YResolution\n','--- \n- Orientation\n- TopLeft\n','--- \n- Dispose\n- Undefined\n','--- \n- Rendering intent\n- Undefined\n','--- \n- Profiles\n- \n','--- \n- Compression\n- JPEG\n','--- \n- Transparent color\n- black\n', `file_width` = 2816.0, `file_height` = 1584.0 WHERE (`assets`.`id` = 3) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''--- \n- Iterations\n- \"0\"\n','--- \n- Channel statistics\n- \n','--- \n- Geom' at line 1: UPDATE `assets` SET `file_aspect_ratio` = 1.77777777777778, `file_meta_data` = '--- \n- Filesize\n- 1.649mb\n','--- \n- Iterations\n- \"0\"\n','--- \n- Channel statistics\n- \n','--- \n- Geometry\n- 2816x1584+0+0\n','--- \n- Artifacts\n- \n','--- \n- modify-date\n- 2009-09-15T19\n','--- \n- Image statistics\n- \n','--- \n- skewness\n- \"-0.30778\"\n','--- \n- standard deviation\n- 101.835 (0.399352)\n','--- \n- Format\n- JPEG (Joint Photographic Experts Group JFIF format)\n','--- \n- Version\n- ImageMagick 6.4.8-9 2009-01-31 Q8 http\n','--- \n- signature\n- e56d799991cc93ca1ae5856f928f82050bc42a15a0a16644293099f83aee8e1e\n','--- \n- create-date\n- 2009-09-15T19\n','--- \n- Matte color\n- grey74\n','--- \n- Print size\n- 39.1111x22\n','--- \n- green\n- \n','--- \n- Endianess\n- Undefined\n','--- \n- Number pixels\n- 4.254mb\n','--- \n- Border color\n- rgb(223,223,223)\n','--- \n- kurtosis\n- \"-1.60004\"\n','--- \n- max\n- 255 (1)\n','--- \n- blue\n- \n','--- \n- Tainted\n- \"False\"\n','--- \n- mean\n- 140.015 (0.549078)\n','--- \n- Resolution\n- 72x72\n','--- \n- Image\n- /Users/joshnabbott/rails/asset-manager/public/system/files/3/original/P1020085.JPG\n','--- \n- verbose\n- \"true\"\n','--- \n- Background color\n- white\n','--- \n- OverAll\n- \n','--- \n- red\n- \n','--- \n- Channel depth\n- \n','--- \n- Class\n- DirectClass\n','--- \n- Page geometry\n- 2816x1584+0+0\n','--- \n- min\n- 0 (0)\n','--- \n- Depth\n- 8-bit\n','--- \n- Colorspace\n- RGB\n','--- \n- jpeg\n- sampling-factor\n','--- \n- Properties\n- \n','--- \n- Interlace\n- None\n','--- \n- Type\n- TrueColor\n','--- \n- Units\n- PixelsPerInch\n','--- \n- Profile-icc\n- 1352 bytes\n','--- \n- Profile-exif\n- 28572 bytes\n','--- \n- exif\n- YResolution\n','--- \n- Orientation\n- TopLeft\n','--- \n- Dispose\n- Undefined\n','--- \n- Rendering intent\n- Undefined\n','--- \n- Profiles\n- \n','--- \n- Compression\n- JPEG\n','--- \n- Transparent color\n- black\n', `file_width` = 2816.0, `file_height` = 1584.0 WHERE (`assets`.`id` = 3) AND ( (`assets`.`type` = 'Image' ) ) ):
+  app/models/image.rb:17:in `update_additional_file_columns'
+  app/controllers/images_controller.rb:46:in `create'
+  app/controllers/images_controller.rb:45:in `create'
+
+Rendered rescues/_trace (40.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 12:41:42) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"title"=>"", "description"=>"", "file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.1>}}
+  [4;36;1mImage Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mImage Create (0.3ms)[0m   [0;1mINSERT INTO `assets` (`updated_at`, `title`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `description`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 19:41:43', '', 'image/jpeg', NULL, 'Image', 'P1020085.JPG', '2009-09-15 19:41:43', 1729229, NULL, '', NULL, NULL, NULL, NULL, '2009-09-15 19:41:43')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/4/original/P1020085.JPG
+  [4;35;1mImage Update (0.4ms)[0m   [0mUPDATE `assets` SET `created_at` = '2009-09-15 19:41:43', `file_width` = 2816.0, `file_height` = 1584.0, `file_content_type` = 'image/jpeg', `title` = '', `file_aspect_ratio` = 1.77777777777778, `file_file_name` = 'P1020085.JPG', `type` = 'Image', `description` = '', `file_meta_data` = '--- \nFilesize: 1.649mb\nIterations: \"0\"\nChannel statistics: \nGeometry: 2816x1584+0+0\nArtifacts: \nmodify-date: 2009-09-15T19\nImage statistics: \nskewness: \"-0.30778\"\nstandard deviation: 101.835 (0.399352)\nFormat: JPEG (Joint Photographic Experts Group JFIF format)\nVersion: ImageMagick 6.4.8-9 2009-01-31 Q8 http\nsignature: e56d799991cc93ca1ae5856f928f82050bc42a15a0a16644293099f83aee8e1e\ncreate-date: 2009-09-15T19\nMatte color: grey74\nPrint size: 39.1111x22\ngreen: \nEndianess: Undefined\nNumber pixels: 4.254mb\nBorder color: rgb(223,223,223)\nkurtosis: \"-1.60004\"\nmax: 255 (1)\nblue: \nTainted: \"False\"\nmean: 140.015 (0.549078)\nResolution: 72x72\nImage: /Users/joshnabbott/rails/asset-manager/public/system/files/4/original/P1020085.JPG\nverbose: \"true\"\nBackground color: white\nOverAll: \nred: \nChannel depth: \nClass: DirectClass\nPage geometry: 2816x1584+0+0\nmin: 0 (0)\nDepth: 8-bit\nColorspace: RGB\njpeg: sampling-factor\nProperties: \nInterlace: None\nType: TrueColor\nUnits: PixelsPerInch\nProfile-icc: 1352 bytes\nProfile-exif: 28572 bytes\nexif: YResolution\nOrientation: TopLeft\nDispose: Undefined\nRendering intent: Undefined\nProfiles: \nCompression: JPEG\nTransparent color: black\n', `file_file_size` = 1729229, `updated_at` = '2009-09-15 19:41:44', `file_updated_at` = '2009-09-15 19:41:43' WHERE `id` = 4[0m
+  [4;36;1mSQL (36.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/images/4
+Completed in 2074ms (DB: 39) | 302 Found [http://localhost/images]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2009-09-15 12:41:45) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mImage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (0.9ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.`id` = 4) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/show
+Completed in 17ms (View: 5, DB: 3) | 200 OK [http://localhost/images/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.4ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) ORDER BY assets.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#edit (for 127.0.0.1 at 2009-09-15 13:09:45) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mImage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (1.1ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.`id` = 4) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/edit
+Rendered images/_form (3.2ms)
+Completed in 17ms (View: 7, DB: 3) | 200 OK [http://localhost/images/4/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#update (for 127.0.0.1 at 2009-09-15 13:10:01) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "id"=>"4", "image"=>{"title"=>"Danger!", "description"=>"", "file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.0>}}
+  [4;35;1mImage Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (0.2ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.`id` = 4) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+
+ActiveRecord::SerializationTypeMismatch (file_meta_data was supposed to be a YAML, but was a Hash):
+  app/controllers/images_controller.rb:63:in `update'
+  app/controllers/images_controller.rb:62:in `update'
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#update (for 127.0.0.1 at 2009-09-15 13:10:34) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "id"=>"4", "image"=>{"title"=>"Danger!", "description"=>"", "file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.1>}}
+  [4;35;1mImage Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (0.6ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.`id` = 4) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+
+ActiveRecord::SerializationTypeMismatch (file_meta_data was supposed to be a YAML, but was a Hash):
+  app/controllers/images_controller.rb:63:in `update'
+  app/controllers/images_controller.rb:62:in `update'
+
+Rendered rescues/_trace (38.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 13:11:25) [GET]
+  [4;35;1mImage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (1.1ms)[0m   [0;1mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 25ms (View: 15, DB: 3) | 200 OK [http://localhost/images]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2009-09-15 13:11:31) [GET]
+  [4;35;1mImage Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+Rendering template within layouts/images
+Rendering images/new
+Rendered images/_form (2.9ms)
+Completed in 15ms (View: 6, DB: 3) | 200 OK [http://localhost/images/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 13:11:44) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"title"=>"Danger!", "description"=>"", "file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.0>}}
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mImage Create (0.3ms)[0m   [0;1mINSERT INTO `assets` (`updated_at`, `title`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `description`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 20:11:44', 'Danger!', 'image/jpeg', NULL, 'Image', 'P1020099.JPG', '2009-09-15 20:11:44', 1884387, NULL, '', NULL, NULL, NULL, NULL, '2009-09-15 20:11:44')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/5/original/P1020099.JPG
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+
+ActiveRecord::SerializationTypeMismatch (file_meta_data was supposed to be a YAML, but was a Hash):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/fileutils.rb:1200:in `inject'
+  app/models/image.rb:14:in `send'
+  app/models/image.rb:14:in `update_additional_file_columns'
+  app/controllers/images_controller.rb:46:in `create'
+  app/controllers/images_controller.rb:45:in `create'
+
+Rendered rescues/_trace (108.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mImage Load (0.4ms)[0m   [0;1mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 13:13:16) [GET]
+  [4;36;1mImage Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.8ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 28ms (View: 17, DB: 3) | 200 OK [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#destroy (for 127.0.0.1 at 2009-09-15 13:13:19) [DELETE]
+  Parameters: {"authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "id"=>"1"}
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.5ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 1) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /Users/joshnabbott/rails/asset-manager/public/system/files/1/original/Photo_12.jpg
+  [4;35;1mImage Destroy (0.2ms)[0m   [0mDELETE FROM `assets` WHERE `id` = 1[0m
+  [4;36;1mSQL (41.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/images
+Completed in 55ms (DB: 44) | 302 Found [http://localhost/images/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 13:13:19) [GET]
+  [4;35;1mImage Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (0.4ms)[0m   [0;1mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 23ms (View: 13, DB: 2) | 200 OK [http://localhost/images]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#destroy (for 127.0.0.1 at 2009-09-15 13:13:21) [DELETE]
+  Parameters: {"authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "id"=>"2"}
+  [4;35;1mImage Columns (75.1ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (19.8ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.`id` = 2) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /Users/joshnabbott/rails/asset-manager/public/system/files/2/original/S7300536.JPG
+  [4;36;1mImage Destroy (0.2ms)[0m   [0;1mDELETE FROM `assets` WHERE `id` = 2[0m
+  [4;35;1mSQL (16.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/images
+Completed in 179ms (DB: 112) | 302 Found [http://localhost/images/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 13:13:21) [GET]
+  [4;36;1mImage Columns (243.4ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (14.9ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 275ms (View: 9, DB: 258) | 200 OK [http://localhost/images]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#destroy (for 127.0.0.1 at 2009-09-15 13:13:23) [DELETE]
+  Parameters: {"authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "id"=>"4"}
+  [4;36;1mImage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.3ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.`id` = 4) AND ( (`assets`.`type` = 'Image' ) ) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /Users/joshnabbott/rails/asset-manager/public/system/files/4/original/P1020085.JPG
+  [4;35;1mImage Destroy (0.2ms)[0m   [0mDELETE FROM `assets` WHERE `id` = 4[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/images
+Completed in 15ms (DB: 4) | 302 Found [http://localhost/images/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2009-09-15 13:13:23) [GET]
+  [4;35;1mImage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (0.5ms)[0m   [0;1mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/index
+Completed in 10ms (View: 1, DB: 2) | 200 OK [http://localhost/images]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2009-09-15 13:13:24) [GET]
+  [4;35;1mImage Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+Rendering template within layouts/images
+Rendering images/new
+Rendered images/_form (3.3ms)
+Completed in 16ms (View: 6, DB: 2) | 200 OK [http://localhost/images/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 13:13:33) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"title"=>"Danger!", "description"=>"", "file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.0>}}
+  [4;36;1mImage Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mImage Create (0.3ms)[0m   [0;1mINSERT INTO `assets` (`updated_at`, `title`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `description`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 20:13:33', 'Danger!', 'image/jpeg', NULL, 'Image', 'P1020099.JPG', '2009-09-15 20:13:33', 1884387, NULL, '', NULL, NULL, NULL, NULL, '2009-09-15 20:13:33')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/6/original/P1020099.JPG
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+
+ActiveRecord::SerializationTypeMismatch (file_meta_data was supposed to be a YAML, but was a Hash):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/fileutils.rb:1200:in `inject'
+  app/models/image.rb:14:in `send'
+  app/models/image.rb:14:in `update_additional_file_columns'
+  app/controllers/images_controller.rb:46:in `create'
+  app/controllers/images_controller.rb:45:in `create'
+
+Rendered rescues/_trace (53.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.0ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2009-09-15 13:14:47) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"uP9FJIAqevq/buWF81MYeTmGqP4m8GhlURn/u94FV+s=", "image"=>{"title"=>"Danger!", "description"=>"", "file"=>#<File:/var/folders/HG/HGOIGeHMFY0O+OR1rGSMzU+++TI/-Tmp-/RackMultipart.10645.1>}}
+  [4;36;1mImage Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mImage Create (0.2ms)[0m   [0;1mINSERT INTO `assets` (`updated_at`, `title`, `file_content_type`, `file_height`, `type`, `file_file_name`, `file_updated_at`, `file_file_size`, `file_meta_data`, `description`, `owner_id`, `file_width`, `file_aspect_ratio`, `owner_type`, `created_at`) VALUES('2009-09-15 20:14:47', 'Danger!', 'image/jpeg', NULL, 'Image', 'P1020099.JPG', '2009-09-15 20:14:47', 1884387, NULL, '', NULL, NULL, NULL, NULL, '2009-09-15 20:14:47')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/joshnabbott/rails/asset-manager/public/system/files/7/original/P1020099.JPG
+  [4;35;1mImage Update (0.7ms)[0m   [0mUPDATE `assets` SET `created_at` = '2009-09-15 20:14:47', `file_width` = 2816.0, `file_height` = 1584.0, `file_content_type` = 'image/jpeg', `title` = 'Danger!', `file_aspect_ratio` = 1.77777777777778, `file_file_name` = 'P1020099.JPG', `type` = 'Image', `description` = '', `file_meta_data` = '--- \nFilesize: 1.797mb\nIterations: 0\nChannel statistics: \n green: \n skewness: -0.210881\n standard deviation: 82.2513 (0.322554)\n kurtosis: -1.52407\n max: 255 (1)\n mean: 152.294 (0.597233)\n min: 0 (0)\n blue: \n skewness: 0.0643526\n standard deviation: 88.0771 (0.345401)\n kurtosis: -1.55489\n max: 255 (1)\n mean: 119.754 (0.469625)\n min: 0 (0)\n red: \n skewness: -0.442368\n standard deviation: 71.1326 (0.278951)\n kurtosis: -1.25594\n max: 255 (1)\n mean: 173.149 (0.679014)\n min: 0 (0)\nGeometry: 2816x1584+0+0\nArtifacts: \n verbose: true\nImage statistics: \n OverAll: \n skewness: 0.182091\n standard deviation: 96.8861 (0.379945)\n kurtosis: -1.57963\n max: 255 (1)\n mean: 111.299 (0.436468)\n min: 0 (0)\nFormat: JPEG (Joint Photographic Experts Group JFIF format)\nVersion: ImageMagick 6.4.8-9 2009-01-31 Q8 http://www.imagemagick.org\nMatte color: grey74\nPrint size: 39.1111x22\nEndianess: Undefined\nNumber pixels: 4.254mb\nBorder color: rgb(223,223,223)\nTainted: false\nResolution: 72x72\nImage: /Users/joshnabbott/rails/asset-manager/public/system/files/7/original/P1020099.JPG\nBackground color: white\nChannel depth: \n green: 8-bit\n blue: 8-bit\n red: 8-bit\nClass: DirectClass\nPage geometry: 2816x1584+0+0\nDepth: 8-bit\nColorspace: RGB\nProperties: \n exif:WhiteBalance: 1\n exif:MaxApertureValue: 30/10\n exif:LightSource: 11\n exif:InteroperabilityOffset: 7704\n exif:DateTimeOriginal: 2008:06:08 18:00:17\n modify-date: 2009-09-15 13:14:47 -07:00\n exif:Sharpness: 1\n exif:SceneCaptureType: 0\n exif:FocalLengthIn35mmFilm: 38\n exif:FocalLength: 58/10\n exif:FileSource: 3\n exif:ExposureTime: 10/2000\n exif:ExifVersion: 48, 50, 50, 49\n exif:Contrast: 0\n signature: 8061ae9a7aea4606a3615c2f055328acbfdb6995a3119a5aef59ea7c833b8637\n exif:SensingMethod: 2\n exif:Model: DMC-LS60\n exif:GainControl: 0\n exif:ExposureMode: 0\n create-date: 2009-09-15 13:14:47 -07:00\n exif:PrintImageMatching: 80, 114, 105, 110, 116, 73, 77, 0, 48, 50, 53, 48, 0, 0, 14, 0, 1, 0, 22, 0, 22, 0, 2, 0, 0, 0, 0, 0, 3, 0, 100, 0, 0, 0, 7, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 11, 0, 172, 0, 0, 0, 12, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 14, 0, 196, 0, 0, 0, 0, 1, 5, 0, 0, 0, 1, 1, 1, 0, 0, 0, 16, 1, 128, 0, 0, 0, 9, 17, 0, 0, 16, 39, 0, 0, 11, 15, 0, 0, 16, 39, 0, 0, 151, 5, 0, 0, 16, 39, 0, 0, 176, 8, 0, 0, 16, 39, 0, 0, 1, 28, 0, 0, 16, 39, 0, 0, 94, 2, 0, 0, 16, 39, 0, 0, 139, 0, 0, 0, 16, 39, 0, 0, 203, 3, 0, 0, 16, 39, 0, 0, 229, 27, 0, 0, 16, 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\n exif:ISOSpeedRatings: 100\n exif:InteroperabilityVersion: 48, 49, 48, 48\n exif:XResolution: 72/1\n exif:ResolutionUnit: 2\n exif:CompressedBitsPerPixel: 4/1\n exif:ComponentsConfiguration: 1, 2, 3, 0\n exif:MakerNote: 80, 97, 110, 97, 115, 111, 110, 105, 99, 0, 0, 0, 46, 0, 1, 0, 3, 0, 1, 0, 0, 0, 2, 0, 0, 0, 2, 0, 7, 0, 4, 0, 0, 0, 0, 1, 0, 9, 3, 0, 3, 0, 1, 0, 0, 0, 12, 0, 0, 0, 7, 0, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 15, 0, 1, 0, 2, 0, 0, 0, 16, 16, 0, 0, 26, 0, 3, 0, 1, 0, 0, 0, 2, 0, 0, 0, 28, 0, 3, 0, 1, 0, 0, 0, 2, 0, 0, 0, 31, 0, 3, 0, 1, 0, 0, 0, 34, 0, 0, 0, 32, 0, 3, 0, 1, 0, 0, 0, 2, 0, 0, 0, 33, 0, 7, 0, 8, 24, 0, 0, 208, 5, 0, 0, 34, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 35, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 36, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 37, 0, 7, 0, 16, 0, 0, 0, 216, 29, 0, 0, 38, 0, 7, 0, 4, 0, 0, 0, 48, 50, 50, 48, 39, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 40, 0, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 41, 0, 4, 0, 1, 0, 0, 0, 33, 202, 0, 0, 42, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 43, 0, 4, 0, 1, 0, 0, 0, 0, 0, 0, 0, 44, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 45, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 46, 0, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 47, 0, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 48, 0, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 49, 0, 3, 0, 1, 0, 0, 0, 2, 0, 0, 0, 50, 0, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 51, 0, 2, 0, 20, 0, 0, 0, 232, 29, 0, 0, 52, 0, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 53, 0, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 54, 0, 3, 0, 1, 0, 0, 0, 255, 255, 0, 0, 55, 0, 3, 0, 1, 0, 0, 0, 2, 0, 0, 0, 56, 0, 3, 0, 1, 0, 0, 0, 3, 0, 0, 0, 58, 0, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 59, 0, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 60, 0, 3, 0, 1, 0, 0, 0, 255, 255, 0, 0, 0, 128, 7, 0, 4, 0, 0, 0, 48, 49, 48, 49, 1, 128, 3, 0, 1, 0, 0, 0, 34, 0, 0, 0, 2, 128, 3, 0, 1, 0, 0, 0, 2, 0, 0, 0, 3, 128, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 4, 128, 3, 0, 1, 0, 0, 0, 52, 11, 0, 0, 5, 128, 3, 0, 1, 0, 0, 0, 30, 4, 0, 0, 6, 128, 3, 0, 1, 0, 0, 0, 122, 5, 0, 0, 7, 128, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 8, 128, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 16, 128, 2, 0, 20, 0, 0, 0, 252, 29, 0, 0, 68, 86, 1, 2, 69, 80, 0, 0, 240, 255, 68, 66, 212, 4, 240, 255, 65, 70, 182, 0, 160, 175, 16, 130, 162, 175, 0, 2, 164, 175, 0, 16, 166, 175, 0, 0, 202, 175, 30, 0, 178, 175, 0, 0, 180, 175, 0, 0, 186, 175, 27, 0, 188, 175, 251, 255, 190, 175, 0, 0, 248, 175, 0, 0, 250, 175, 36, 0, 168, 175, 171, 9, 170, 175, 71, 68, 200, 175, 6, 4, 216, 175, 159, 0, 182, 175, 64, 0, 184, 175, 0, 0, 206, 175, 186, 1, 210, 175, 20, 0, 208, 175, 66, 0, 172, 175, 133, 2, 176, 175, 76, 0, 174, 175, 193, 0, 212, 175, 0, 0, 244, 175, 20, 0, 242, 175, 40, 0, 226, 175, 0, 0, 228, 175, 1, 0, 224, 175, 35, 68, 230, 175, 1, 0, 232, 175, 1, 0, 234, 175, 0, 0, 236, 175, 0, 0, 246, 175, 0, 0, 218, 175, 0, 0, 214, 175, 0, 0, 240, 175, 0, 0, 4, 6, 140, 8, 10, 6, 71, 68, 200, 6, 10, 10, 154, 175, 0, 0, 156, 175, 0, 0, 158, 175, 0, 0, 240, 255, 83, 84, 74, 0, 164, 6, 0, 0, 166, 6, 0, 0, 168, 6, 0, 0, 170, 6, 0, 0, 172, 6, 0, 0, 250, 7, 0, 0, 174, 6, 0, 0, 176, 6, 0, 0, 182, 6, 0, 0, 184, 6, 0, 0, 186, 6, 0, 0, 244, 7, 0, 0, 246, 7, 0, 0, 178, 6, 0, 0, 180, 6, 0, 0, 176, 4, 0, 0, 178, 4, 0, 0, 240, 255, 65, 69, 198, 0, 32, 5, 251, 2, 34, 5, 98, 2, 6, 5, 251, 2, 238, 7, 251, 2, 36, 5, 235, 7, 16, 5, 91, 7, 38, 5, 246, 0, 192, 6, 79, 13, 40, 5, 237, 0, 58, 5, 10, 0, 197, 25, 0, 0, 80, 5, 2, 3, 82, 5, 233, 4, 202, 6, 9, 0, 0, 5, 1, 0, 8, 5, 0, 0, 2, 5, 0, 0, 10, 5, 0, 0, 4, 7, 0, 0, 6, 7, 0, 0, 8, 7, 5, 0, 242, 6, 0, 0, 246, 6, 255, 0, 244, 6, 0, 0, 248, 6, 40, 0, 42, 5, 65, 0, 44, 5, 5, 1, 50, 5, 5, 1, 250, 6, 5, 1, 0, 7, 0, 1, 2, 7, 4, 0, 59, 5, 10, 0, 62, 5, 0, 0, 198, 25, 2, 3, 200, 25, 217, 3, 48, 5, 128, 254, 28, 5, 37, 0, 232, 6, 49, 37, 26, 5, 236, 28, 239, 6, 6, 0, 240, 6, 2, 0, 254, 6, 0, 0, 46, 5, 0, 0, 20, 5, 17, 1, 22, 5, 12, 0, 34, 10, 54, 1, 88, 5, 19, 0, 90, 5, 128, 0, 240, 255, 87, 66, 234, 0, 0, 4, 52, 11, 2, 4, 122, 5, 92, 4, 30, 4, 4, 4, 75, 1, 6, 4, 57, 1, 96, 4, 100, 7, 26, 4, 255, 255, 94, 4, 0, 0, 95, 4, 0, 0, 18, 4, 255, 255, 20, 4, 255, 255, 22, 4, 255, 255, 24, 4, 255, 255, 204, 4, 16, 6, 206, 4, 94, 9, 208, 4, 24, 9, 210, 4, 127, 6, 8, 4, 239, 0, 10, 4, 228, 0, 180, 4, 0, 0, 182, 4, 64, 0, 64, 4, 208, 0, 48, 4, 84, 0, 56, 4, 110, 0, 50, 4, 102, 0, 58, 4, 127, 0, 52, 4, 226, 255, 60, 4, 25, 0, 54, 4, 12, 0, 62, 4, 80, 0, 76, 4, 255, 255, 78, 4, 255, 255,\n exif:JPEGInterchangeFormatLength: 6830\n exif:FNumber: 80/10\n exif:DateTime: 2008:06:08 18:00:17\n exif:CustomRendered: 0\n exif:SceneType: 1\n exif:Saturation: 1\n exif:MeteringMode: 5\n exif:Make: Panasonic\n exif:ExifOffset: 420\n exif:DateTimeDigitized: 2008:06:08 18:00:17\n exif:ColorSpace: 1\n jpeg:sampling-factor: 2x1,1x1,1x1\n exif:ExposureBiasValue: 100/100\n exif:ExifImageLength: 1584\n exif:InteroperabilityIndex: R98\n exif:ExposureProgram: 2\n exif:YResolution: 72/1\n exif:FlashPixVersion: 48, 49, 48, 48\n exif:ExifImageWidth: 2816\n jpeg:colorspace: 2\n exif:YCbCrPositioning: 2\n exif:Software: Ver.1.0\n exif:Orientation: 1\n exif:JPEGInterchangeFormat: 8084\n exif:Flash: 24\n exif:DigitalZoomRatio: 0/10\n exif:Compression: 6\nInterlace: None\nType: TrueColor\nUnits: PixelsPerInch\nOrientation: TopLeft\nDispose: Undefined\nRendering intent: Undefined\nProfiles: \n Profile-icc: 1352 bytes\n Profile-exif: 28572 bytes\nCompression: JPEG\nTransparent color: black\n', `file_file_size` = 1884387, `updated_at` = '2009-09-15 20:14:49', `file_updated_at` = '2009-09-15 20:14:47' WHERE `id` = 7[0m
+  [4;36;1mSQL (33.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/images/7
+Completed in 1576ms (DB: 37) | 302 Found [http://localhost/images]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2009-09-15 13:14:49) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mImage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (0.3ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.`id` = 7) AND ( (`assets`.`type` = 'Image' ) ) [0m
+Rendering template within layouts/images
+Rendering images/show
+Completed in 14ms (View: 4, DB: 2) | 200 OK [http://localhost/images/7]
+  [4;36;1mImage Load (0.4ms)[0m   [0;1mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.3ms)[0m   [0mSELECT * FROM `assets` WHERE ( (`assets`.`type` = 'Image' ) ) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-15 13:16:35) [GET]
+
+ActionController::RoutingError (No route matches "/rubyrun_rss/perf_summary.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

@@ -2,12 +2,14 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Title</th>
+    <th>File Name</th>
     <th>Thumbnail</th>
   </tr>
 
 <% @images.each do |image| %>
   <tr>
+    <td><%= image.title %></td>
     <td><%= image.file_file_name %></td>
     <td><%= image_tag(image.file.url, :width => 100) %></td>
     <td><%= link_to 'Show', image %></td>
