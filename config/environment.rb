@@ -23,6 +23,7 @@ Rails::Initializer.run do |config|
   config.gem 'greatseth-rvideo', :lib => 'rvideo'
   config.gem 'mime-types', :lib => 'mime/types'
   config.gem 'jeweler', :lib => 'jeweler'
+  config.gem 'mbleigh-acts-as-taggable-on', :lib => 'acts-as-taggable-on'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
