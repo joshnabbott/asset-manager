@@ -1,0 +1,22 @@
+<%- session_key_name = ActionController::Base.session_options[:key] -%>
+$(document).ready(function($) {
+  $('#image_submit').click(function(){
+    $('#image_file').uploadifyUpload();
+    return false;
+  });
+
+  $('#image_file').uploadify({
+    "cancelImg" : "/uploadify/cancel.png",
+    "buttonText" : "Browse",
+    "scriptData" : {
+      "<%= session_key_name %>" : "<%= u(cookies[session_key_name]) %>",
+      "authenticity_token" : "<%= u(form_authenticity_token) %>"
+    },
+    "multi" : true,
+    "script" : "<%= images_path %>",
+    "uploader" : "/uploadify/uploadify.swf",
+    "onAllComplete" : function(event, data) {
+      document.location = '<%= images_path %>';
+    }
+  });
+})
