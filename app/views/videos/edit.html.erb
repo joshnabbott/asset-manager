@@ -1,0 +1,10 @@
+<h1>Editing Video</h1>
+
+<% form_for(@video, :html => { :multipart => true }) do |f| %>
+	<fieldset>
+		<%= render :partial => 'form', :locals => { :f => f } %>
+		<div>
+    		<%= f.submit 'Update' %> - or - <%= link_to 'Cancel', videos_path %>
+  		</div>
+	</fieldset>
+<% end %>
