@@ -1,5 +1,6 @@
 class Asset < ActiveRecord::Base
   belongs_to :owner
+  acts_as_taggable_on :tags
 
   # Ruby method to call system identify. Accepts regular arguments of `identify`
   # Run identify -help in a terminal window to see available options
