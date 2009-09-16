@@ -21,7 +21,8 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'thoughtbot-paperclip', :lib => 'paperclip'
   config.gem 'greatseth-rvideo', :lib => 'rvideo'
-  config.gem 'mime-types', :lib => 'mime-types'
+  config.gem 'mime-types', :lib => 'mime/types'
+  config.gem 'jeweler', :lib => 'jeweler'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
