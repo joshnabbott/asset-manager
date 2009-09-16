@@ -12,7 +12,7 @@ class CreateAssets < ActiveRecord::Migration
       t.text :description
       t.integer :width
       t.integer :height
-      t.decimal :aspect_ratio, :precision => 6, :scale => 6
+      t.float :aspect_ratio
       t.text :meta_data
 
       t.timestamps
