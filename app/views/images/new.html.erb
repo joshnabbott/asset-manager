@@ -1,8 +1,17 @@
+<%- content_for :javascripts do -%>
+<%= javascript_include_tag(new_image_path, :format => :js) %>
+<%- end -%>
+
+<%- content_for :stylesheets do -%>
+<%= stylesheet_link_tag('/uploadify/uploadify') %>
+<%- end -%>
+
 <h1>New image</h1>
 
 <% form_for(@image, :html => { :multipart => true }) do |f| %>
   <fieldset>
     <%= render :partial => 'form', :locals => { :f => f } %>
+
     <p>
       <%= f.submit 'Create' %> - or - <%= link_to 'Cancel', images_path %>
     </p>

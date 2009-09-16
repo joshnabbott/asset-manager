@@ -28,6 +28,7 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.js
       format.xml  { render :xml => @image }
     end
   end
@@ -40,16 +41,31 @@ class ImagesController < ApplicationController
   # POST /images
   # POST /images.xml
   def create
-    @image = Image.new(params[:image])
+    # For uploadify (multi-upload)
+    if params['Filedata']
+      @image = Image.new(:uploadify_file => params['Filedata'])
+      respond_to do |format|
+        if @image.save
+          flash[:success] = 'Image was successfully created.'
+          format.html { render :text => flash[:success], :status => 200 }
+        else
+          flash[:error] = 'There was an error creating the image.'
+          format.html { render :text => flash[:error], :status => 500 }
+        end
+      end
+    else
+      # For normal upload
+      @image = Image.new(params[:image])
 
-    respond_to do |format|
-      if @image.save
-        flash[:notice] = 'Image was successfully created.'
-        format.html { redirect_to(@image) }
-        format.xml  { render :xml => @image, :status => :created, :location => @image }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @image.errors, :status => :unprocessable_entity }
+      respond_to do |format|
+        if @image.save
+          flash[:notice] = 'Image was successfully created.'
+          format.html { redirect_to(@image) }
+          format.xml  { render :xml => @image, :status => :created, :location => @image }
+        else
+          format.html { render :action => "new" }
+          format.xml  { render :xml => @image.errors, :status => :unprocessable_entity }
+        end
       end
     end
   end

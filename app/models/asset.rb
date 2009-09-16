@@ -1,10 +1,10 @@
+require 'mime/types'
 class Asset < ActiveRecord::Base
   belongs_to :owner
   acts_as_taggable_on :tags
 
-  # Ruby method to call system identify. Accepts regular arguments of `identify`
-  # Run identify -help in a terminal window to see available options
-  def identify(image, *args)
-    `identify #{args.join(' ')} #{image}`
+  def uploadify_file=(file_data)
+    file_data.content_type = MIME::Types.type_for(file_data.original_filename).to_s
+    self.file = file_data
   end
 end
