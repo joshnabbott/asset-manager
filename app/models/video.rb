@@ -10,8 +10,6 @@ class Video < Asset
   before_file_post_process :create_preview
   
   def create_preview(milliseconds=2000)
-    # Make sure that /usr/local/bin is always in the path. Had issues with Passenger in the past.
-    ENV['PATH'] = '/usr/local/bin:' + ENV['PATH']
     frame = RVideo::FrameCapturer.capture! :input => "#{self.file.queued_for_write[:original].path}", :offset => "#{(milliseconds/1000).to_s}"
     self.preview = File.open(frame[0], 'r')
     self.height = Paperclip::Geometry.from_file(self.preview.queued_for_write[:original].path).try(:height)

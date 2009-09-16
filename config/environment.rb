@@ -21,6 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'thoughtbot-paperclip', :lib => 'paperclip'
   config.gem 'greatseth-rvideo', :lib => 'rvideo'
+  config.gem 'mime-types', :lib => 'mime-types'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -40,4 +41,7 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+  
+  # Add these paths manually since passenger won't
+  ENV['PATH'] = '/usr/local/bin:/opt/local/bin:' + ENV['PATH']
 end
