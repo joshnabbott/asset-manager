@@ -7,5 +7,16 @@
 <div>
 	<%= image_tag @video.preview.url(:master) %>
 </div>
+<h3>Description</h3>
+<div>
+	<%=h @video.description %>
+</div>
+<h3>Tags</h3>
+<div>
+	<%=h @video.tag_list %>
+</div>
+
+<p>
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>
+</p>

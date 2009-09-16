@@ -46,7 +46,7 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
-
-  # Add these paths manually since passenger won't
-  ENV['PATH'] = '/usr/local/bin:/opt/local/bin:' + ENV['PATH']
 end
+
+# Add these paths manually since passenger won't
+ENV['PATH'] = '/usr/local/bin:/opt/local/bin:' + ENV['PATH']

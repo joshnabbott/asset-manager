@@ -3,7 +3,6 @@ require 'rvideo'
 class Video < Asset
   has_attached_file :file, :url => "/system/videos/:attachment/:id/:style/:filename"
   has_attached_file :preview, :url => "/system/videos/:attachment/:id/:style/:filename", :styles => {:icon => "100x100#", :master => "500x500>"}
-  validates_presence_of :title
   validates_attachment_presence :file
   validates_attachment_content_type :file, :content_type => /video/
   
