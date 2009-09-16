@@ -34,11 +34,15 @@ class Video < Asset
   
   # Create easy hooks for rvideo data, go go gadget method_missing
   def method_missing(m, *args, &block)
-    inspected = RVideo::Inspector.new(:file => self.file.path)
-    if inspected.respond_to?(m)
-      inspected.send(m, *args, &block)
-    else
+    begin
       super
+    rescue
+      inspected = RVideo::Inspector.new(:file => self.file.path)
+      if inspected.respond_to?(m)
+        inspected.send(m, *args, &block)
+      else
+        super
+      end
     end
   end
 
