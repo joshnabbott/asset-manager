@@ -5,6 +5,8 @@ class CreateAssets < ActiveRecord::Migration
       t.string :owner_type
       t.string :type, :file_file_name, :file_content_type
       t.integer :file_file_size
+      t.string :preview_file_name, :preview_content_type
+      t.integer :preview_file_size
       t.datetime :file_updated_at
       t.string :title
       t.text :description

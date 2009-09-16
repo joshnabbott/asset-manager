@@ -1,0 +1,11 @@
+<h2>Show Video - <%=h @video.title %></h2>
+<h3>Video</h3>
+<div>
+	<embed height="<%= @video.height + 16 %>" width="<%= @video.width %>" src="<%= @video.file.url %>" type="video/quicktime" autoplay="false" pluginspage="http://www.apple.com/quicktime/download" enablejavascript="true" id="movie" />
+</div>
+<h3>Preview Image</h3>
+<div>
+	<%= image_tag @video.preview.url(:master) %>
+</div>
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>
