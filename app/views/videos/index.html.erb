@@ -1,23 +1,20 @@
+<%- content_for :javascripts do -%>
+<%= javascript_include_tag(videos_path, :format => :js) %>
+<%- end -%>
+
 <h1>Listing Videos</h1>
-
-<table>
-  <tr>
-	<th>Title</th>
-    <th>File Name</th>
-    <th>Preview</th>
-	<th>Options</th>
-  </tr>
-
-<% @videos.each do |video| %>
-  <tr>
-	<td><%= video.title %></td>
-    <td><%= video.file_file_name %></td>
-    <td><%= image_tag(video.preview.url(:icon)) %></td>
-    <td><%= link_to 'Show', video %> | <%= link_to 'Edit', edit_video_path(video) %> | <%= link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
+<div><%= link_to "Edit Selected", '#', :id => 'edit_selected' %> | <%= link_to "Delete Selected", '#', :id => 'delete_selected' %></div>
+<form action="#">
+	<table>
+		<tr>
+			<th></th>
+			<th>Title</th>
+			<th>File Name</th>
+			<th>Preview</th>
+			<th>Options</th>
+		</tr>
+		<%= render @videos %>
+	</table>
+</form>
 <br />
-
-<%= link_to 'New video', new_video_path %>
+<%= link_to 'Upload Videos', new_video_path %>

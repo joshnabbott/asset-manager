@@ -6,6 +6,7 @@ class VideosController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.js
       format.xml  { render :xml => @videos }
     end
   end

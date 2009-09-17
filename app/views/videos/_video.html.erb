@@ -1,0 +1,11 @@
+<tr class="<%= cycle('even', 'odd') %>">
+	<td><%= check_box_tag 'videos[]', video.id %></td>
+	<td><%= video.title %></td>
+	<td><%= video.file_file_name %></td>
+	<td><%= image_tag(video.preview.url(:icon)) %></td>
+	<td class="actions">
+		<%= link_to 'Show', video %> | 
+		<%= link_to 'Edit', edit_video_path(video) %> | 
+ 		<%= link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete %>
+	</td>
+</tr>
