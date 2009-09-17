@@ -1,9 +1,15 @@
 <%= f.error_messages %>
 
 <div><%= f.file_field :file %></div>
+<%= f.hidden_field :image_ids %>
 
-<!-- <div><%= f.label :title %><br/>
-<%= f.text_field :title %></div>
+<%- unless @image.new_record? -%>
+  <div><%= f.label :title %><br/>
+  <%= f.text_field :title %></div>
 
-<div><%= f.label :description %><br/>
-<%= f.text_area :description %></div> -->
+  <div><%= f.label :description %><br/>
+  <%= f.text_area :description %></div>
+
+  <div><%= f.label :tag_list, 'Tags (separate tags with a comma)' %><br/>
+  <%= f.text_field :tag_list %></div>
+<%- end -%>
