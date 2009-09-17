@@ -1,8 +1,12 @@
+# TODO: get_meta_data and santized_meta_data_for_yaml seem to be very out of place here.
 class Image < Asset
   attr_accessor :image_ids
   has_attached_file :file, :url => "/system/images/:attachment/:id/:style/:filename"
   before_file_post_process :set_data_columns
   serialize :meta_data
+
+  validates_attachment_presence :file
+  validates_attachment_content_type :file, :content_type => /image/
 
 protected
   def get_meta_data(file_path)
