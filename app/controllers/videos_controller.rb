@@ -28,6 +28,7 @@ class VideosController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.js # javascript for uploadify
       format.xml  { render :xml => @video }
     end
   end
@@ -40,16 +41,29 @@ class VideosController < ApplicationController
   # POST /videos
   # POST /videos.xml
   def create
-    @video = Video.new(params[:video])
-
-    respond_to do |format|
-      if @video.save
-        flash[:notice] = 'Video was successfully created.'
-        format.html { redirect_to(@video) }
-        format.xml  { render :xml => @video, :status => :created, :location => @video }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @video.errors, :status => :unprocessable_entity }
+    # For uploadify (multi-upload)
+    if params['Filedata']
+      @video = Video.new(:uploadify_file => params['Filedata'])
+      respond_to do |format|
+        if @video.save
+          flash[:success] = 'Video was successfully created.'
+          format.html { render :text => flash[:success], :status => 200 }
+        else
+          flash[:error] = 'There was an error creating the video.'
+          format.html { render :text => flash[:error], :status => 500 }
+        end
+      end
+    else
+      @video = Video.new(params[:video])
+      respond_to do |format|
+        if @video.save
+          flash[:notice] = 'Video was successfully created.'
+          format.html { redirect_to(@video) }
+          format.xml  { render :xml => @video, :status => :created, :location => @video }
+        else
+          format.html { render :action => "new" }
+          format.xml  { render :xml => @video.errors, :status => :unprocessable_entity }
+        end
       end
     end
   end

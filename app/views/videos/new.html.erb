@@ -1,10 +1,21 @@
-<h1>New Video</h1>
+<%- content_for :javascripts do -%>
+<%= javascript_include_tag(new_video_path, :format => :js) %>
+<%- end -%>
+
+<%- content_for :stylesheets do -%>
+<%= stylesheet_link_tag('/uploadify/uploadify') %>
+<%- end -%>
+
+<h1>Upload Videos</h1>
 
 <% form_for(@video, :html => { :multipart => true }) do |f| %>
-	<fieldset>
-		<%= render :partial => 'form', :locals => { :f => f } %>
-		<div>
-    		<%= f.submit 'Create' %> - or - <%= link_to 'Cancel', videos_path %>
-  		</div>
-	</fieldset>
+  <fieldset>
+   	<div>
+		<%= f.file_field :file %>
+	</div>
+
+    <p>
+      <%= f.submit 'Create' %> - or - <%= link_to 'Cancel', videos_path %>
+    </p>
+  </fieldset>
 <% end %>
