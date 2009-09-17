@@ -1,24 +1,20 @@
+<%- content_for :javascripts do -%>
+<%= javascript_include_tag(images_path, :format => :js) %>
+<%- end -%>
+
 <h1>Listing images</h1>
+
+<div><%= link_to "Edit selected", '#', :id => 'edit_selected' %> | <%= link_to "Delete selected", '#', :id => 'delete_selected' %></div>
 
 <table>
   <tr>
+    <th></th>
     <th>Title</th>
     <th>File Name</th>
     <th>Thumbnail</th>
+    <th>Actions</th>
   </tr>
-
-<% @images.each do |image| %>
-  <tr>
-    <td><%= image.title %></td>
-    <td><%= image.file_file_name %></td>
-    <td><%= image_tag(image.file.url, :width => 100) %></td>
-    <td><%= link_to 'Show', image %></td>
-    <td><%= link_to 'Edit', edit_image_path(image) %></td>
-    <td><%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <%= render @images %>
 </table>
 
-<br />
-
-<%= link_to 'New image', new_image_path %>
+<p><%= link_to 'New image', new_image_path %></p>
