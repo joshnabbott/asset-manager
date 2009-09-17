@@ -1,5 +1,11 @@
 <%= f.error_messages %>
 <div>
+	<%= f.file_field :file %>
+</div>
+<%= f.hidden_field :video_ids %>
+
+<%- unless @video.new_record? -%>
+<div>
 	<%= f.label :title %>
 	<%= f.text_field :title %>
 </div>
@@ -8,9 +14,7 @@
 	<%= f.text_area :description %>
 </div>
 <div>
-	<%= f.label :tag_list %><br />
+	<%= f.label :tag_list, 'Tags (separate tags with a comma)' %><br />
 	<%= f.text_field :tag_list %>
 </div>
-<div>
-	<%= f.file_field :file %>
-</div>
+<%- end -%>

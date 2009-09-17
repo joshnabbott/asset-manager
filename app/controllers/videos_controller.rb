@@ -37,6 +37,11 @@ class VideosController < ApplicationController
   def edit
     @video = Video.find(params[:id])
   end
+  
+  # GET /videos/:ids/edit
+  def edit_batches
+    @videos = Video.find(params[:ids])
+  end
 
   # POST /videos
   # POST /videos.xml
@@ -46,8 +51,9 @@ class VideosController < ApplicationController
       @video = Video.new(:uploadify_file => params['Filedata'])
       respond_to do |format|
         if @video.save
-          flash[:success] = 'Video was successfully created.'
-          format.html { render :text => flash[:success], :status => 200 }
+          flash[:success]  = 'Video was successfully created.'
+          flash[:video_id] = @video.id
+          format.html { render :text => flash.to_json, :status => 200 }
         else
           flash[:error] = 'There was an error creating the video.'
           format.html { render :text => flash[:error], :status => 500 }
@@ -84,6 +90,25 @@ class VideosController < ApplicationController
       end
     end
   end
+  
+  # PUT /videos/:ids
+  def update_batches
+    @videos = Video.find(params[:ids])
+    @videos.each_with_index do |video, index|
+      video.title = params[:video]['title'][index]
+      video.description = params[:video]['description'][index]
+      video.tag_list = params[:video]['tag_list'][index]
+    end
+
+    respond_to do |format|
+      if @videos.map(&:save)
+        flash[:notice] = 'Videos were successfully updated.'
+        format.html { redirect_to(videos_path) }
+      else
+        format.html { render :action => "edit_batches" }
+      end
+    end
+  end
 
   # DELETE /videos/1
   # DELETE /videos/1.xml
@@ -96,4 +121,16 @@ class VideosController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  # DELETE /videos/:ids
+  def destroy_batches
+    @videos = Video.find(params[:ids])
+    @videos.map(&:destroy)
+
+    respond_to do |format|
+      format.html { redirect_to(videos_url) }
+      format.xml  { head :ok }
+    end
+  end
+  
 end

@@ -24,11 +24,20 @@ $(document).ready(function($) {
     "fileDesc" : "Please select a video file. Valid formats are: " + "<%= @video.extensions.join(", ")%>",
 	"fileExt" : "<%= uploadify_extensions.join(";") %>",
 	'onComplete': function(event, queueID, fileObj, response, data) {
+       // convert the response from string formmatted as json to a json object
+       var response = JSON.parse(response);
+       var current_ids = $('#video_video_ids').val();
+       current_ids = current_ids.split('/');
+       current_ids.push(response.video_id);
+       $('#video_video_ids').val(current_ids.join('/'));
 	   fileName_location = "#video_file" + queueID + " .fileName";
 	   percentage_location = "#video_file" + queueID + " .percentage";
-       $(fileName_location).html(fileObj.name + " - " + response);
+       $(fileName_location).html(fileObj.name + " - " + response.success);
 	   $(percentage_location).empty();
        return false;
-	}
+	},
+	"onAllComplete" : function(event, data) {
+      $('#new_video').append('<div><p><strong>Finished!</strong> Next: <a href="/videos' + $('#video_video_ids').val() + '/edit">Add titles and descriptions</a>? (Or just <%= link_to "go back", videos_path %>)</p></div>');
+    }
   });
 })

@@ -124,6 +124,17 @@ class ImagesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  # DELETE /images/:ids
+  def destroy_batches
+    @images = Image.find(params[:ids])
+    @images.map(&:destroy)
+
+    respond_to do |format|
+      format.html { redirect_to(images_url) }
+      format.xml  { head :ok }
+    end
+  end
 
 protected
   def last_uploaded_ids
