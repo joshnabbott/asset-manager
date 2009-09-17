@@ -1,4 +1,10 @@
 <%- session_key_name = ActionController::Base.session_options[:key] -%>
+<%- 
+uploadify_extensions = []
+for ext in @video.extensions
+	uploadify_extensions.push("*." + ext)
+end
+-%>
 $(document).ready(function($) {
   $('#video_submit').click(function(){
     $('#video_file').uploadifyUpload();
@@ -15,8 +21,14 @@ $(document).ready(function($) {
     "multi" : true,
     "script" : "<%= videos_path %>",
     "uploader" : "/uploadify/uploadify.swf",
-    "onAllComplete" : function(event, data) {
-      document.location = '<%= videos_path %>';
-    }
+    "fileDesc" : "Please select a video file. Valid formats are: " + "<%= @video.extensions.join(", ")%>",
+	"fileExt" : "<%= uploadify_extensions.join(";") %>",
+	'onComplete': function(event, queueID, fileObj, response, data) {
+	   fileName_location = "#video_file" + queueID + " .fileName";
+	   percentage_location = "#video_file" + queueID + " .percentage";
+       $(fileName_location).html(fileObj.name + " - " + response);
+	   $(percentage_location).empty();
+       return false;
+	}
   });
 })

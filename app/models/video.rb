@@ -2,12 +2,13 @@ require 'rvideo'
 
 class Video < Asset
   has_attached_file :file, :url => "/system/videos/:attachment/:id/:style/:filename"
-  has_attached_file :preview, :url => "/system/videos/:attachment/:id/:style/:filename", :styles => {:icon => "100x100#", :master => "500x500>"}
+  has_attached_file :preview, :url => "/system/videos/:attachment/:id/:style/:filename", :styles => {:icon => "100x100>", :master => "500x500>"}
   validates_attachment_presence :file
   validates_attachment_content_type :file, :content_type => /video/
   
   before_file_post_process :create_preview
   
+  # Create preview for the video
   def create_preview(milliseconds=2000)
     # Make sure we use the right file, self.file.path doesn't exist before a save
     # This method is public and can be called outside of before_file_post_process
@@ -30,6 +31,24 @@ class Video < Asset
     self.height = image.try(:height)
     self.width = image.try(:width)
     self.aspect_ratio = image.try(:aspect)
+  end
+  
+  # Embed tag for easy use
+  def embed(id="movie")
+  	"<embed height=\"#{self.height + 16}\" width=\"#{self.width}\" src=\"#{self.file.url}\" type=\"video/quicktime\" autoplay=\"false\" pluginspage=\"http://www.apple.com/quicktime/download\" enablejavascript=\"true\" id=\"#{id}\" />"
+  end
+  
+  # Get valid mime-type extensions
+  def extensions
+    mime_types = []
+    MIME::Types[/^video/].each do |t|
+      mime_types.push t
+    end
+    ext = []
+    for mime_type in mime_types
+      ext.concat mime_type.extensions
+    end
+    return ext.uniq
   end
   
   # Create easy hooks for rvideo data, go go gadget method_missing

@@ -1,7 +1,7 @@
 <h2>Show Video - <%=h @video.title %></h2>
 <h3>Video</h3>
 <div>
-	<embed height="<%= @video.height + 16 %>" width="<%= @video.width %>" src="<%= @video.file.url %>" type="video/quicktime" autoplay="false" pluginspage="http://www.apple.com/quicktime/download" enablejavascript="true" id="movie" />
+	<%= @video.embed %>
 </div>
 <h3>Preview Image</h3>
 <div>
