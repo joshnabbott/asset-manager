@@ -1,3 +1,5 @@
+// Implement a mechanism to retain the ids of the files uploaded for batch image edit
+// See for documentation: http://www.uploadify.com/documentation/
 <%- session_key_name = ActionController::Base.session_options[:key] -%>
 $(document).ready(function($) {
   $('#image_submit').click(function(){
@@ -6,17 +8,27 @@ $(document).ready(function($) {
   });
 
   $('#image_file').uploadify({
-    "cancelImg" : "/uploadify/cancel.png",
-    "buttonText" : "Browse",
-    "scriptData" : {
+    "cancelImg"     : "/uploadify/cancel.png",
+    "buttonText"    : "Browse",
+    "scriptData"    : {
       "<%= session_key_name %>" : "<%= u(cookies[session_key_name]) %>",
-      "authenticity_token" : "<%= u(form_authenticity_token) %>"
+      "authenticity_token"      : "<%= u(form_authenticity_token) %>"
     },
-    "multi" : true,
-    "script" : "<%= images_path %>",
-    "uploader" : "/uploadify/uploadify.swf",
-    "onAllComplete" : function(event, data) {
-      document.location = '<%= images_path %>';
+    "multi"         : true,
+    "script"        : "<%= images_path %>",
+    "uploader"      : "/uploadify/uploadify.swf",
+    "fileExt"       : "*.jpg;*.jpeg;*.png;*.gif;*.tiff",
+    "onComplete"    : function(event, queueID, fileObj, response) {
+      // convert the response from string formmatted as json to a json object
+      var response    = JSON.parse(response);
+      var current_ids = $('#image_image_ids').val();
+      current_ids     = current_ids.split('/');
+      current_ids.push(response.image_id);
+      $('#image_image_ids').val(current_ids.join('/'));
+      return false;
+    },
+    "onAllComplete" : function() {
+      $('#new_image').append('<div><p><strong>Finished!</strong> Next: <a href="/images' + $('#image_image_ids').val() + '/edit">Add titles and descriptions</a>? (Or just <%= link_to "go back", images_path %>)</p></div>');
     }
   });
 })

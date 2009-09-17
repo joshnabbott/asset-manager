@@ -1,4 +1,5 @@
 class Image < Asset
+  attr_accessor :image_ids
   has_attached_file :file, :url => "/system/images/:attachment/:id/:style/:filename"
   before_file_post_process :set_data_columns
   serialize :meta_data

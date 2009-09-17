@@ -1,3 +1,4 @@
+# TODO: Clean up update_batches method
 class ImagesController < ApplicationController
   # GET /images
   # GET /images.xml
@@ -38,6 +39,11 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
   end
 
+  # GET /images/:ids/edit
+  def edit_batches
+    @images = Image.find(params[:ids])
+  end
+
   # POST /images
   # POST /images.xml
   def create
@@ -46,8 +52,9 @@ class ImagesController < ApplicationController
       @image = Image.new(:uploadify_file => params['Filedata'])
       respond_to do |format|
         if @image.save
-          flash[:success] = 'Image was successfully created.'
-          format.html { render :text => flash[:success], :status => 200 }
+          flash[:success]  = 'Image was successfully created.'
+          flash[:image_id] = @image.id
+          format.html { render :text => flash.to_json, :status => 200 }
         else
           flash[:error] = 'There was an error creating the image.'
           format.html { render :text => flash[:error], :status => 500 }
@@ -87,6 +94,24 @@ class ImagesController < ApplicationController
     end
   end
 
+  # PUT /images/:ids
+  def update_batches
+    @images = Image.find(params[:ids])
+    @images.each_with_index do |image, index|
+      image.title       = params[:image]['title'][index]
+      image.description = params[:image]['description'][index]
+    end
+
+    respond_to do |format|
+      if @images.map(&:save)
+        flash[:notice] = 'Images were successfully updated.'
+        format.html { redirect_to(images_path) }
+      else
+        format.html { render :action => "edit_batches" }
+      end
+    end
+  end
+
   # DELETE /images/1
   # DELETE /images/1.xml
   def destroy
@@ -97,5 +122,10 @@ class ImagesController < ApplicationController
       format.html { redirect_to(images_url) }
       format.xml  { head :ok }
     end
+  end
+
+protected
+  def last_uploaded_ids
+    cookies[:last_uploaded_ids] ||= { :value => [] }
   end
 end
