@@ -1,0 +1,8 @@
+$(document).ready(function($) {
+  // Batch edit all checked from index screen
+  $('#edit_selected').click(function(){
+    ids = $('input:checkbox[name=images[]]:checked').fieldArray();
+    document.location = '/images/' + ids.join('/') + '/edit'
+    return false;
+  });
+});
