@@ -1,4 +1,3 @@
-// Implement a mechanism to retain the ids of the files uploaded for batch image edit
 // See for documentation: http://www.uploadify.com/documentation/
 <%- session_key_name = ActionController::Base.session_options[:key] -%>
 $(document).ready(function($) {
@@ -27,7 +26,7 @@ $(document).ready(function($) {
       $('#image_image_ids').val(current_ids.join('/'));
       return false;
     },
-    "onAllComplete" : function() {
+    "onAllComplete" : function(event, data) {
       $('#new_image').append('<div><p><strong>Finished!</strong> Next: <a href="/images' + $('#image_image_ids').val() + '/edit">Add titles and descriptions</a>? (Or just <%= link_to "go back", images_path %>)</p></div>');
     }
   });

@@ -5,7 +5,7 @@
     <%- @images.in_groups_of(4, false) do |images| -%>
       <tr>
         <%- images.each do |image| -%>
-          <td>
+          <td width="25%">
             <div><%= image_tag(image.file.url, :height => 200) %></div>
             <div>
               <%= label_tag "image_title_#{image.id}", 'Title' %><br/>
@@ -15,10 +15,14 @@
               <%= label_tag "image_description_#{image.id}", 'Description' %><br/>
               <%= text_area_tag 'image[description][]', image.description, :id => "image_description_#{image.id}" %>
             </div>
+            <div>
+              <%= label_tag "image_tag_list_#{image.id}", 'Tags (separate tags with a comma)' %><br/>
+              <%= text_field_tag 'image[tag_list][]', image.tag_list, :id => "image_tag_list_#{image.id}" %>
+            </div>
           </td>
         <%- end -%>
       </tr>
     <%- end -%>
   </table>
-  <%= f.submit 'Save' %>
+  <p><%= f.submit 'Save' %> - or - <%= link_to 'Cancel', images_path %></p>
 <%- end -%>

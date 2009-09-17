@@ -100,6 +100,7 @@ class ImagesController < ApplicationController
     @images.each_with_index do |image, index|
       image.title       = params[:image]['title'][index]
       image.description = params[:image]['description'][index]
+      image.tag_list    = params[:image]['tag_list'][index]
     end
 
     respond_to do |format|
