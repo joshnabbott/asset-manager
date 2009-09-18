@@ -122,3 +122,7 @@ fieldset {
   border: 1px solid #EEE;
   padding: 10px;
 }
+
+.pagination {
+  padding: 8px 0;
+}

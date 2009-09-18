@@ -28,6 +28,7 @@ Rails::Initializer.run do |config|
   config.gem 'jeweler', :lib => 'jeweler'
   config.gem 'mbleigh-acts-as-taggable-on', :lib => 'acts-as-taggable-on'
   config.gem 'RedCloth', :lib => 'redcloth'
+  config.gem 'mislav-will_paginate', :lib => 'will_paginate'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

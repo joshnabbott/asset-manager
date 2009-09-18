@@ -16,6 +16,7 @@
 		</tr>
 		<%= render @videos %>
 	</table>
+	<%= will_paginate @videos %>
 </form>
 <div id="asset_nav_footer">
   <%= link_to 'Upload Videos', new_video_path %>
