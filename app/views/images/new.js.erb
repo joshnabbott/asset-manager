@@ -24,6 +24,12 @@ $(document).ready(function($) {
       current_ids     = current_ids.split('/');
       current_ids.push(response.image_id);
       $('#image_image_ids').val(current_ids.join('/'));
+
+      fileName_location = "#image_file" + queueID + " .fileName";
+      percentage_location = "#image_file" + queueID + " .percentage";
+      $(fileName_location).html(fileObj.name + " - " + response.success);
+      $(percentage_location).empty();
+
       return false;
     },
     "onAllComplete" : function(event, data) {

@@ -128,17 +128,11 @@ class ImagesController < ApplicationController
   
   # DELETE /images/:ids
   def destroy_batches
-    @images = Image.find(params[:ids])
-    @images.map(&:destroy)
+    @images = Image.destroy(params[:ids])
 
     respond_to do |format|
       format.html { redirect_to(images_url) }
       format.xml  { head :ok }
     end
-  end
-
-protected
-  def last_uploaded_ids
-    cookies[:last_uploaded_ids] ||= { :value => [] }
   end
 end
