@@ -2,7 +2,7 @@
 
 <%- form_for(@images, :url => update_batch_images_path(@images)) do |f| -%>
   <table width="100%" id="edit_batch_images" border="1">
-    <%- @images.in_groups_of(4, false) do |images| -%>
+    <%- @images.in_groups_of(3, false) do |images| -%>
       <tr>
         <%- images.each do |image| -%>
           <td width="25%">

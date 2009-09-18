@@ -125,8 +125,7 @@ class VideosController < ApplicationController
   
   # DELETE /videos/:ids
   def destroy_batches
-    @videos = Video.find(params[:ids])
-    @videos.map(&:destroy)
+    @images = Video.destroy(params[:ids])
 
     respond_to do |format|
       format.html { redirect_to(videos_url) }
