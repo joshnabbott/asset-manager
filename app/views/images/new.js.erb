@@ -27,7 +27,7 @@ $(document).ready(function($) {
       return false;
     },
     "onAllComplete" : function(event, data) {
-      $('#new_image').append('<div><p><strong>Finished!</strong> Next: <a href="/images' + $('#image_image_ids').val() + '/edit">Add titles and descriptions</a>? (Or just <%= link_to "go back", images_path %>)</p></div>');
+      $('#status_message').html('<div><p><strong>Finished!</strong> Next: <a href="/images' + $('#image_image_ids').val() + '/edit">Add titles and descriptions</a>? (Or just <%= link_to "go back", images_path %>)</p></div>');
     }
   });
 })

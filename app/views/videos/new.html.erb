@@ -10,10 +10,11 @@
 
 <% form_for(@video, :html => { :multipart => true }) do |f| %>
   <fieldset>
-	<%= render :partial => 'form', :locals => { :f => f } %>
+  	<%= render :partial => 'form', :locals => { :f => f } %>
 
-    <p>
+    <div class='bw'>
       <%= f.submit 'Create Videos' %> - or - <%= link_to 'Cancel', videos_path %>
-    </p>
+    </div>
   </fieldset>
 <% end %>
+<div id="status_message"></div>

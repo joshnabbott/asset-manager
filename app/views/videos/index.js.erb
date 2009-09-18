@@ -4,6 +4,8 @@ $(document).ready(function($) {
 		ids = $('input:checkbox[name=videos[]]:checked').fieldArray();
 		if (ids.length > 0) {
 			document.location = '/videos/' + ids.join('/') + '/edit'
+		} else {
+		  alert("You must select at least 1 video to edit.");
 		}
 		return false;
 	});
@@ -27,7 +29,9 @@ $(document).ready(function($) {
 				s.setAttribute('value', '<%= form_authenticity_token %>');
 				f.appendChild(s);f.submit();
 			}
-		}
+		} else {
+  	  alert("You must select at least 1 video to delete.");
+  	}
 		return false;
 	});
 });

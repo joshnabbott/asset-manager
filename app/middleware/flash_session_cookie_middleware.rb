@@ -2,17 +2,18 @@ require 'rack/utils'
 
 class FlashSessionCookieMiddleware
   def initialize(app, session_key = '_session_id')
-    @app         = app
+    @app = app
     @session_key = session_key
   end
 
   def call(env)
+    # Small hack to make sure sessions work for Flash objects
     if env['HTTP_USER_AGENT'] =~ /^(Adobe|Shockwave) Flash/
-      # I don't know what gone awry but env['QUERY_STRING'] is always blank now.
-      session_param      = [@session_key, env['rack.request.form_hash'][@session_key]]
-      env['HTTP_COOKIE'] = session_param.join('=')
+      req = Rack::Request.new(env)
+      unless req.params[@session_key].nil?
+        env['HTTP_COOKIE'] = "#{@session_key}=#{req.params[@session_key]}".freeze
+      end
     end
-
     @app.call(env)
   end
 end

@@ -3,18 +3,23 @@
 <%- end -%>
 
 <h1>Listing Videos</h1>
-<div><%= link_to "Edit Selected", '#', :id => 'edit_selected' %> | <%= link_to "Delete Selected", '#', :id => 'delete_selected' %></div>
+<div id="asset_nav"><%= link_to 'Upload Videos', new_video_path %> | <%= link_to "Edit Selected", '#', :id => 'edit_selected' %> | <%= link_to "Delete Selected", '#', :id => 'delete_selected' %></div>
+<%- if @videos.length > 0 %>
 <form action="#">
-	<table>
+	<table id="asset_list">
 		<tr>
 			<th></th>
+			<th>Preview</th>
 			<th>Title</th>
 			<th>File Name</th>
-			<th>Preview</th>
 			<th>Options</th>
 		</tr>
 		<%= render @videos %>
 	</table>
 </form>
-<br />
 <%= link_to 'Upload Videos', new_video_path %>
+<%- else -%>
+<div id="no_assets_message">
+There are currently no videos to display.
+</div>
+<%- end -%>

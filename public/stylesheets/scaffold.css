@@ -52,3 +52,46 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+/* Make The Views Stylish */
+
+#asset_list { 
+	width: 100%; 
+	border-left: 1px solid #EEE; 
+	border-bottom: 1px solid #EEE; 
+	border-collapse: collapse;
+}
+
+#asset_list th { 
+  background-color: #EEE; 
+  padding: 5px; 
+  text-align: left; 
+  border-right: 1px solid #EEE; 
+}
+
+#asset_list td { 
+  padding: 5px;
+  text-align: left;
+  border-top: 1px solid #EEE;
+  border-right: 1px solid #EEE;
+}
+
+#asset_list .even { 
+  background-color: #F5F9FA;
+}
+
+#no_assets_message {
+  padding: 10px 0;
+}
+
+/* Wrapper for fields and buttons, <p> tags aren't valid... bad rails */
+.fw {
+  padding-bottom: 8px;
+}
+
+.bw {
+}
+
+fieldset {
+  border: 1px solid #EEE;
+  padding: 10px;
+}
