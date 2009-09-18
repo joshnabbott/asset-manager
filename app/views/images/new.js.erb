@@ -16,6 +16,7 @@ $(document).ready(function($) {
     "multi"         : true,
     "script"        : "<%= images_path %>",
     "uploader"      : "/uploadify/uploadify.swf",
+    "fileDesc" : "Please select image files. Valid formats are: jpg, jpeg, png, gif, tiff",
     "fileExt"       : "*.jpg;*.jpeg;*.png;*.gif;*.tiff",
     "onComplete"    : function(event, queueID, fileObj, response) {
       // convert the response from string formmatted as json to a json object
@@ -27,13 +28,16 @@ $(document).ready(function($) {
 
       fileName_location = "#image_file" + queueID + " .fileName";
       percentage_location = "#image_file" + queueID + " .percentage";
+      cancel_location = "#image_file" + queueID + " .cancel";
       $(fileName_location).html(fileObj.name + " - " + response.success);
       $(percentage_location).empty();
+      $(cancel_location).empty();
 
       return false;
     },
     "onAllComplete" : function(event, data) {
-      $('#status_message').html('<div><p><strong>Finished!</strong> Next: <a href="/images' + $('#image_image_ids').val() + '/edit">Add titles and descriptions</a>? (Or just <%= link_to "go back", images_path %>)</p></div>');
+      $('#status_message').show();
+      $('#status_message').html('<strong>Finished!</strong> Next: <a href="/images' + $('#image_image_ids').val() + '/edit">Add titles and descriptions</a>? (Or just <%= link_to "go back", images_path %>)');
     }
   });
 })

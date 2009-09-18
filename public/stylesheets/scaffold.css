@@ -95,6 +95,11 @@ a:hover { color: #fff; background-color:#000; }
   padding-top: 5px;
 }
 
+#status_message {
+  margin-top: 10px;
+  display: none;
+}
+
 /* Wrapper for fields and buttons, <p> tags aren't valid... bad rails */
 .fw {
   padding-bottom: 8px;
