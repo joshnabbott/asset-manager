@@ -25,6 +25,7 @@ Rails::Initializer.run do |config|
   config.gem 'thoughtbot-paperclip', :lib => 'paperclip'
   config.gem 'greatseth-rvideo', :lib => 'rvideo'
   config.gem 'mime-types', :lib => 'mime/types'
+  config.gem 'git', :lib => 'git'
   config.gem 'jeweler', :lib => 'jeweler'
   config.gem 'mbleigh-acts-as-taggable-on', :lib => 'acts-as-taggable-on'
   config.gem 'RedCloth', :lib => 'redcloth'
