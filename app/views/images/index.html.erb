@@ -2,19 +2,26 @@
 <%= javascript_include_tag(images_path, :format => :js) %>
 <%- end -%>
 
-<h1>Listing images</h1>
-
-<div><%= link_to "Edit selected", '#', :id => 'edit_selected' %> | <%= link_to "Delete selected", '#', :id => 'delete_selected' %></div>
-
-<table id="asset_list">
-  <tr>
-    <th></th>
-    <th>Title</th>
-    <th>File Name</th>
-    <th>Thumbnail</th>
-    <th>Actions</th>
-  </tr>
-  <%= render @images %>
-</table>
-
-<p><%= link_to 'New image', new_image_path %></p>
+<h1>Listing Images</h1>
+<div id="asset_nav"><%= link_to 'Upload Images', new_image_path %> | <%= link_to "Edit selected", '#', :id => 'edit_selected' %> | <%= link_to "Delete selected", '#', :id => 'delete_selected' %></div>
+<%- if @images.length > 0 -%>
+<form action="#">
+  <table id="asset_list">
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>File Name</th>
+      <th>Thumbnail</th>
+      <th>Actions</th>
+    </tr>
+    <%= render @images %>
+  </table>
+</form>
+<div id="asset_nav_footer">
+  <%= link_to 'Upload Images', new_video_path %>
+</div>
+<%- else -%>
+<div id="no_assets_message">
+There are currently no images to display.
+</div>
+<%- end -%>

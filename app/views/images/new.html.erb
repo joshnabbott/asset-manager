@@ -12,9 +12,9 @@
   <fieldset>
     <%= render :partial => 'form', :locals => { :f => f } %>
 
-    <p>
-      <%= f.submit 'Create' %> - or - <%= link_to 'Cancel', images_path %>
-    </p>
+    <div class="bw">
+      <%= f.submit 'Create Images' %> - or - <%= link_to 'Cancel', images_path %>
+    </div>
   </fieldset>
 <% end %>
 <div id="status_message"></div>

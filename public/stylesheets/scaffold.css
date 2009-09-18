@@ -83,6 +83,18 @@ a:hover { color: #fff; background-color:#000; }
   padding: 10px 0;
 }
 
+#asset_nav {
+  border-bottom: 1px solid #EEE;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+#asset_nav_footer {
+  border-top: 1px solid #EEE;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
 /* Wrapper for fields and buttons, <p> tags aren't valid... bad rails */
 .fw {
   padding-bottom: 8px;

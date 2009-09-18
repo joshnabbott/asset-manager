@@ -9,6 +9,7 @@ $(document).ready(function($) {
 		}
 		return false;
 	});
+	
 	$('#delete_selected').click(function() {
 		ids = $('input:checkbox[name=videos[]]:checked').fieldArray();
 		if (ids.length > 0) {

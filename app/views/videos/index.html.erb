@@ -4,7 +4,7 @@
 
 <h1>Listing Videos</h1>
 <div id="asset_nav"><%= link_to 'Upload Videos', new_video_path %> | <%= link_to "Edit Selected", '#', :id => 'edit_selected' %> | <%= link_to "Delete Selected", '#', :id => 'delete_selected' %></div>
-<%- if @videos.length > 0 %>
+<%- if @videos.length > 0 -%>
 <form action="#">
 	<table id="asset_list">
 		<tr>
@@ -17,7 +17,9 @@
 		<%= render @videos %>
 	</table>
 </form>
-<%= link_to 'Upload Videos', new_video_path %>
+<div id="asset_nav_footer">
+  <%= link_to 'Upload Videos', new_video_path %>
+</div>
 <%- else -%>
 <div id="no_assets_message">
 There are currently no videos to display.

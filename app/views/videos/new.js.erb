@@ -22,8 +22,8 @@ $(document).ready(function($) {
     "script" : "<%= videos_path %>",
     "uploader" : "/uploadify/uploadify.swf",
     "fileDesc" : "Please select a video file. Valid formats are: " + "<%= @video.extensions.join(", ")%>",
-	"fileExt" : "<%= uploadify_extensions.join(";") %>",
-	'onComplete': function(event, queueID, fileObj, response, data) {
+	  "fileExt" : "<%= uploadify_extensions.join(";") %>",
+	  'onComplete': function(event, queueID, fileObj, response, data) {
        // convert the response from string formmatted as json to a json object
        var response = JSON.parse(response);
        var current_ids = $('#video_video_ids').val();
@@ -35,9 +35,9 @@ $(document).ready(function($) {
        $(fileName_location).html(fileObj.name + " - " + response.success);
 	   $(percentage_location).empty();
        return false;
-	},
-	"onAllComplete" : function(event, data) {
-      $('#status_message').html('<div><p><strong>Finished!</strong> Next: <a href="/videos' + $('#video_video_ids').val() + '/edit">Add titles and descriptions</a>? (Or just <%= link_to "go back", videos_path %>)</p></div>');
-    }
-  });
+	   },
+	   "onAllComplete" : function(event, data) {
+       $('#status_message').html('<div><p><strong>Finished!</strong> Next: <a href="/videos' + $('#video_video_ids').val() + '/edit">Add titles and descriptions</a>? (Or just <%= link_to "go back", videos_path %>)</p></div>');
+      }
+   });
 })

@@ -1,5 +1,18 @@
-<h3><%= @image.file_file_name %></h3>
-<%= image_tag(@image.file.url) %>
-
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+<h1>Show Image</h1>
+<div id="asset_nav">
+  <%= link_to 'Edit', edit_image_path(@image) %> |
+  <%= link_to 'Back', images_path %>
+</div>
+<div>
+  <%= image_tag(@image.file.url) %>
+</div>
+<p>
+  <strong>File Name:</strong> <%= @image.file_file_name %>
+</p> 
+<p>
+  <strong>Title:</strong> <%=h @image.title %>
+</p>
+<p>
+  <strong>Tags:</strong> <%=h @image.tag_list %>
+</p>
+<%= textilize @image.description %>

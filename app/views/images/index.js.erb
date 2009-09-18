@@ -2,9 +2,11 @@ $(document).ready(function($) {
   // Batch edit all checked from index screen
   $('#edit_selected').click(function(){
     ids = $('input:checkbox[name=images[]]:checked').fieldArray();
-  if (ids.length > 0) {
+    if (ids.length > 0) {
       document.location = '/images/' + ids.join('/') + '/edit'
-  }
+    } else {
+    	alert("You must select at least 1 image to edit.");
+    }
     return false;
   });
 
@@ -28,6 +30,8 @@ $(document).ready(function($) {
         s.setAttribute('value', '<%= form_authenticity_token %>');
         f.appendChild(s);f.submit();
       }
+    } else {
+      alert("You must select at least 1 image to delete.");
     }
     return false;
   });
