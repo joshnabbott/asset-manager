@@ -3,7 +3,7 @@
 <%- end -%>
 
 <h1>Listing Images</h1>
-<div id="asset_nav"><%= link_to 'Upload Images', new_image_path %> | <%= link_to "Edit selected", '#', :id => 'edit_selected' %> | <%= link_to "Delete selected", '#', :id => 'delete_selected' %></div>
+<div id="asset_nav"><%= link_to 'Upload Images', new_image_path %> | <%= link_to "Edit Selected", '#', :id => 'edit_selected' %> | <%= link_to "Delete Selected", '#', :id => 'delete_selected' %></div>
 <%- if @images.length > 0 -%>
 <form action="#">
   <table id="asset_list">
