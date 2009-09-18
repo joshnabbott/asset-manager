@@ -10,21 +10,23 @@ $(document).ready(function($) {
 	$('#delete_selected').click(function() {
 		ids = $('input:checkbox[name=images[]]:checked').fieldArray();
 		if (ids.length > 0) {
-			var f = document.createElement('form'); 
-			f.style.display = 'none'; 
-			this.parentNode.appendChild(f); 
-			f.method = 'POST'; 
-			f.action = '/images/' + ids.join('/');
-			var m = document.createElement('input');
-			m.setAttribute('type', 'hidden'); 
-			m.setAttribute('name', '_method'); 
-			m.setAttribute('value', 'delete'); 
-			f.appendChild(m);
-			var s = document.createElement('input');
-			s.setAttribute('type', 'hidden');
-			s.setAttribute('name', 'authenticity_token');
-			s.setAttribute('value', '<%= form_authenticity_token %>');
-			f.appendChild(s);f.submit();
+			if (confirm('Are you sure?')) { 
+				var f = document.createElement('form'); 
+				f.style.display = 'none'; 
+				this.parentNode.appendChild(f); 
+				f.method = 'POST'; 
+				f.action = '/images/' + ids.join('/');
+				var m = document.createElement('input');
+				m.setAttribute('type', 'hidden'); 
+				m.setAttribute('name', '_method'); 
+				m.setAttribute('value', 'delete'); 
+				f.appendChild(m);
+				var s = document.createElement('input');
+				s.setAttribute('type', 'hidden');
+				s.setAttribute('name', 'authenticity_token');
+				s.setAttribute('value', '<%= form_authenticity_token %>');
+				f.appendChild(s);f.submit();
+			}
 		}
 		return false;
 	});
