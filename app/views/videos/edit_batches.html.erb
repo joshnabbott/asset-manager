@@ -1,28 +1,7 @@
 <h1>Batch Edit Videos</h1>
 
 <%- form_for(@videos, :url => update_batch_videos_path(@videos)) do |f| -%>
-  <table width="100%" id="edit_batch_videos" border="1">
-    <%- @videos.in_groups_of(4, false) do |videos| -%>
-      <tr>
-        <%- videos.each do |video| -%>
-          <td width="25%">
-            <div><%= image_tag(video.preview.url(:edit)) %></div>
-            <div>
-              <%= label_tag "video_title_#{video.id}", 'Title' %><br/>
-              <%= text_field_tag 'video[title][]', video.title, :id => "video_title_#{video.id}" %>
-            </div>
-            <div>
-              <%= label_tag "video_description_#{video.id}", 'Description' %><br/>
-              <%= text_area_tag 'video[description][]', video.description, :id => "video_description_#{video.id}" %>
-            </div>
-            <div>
-              <%= label_tag "video_tag_list_#{video.id}", 'Tags (separate tags with a comma)' %><br/>
-              <%= text_field_tag 'video[tag_list][]', video.tag_list, :id => "video_tag_list_#{video.id}" %>
-            </div>
-          </td>
-        <%- end -%>
-      </tr>
-    <%- end -%>
-  </table>
-  <p><%= f.submit 'Update All' %> - or - <%= link_to 'Cancel', videos_path %></p>
+  <%= render :partial => "videos/batch_video", :collection => @videos %>
+  <div class="asset_reset"></div>
+  <div class="bw"><%= f.submit 'Update All' %> - or - <%= link_to 'Cancel', videos_path %></div>
 <%- end -%>

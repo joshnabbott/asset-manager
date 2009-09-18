@@ -1,0 +1,17 @@
+<div class="batch_video">
+  <fieldset>
+    <div class="fw"><%= image_tag(batch_video.preview.url(:edit)) %></div>
+    <div class="fw">
+      <%= label_tag "video_title_#{batch_video.id}", 'Title' %><br/>
+      <%= text_field_tag 'video[title][]', batch_video.title, :id => "video_title_#{batch_video.id}" %>
+    </div>
+    <div class="fw">
+      <%= label_tag "video_description_#{batch_video.id}", 'Description' %><br/>
+      <%= text_area_tag 'video[description][]', batch_video.description, :id => "video_description_#{batch_video.id}" %>
+    </div>
+    <div>
+      <%= label_tag "video_tag_list_#{batch_video.id}", 'Tags (separate tags with a comma)' %><br/>
+      <%= text_field_tag 'video[tag_list][]', batch_video.tag_list, :id => "video_tag_list_#{batch_video.id}" %>
+    </div>
+  </fieldset>
+</div>
