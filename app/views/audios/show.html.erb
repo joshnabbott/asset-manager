@@ -1,0 +1,18 @@
+<h1>Show Audio</h1>
+<div id="asset_nav">
+  <%= link_to 'Edit', edit_audio_path(@audio) %> |
+  <%= link_to 'Back', audios_path %>
+</div>
+<div>
+  <%= @audio.embed %>
+</div>
+<p>
+  <strong>File Name:</strong> <%= @audio.file_file_name %>
+</p>
+<p>
+  <strong>Title:</strong> <%=h @audio.title %>
+</p>
+<p>
+  <strong>Tags:</strong> <%=h @audio.tag_list %>
+</p>
+<%= textilize @audio.description %>

@@ -1,0 +1,10 @@
+<tr class="<%= cycle('even', 'odd') %>">
+	<td><%= check_box_tag 'audios[]', audio.id %></td>
+	<td><%= audio.title %></td>
+	<td><%= audio.file_file_name %></td>
+	<td class="actions">
+		<%= link_to 'Show', audio %> | 
+		<%= link_to 'Edit', edit_audio_path(audio) %> | 
+ 		<%= link_to 'Destroy', audio, :confirm => 'Are you sure?', :method => :delete %>
+	</td>
+</tr>

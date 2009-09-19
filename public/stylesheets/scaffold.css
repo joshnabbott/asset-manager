@@ -100,7 +100,7 @@ a:hover { color: #fff; background-color:#000; }
   display: none;
 }
 
-.batch_video {
+.batch_display_item {
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -121,6 +121,16 @@ a:hover { color: #fff; background-color:#000; }
 fieldset {
   border: 1px solid #EEE;
   padding: 10px;
+}
+
+fieldset.batch_audio {
+  width: 275px;
+  height: 250px;
+}
+
+fieldset.batch_video {
+  width: 275px;
+  height: 360px;
 }
 
 .pagination {

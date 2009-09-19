@@ -1,4 +1,3 @@
-# TODO: Clean up update_batches method
 class ImagesController < ApplicationController
   # GET /images
   # GET /images.xml

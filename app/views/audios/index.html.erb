@@ -1,0 +1,27 @@
+<%- content_for :javascripts do -%>
+<%= javascript_include_tag(audios_path, :format => :js) %>
+<%- end -%>
+
+<h1>Listing Audio</h1>
+<div id="asset_nav"><%= link_to 'Upload Audio', new_audio_path %> | <%= link_to "Edit Selected", '#', :id => 'edit_selected' %> | <%= link_to "Delete Selected", '#', :id => 'delete_selected' %></div>
+<%- if @audios.length > 0 -%>
+<form action="#">
+	<table id="asset_list">
+		<tr>
+			<th></th>
+			<th>Title</th>
+			<th>File Name</th>
+			<th>Options</th>
+		</tr>
+		<%= render @audios %>
+	</table>
+	<%= will_paginate @audios %>
+</form>
+<div id="asset_nav_footer">
+  <%= link_to 'Upload Audio', new_audio_path %>
+</div>
+<%- else -%>
+<div id="no_assets_message">
+There is currently no audio to display.
+</div>
+<%- end -%>

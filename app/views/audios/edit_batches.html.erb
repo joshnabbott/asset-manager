@@ -1,0 +1,7 @@
+<h1>Batch Edit Audio</h1>
+
+<%- form_for(@audios, :url => update_batch_audios_path(@audios)) do |f| -%>
+  <%= render :partial => "audios/batch_audio", :collection => @audios %>
+  <div class="asset_reset"></div>
+  <div class="bw"><%= f.submit 'Update All' %> - or - <%= link_to 'Cancel', audios_path %></div>
+<%- end -%>

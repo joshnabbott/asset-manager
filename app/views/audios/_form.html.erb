@@ -1,0 +1,18 @@
+<%= f.error_messages %>
+<div class='fw'><%= f.file_field :file %></div>
+<%= f.hidden_field :audio_ids %>
+
+<%- unless @audio.new_record? -%>
+<div class='fw'>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+</div>
+<di class='fw'v>
+	<%= f.label :description %><br />
+	<%= f.text_area :description %>
+</div>
+<div class='fw'>
+	<%= f.label :tag_list, 'Tags (separate tags with a comma)' %><br />
+	<%= f.text_field :tag_list %>
+</div>
+<%- end -%>

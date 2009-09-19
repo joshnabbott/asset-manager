@@ -1,0 +1,38 @@
+$(document).ready(function($) {
+	// Batch edit all checked from index screen
+	$('#edit_selected').click(function(){
+		ids = $('input:checkbox[name=audios[]]:checked').fieldArray();
+		if (ids.length > 0) {
+			document.location = '/audios/' + ids.join('/') + '/edit'
+		} else {
+		  alert("You must select at least 1 audio to edit.");
+		}
+		return false;
+	});
+	
+	$('#delete_selected').click(function() {
+		ids = $('input:checkbox[name=audios[]]:checked').fieldArray();
+		if (ids.length > 0) {
+			if (confirm('Are you sure?')) { 
+				var f = document.createElement('form'); 
+				f.style.display = 'none'; 
+				this.parentNode.appendChild(f); 
+				f.method = 'POST'; 
+				f.action = '/audios/' + ids.join('/');
+				var m = document.createElement('input');
+				m.setAttribute('type', 'hidden'); 
+				m.setAttribute('name', '_method'); 
+				m.setAttribute('value', 'delete'); 
+				f.appendChild(m);
+				var s = document.createElement('input');
+				s.setAttribute('type', 'hidden');
+				s.setAttribute('name', 'authenticity_token');
+				s.setAttribute('value', '<%= form_authenticity_token %>');
+				f.appendChild(s);f.submit();
+			}
+		} else {
+  	  alert("You must select at least 1 audio to delete.");
+  	}
+		return false;
+	});
+});

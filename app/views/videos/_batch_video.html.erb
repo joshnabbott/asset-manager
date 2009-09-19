@@ -1,6 +1,9 @@
-<div class="batch_video">
-  <fieldset>
+<div class="batch_display_item">
+  <fieldset class="batch_video">
     <div class="fw"><%= image_tag(batch_video.preview.url(:edit)) %></div>
+    <p>
+      <strong>File Name:</strong> <%= batch_video.file_file_name %>
+    </p>
     <div class="fw">
       <%= label_tag "video_title_#{batch_video.id}", 'Title' %><br/>
       <%= text_field_tag 'video[title][]', batch_video.title, :id => "video_title_#{batch_video.id}" %>

@@ -1,4 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :audios
+  map.edit_batch_audios 'audios/*ids/edit', :controller => 'audios', :action => 'edit_batches', :conditions => { :method => :get }
+  map.update_batch_audios 'audios/*ids', :controller => 'audios', :action => 'update_batches', :conditions => { :method => :put }
+  map.destroy_batch_audios 'audios/*ids', :controller => 'audios', :action => 'destroy_batches', :conditions => { :method => :delete }
+
   # Routes for images, this includes custom routes for batch options
   map.resources :images
   map.edit_batch_images 'images/*ids/edit', :controller => 'images', :action => 'edit_batches', :conditions => { :method => :get }

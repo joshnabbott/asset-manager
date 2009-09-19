@@ -1,0 +1,20 @@
+<div class="batch_display_item">
+  <fieldset class="batch_audio">
+    <div class="fw"><%= batch_audio.embed %></div>
+    <p>
+      <strong>File Name:</strong> <%= batch_audio.file_file_name %>
+    </p>
+    <div class="fw">
+      <%= label_tag "audio_title_#{batch_audio.id}", 'Title' %><br/>
+      <%= text_field_tag 'audio[title][]', batch_audio.title, :id => "audio_title_#{batch_audio.id}" %>
+    </div>
+    <div class="fw">
+      <%= label_tag "audio_description_#{batch_audio.id}", 'Description' %><br/>
+      <%= text_area_tag 'audio[description][]', batch_audio.description, :id => "audio_description_#{batch_audio.id}" %>
+    </div>
+    <div>
+      <%= label_tag "audio_tag_list_#{batch_audio.id}", 'Tags (separate tags with a comma)' %><br/>
+      <%= text_field_tag 'audio[tag_list][]', batch_audio.tag_list, :id => "audio_tag_list_#{batch_audio.id}" %>
+    </div>
+  </fieldset>
+</div>

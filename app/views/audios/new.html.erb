@@ -1,0 +1,20 @@
+<%- content_for :javascripts do -%>
+<%= javascript_include_tag(new_audio_path, :format => :js) %>
+<%- end -%>
+
+<%- content_for :stylesheets do -%>
+<%= stylesheet_link_tag('/uploadify/uploadify') %>
+<%- end -%>
+
+<h1>Upload Audio</h1>
+
+<% form_for(@audio, :html => { :multipart => true }) do |f| %>
+  <fieldset>
+  	<%= render :partial => 'form', :locals => { :f => f } %>
+
+    <div class='bw'>
+      <%= f.submit 'Create Audio' %> - or - <%= link_to 'Cancel', audios_path %>
+    </div>
+    <div id="status_message"></div>
+  </fieldset>
+<% end %>

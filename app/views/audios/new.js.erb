@@ -1,0 +1,46 @@
+<%- session_key_name = ActionController::Base.session_options[:key] -%>
+<%- 
+uploadify_extensions = []
+for ext in @audio.extensions
+	uploadify_extensions.push("*." + ext)
+end
+-%>
+$(document).ready(function($) {
+  $('#audio_submit').click(function(){
+    $('#audio_file').uploadifyUpload();
+    return false;
+  });
+
+  $('#audio_file').uploadify({
+    "cancelImg" : "/uploadify/cancel.png",
+    "buttonText" : "Browse",
+    "scriptData" : {
+      "<%= session_key_name %>" : encodeURIComponent("<%= u(cookies[session_key_name]) %>"),
+      "authenticity_token" : encodeURIComponent("<%= u(form_authenticity_token) %>")
+    },
+    "multi" : true,
+    "script" : "<%= audios_path %>",
+    "uploader" : "/uploadify/uploadify.swf",
+    "fileDesc" : "Please select audio files. Valid formats are: " + "<%= @audio.extensions.join(", ")%>",
+	  "fileExt" : "<%= uploadify_extensions.join(";") %>",
+	  'onComplete': function(event, queueID, fileObj, response, data) {
+       // convert the response from string formmatted as json to a json object
+       var response = JSON.parse(response);
+       var current_ids = $('#audio_audio_ids').val();
+       current_ids = current_ids.split('/');
+       current_ids.push(response.audio_id);
+       $('#audio_audio_ids').val(current_ids.join('/'));
+	     fileName_location = "#audio_file" + queueID + " .fileName";
+	     percentage_location = "#audio_file" + queueID + " .percentage";
+	     cancel_location = "#audio_file" + queueID + " .cancel";
+       $(fileName_location).html(fileObj.name + " - " + response.success);
+	     $(percentage_location).empty();
+	     $(cancel_location).empty();
+       return false;
+    },
+	  "onAllComplete" : function(event, data) {
+	    $('#status_message').show();
+      $('#status_message').html('<strong>Finished!</strong> Next: <a href="/audios' + $('#audio_audio_ids').val() + '/edit">Add titles and descriptions</a>? (Or just <%= link_to "go back", audios_path %>)');
+    }
+  });
+})

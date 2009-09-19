@@ -1,0 +1,10 @@
+<h1>Editing Audio</h1>
+
+<% form_for(@audio, :html => { :multipart => true }) do |f| %>
+  <fieldset>
+		<%= render :partial => 'form', :locals => { :f => f } %>
+		<div class='bw'>
+    	<%= f.submit 'Update' %> - or - <%= link_to 'Cancel', audios_path %>
+  	</div>
+	</fieldset>
+<% end %>
