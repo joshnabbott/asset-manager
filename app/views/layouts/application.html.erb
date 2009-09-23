@@ -12,9 +12,8 @@
   <%= yield :javascripts if @content_for_javascripts %>
 </head>
 <body>
-
+<%= render :partial => "layouts/toolbar" %>
 <p style="color: green"><%= flash[:notice] %></p>
-
 <%= yield %>
 
 </body>

@@ -100,6 +100,40 @@ a:hover { color: #fff; background-color:#000; }
   display: none;
 }
 
+ul#global_toolbar {
+  margin: 0;
+  padding: 0;
+}
+
+#global_toolbar li {
+  display: block;
+  float: left;
+  margin: 0 5px 0 0;
+}
+
+#global_toolbar li a, #global_toolbar li a:visited {
+  padding: 10px;
+  background-color: #EEE;
+  border: 1px solid #DDD;
+  text-decoration: none;
+  display: block;
+}
+
+#global_toolbar .am_toolbar_button {
+  background-color: #EEE;
+  border: 1px solid #DDD;
+  text-decoration: none;
+  padding: 10px;
+}
+
+#global_toolbar li a:hover, #global_toolbar li a:active {
+  padding: 10px;
+  background-color: #000;
+  border: 1px solid #DDD;
+  text-decoration: none;
+  display: block;
+}
+
 .batch_display_item {
   float: left;
   margin-right: 10px;
@@ -108,6 +142,9 @@ a:hover { color: #fff; background-color:#000; }
 
 .asset_reset {
   clear: both;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 /* Wrapper for fields and buttons, <p> tags aren't valid... bad rails */
