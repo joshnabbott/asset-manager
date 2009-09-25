@@ -51,5 +51,5 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
-# Add these paths manually since passenger won't
+# Add these paths manually since passenger won't sometimes.
 ENV['PATH'] = '/usr/local/bin:/opt/local/bin:' + ENV['PATH']
