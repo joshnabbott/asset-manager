@@ -1,0 +1,20 @@
+<h1>Listing asset_categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @asset_categories.each do |asset_category| %>
+  <tr>
+    <td><%=h asset_category.name %></td>
+    <td><%= link_to 'Show', asset_category %></td>
+    <td><%= link_to 'Edit', edit_asset_category_path(asset_category) %></td>
+    <td><%= link_to 'Destroy', asset_category, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New asset_category', new_asset_category_path %>

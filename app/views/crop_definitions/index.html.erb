@@ -1,0 +1,32 @@
+<h1>Listing crop_definitions</h1>
+
+<table>
+  <tr>
+    <th>Asset category</th>
+    <th>Name</th>
+    <th>Minimum width</th>
+    <th>Minimum height</th>
+    <th>X</th>
+    <th>Y</th>
+    <th>Locked ratio</th>
+  </tr>
+
+<% @crop_definitions.each do |crop_definition| %>
+  <tr>
+    <td><%=h crop_definition.asset_category.name %></td>
+    <td><%=h crop_definition.name %></td>
+    <td><%=h crop_definition.minimum_width %></td>
+    <td><%=h crop_definition.minimum_height %></td>
+    <td><%=h crop_definition.x %></td>
+    <td><%=h crop_definition.y %></td>
+    <td><%=h crop_definition.locked_ratio %></td>
+    <td><%= link_to 'Show', crop_definition %></td>
+    <td><%= link_to 'Edit', edit_crop_definition_path(crop_definition) %></td>
+    <td><%= link_to 'Destroy', crop_definition, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New crop_definition', new_crop_definition_path %>

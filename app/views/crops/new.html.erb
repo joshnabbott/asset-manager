@@ -1,0 +1,36 @@
+<%- content_for :stylesheets do -%>
+<%= stylesheet_link_tag '/jcrop/css/jquery.Jcrop.css' %>
+<%- end -%>
+
+<%- content_for :javascripts do -%>
+<%= javascript_include_tag '/jcrop/js/jquery.Jcrop.js' %>
+<%= javascript_include_tag 'jquery.imagetool.min' %>
+<%- end -%>
+
+<%- content_for :document_ready do -%>
+$('#jcrop-target').Jcrop({
+  aspectRatio: <%= @crop_definition.locked_ratio ? (@crop_definition.minimum_width.to_f / @crop_definition.minimum_height.to_f) : 0 %>,
+  bgColor: 'black',
+  bgOpacity: '.5',
+  boxHeight: 0,
+  boxWidth: 0,
+  minSize: [<%= @crop_definition.minimum_width %>, <%= @crop_definition.minimum_height %>],
+  setSelect: [<%= @crop_definition.x %>, <%= @crop_definition.y %>, <%= @crop_definition.x + @crop_definition.minimum_width %>, <%= @crop_definition.y + @crop_definition.minimum_height %>],
+  onChange: function(c) {
+    $('#crop_offset_x').val(c.x);
+    $('#crop_offset_y').val(c.y);
+    $('#crop_width').val(c.w);
+    $('#crop_height').val(c.h);
+  }
+});
+<%- end -%>
+<h1>New crop</h1>
+
+<% form_for([@image, @crop]) do |f| %>
+  <fieldset>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <p>
+      <%= f.submit 'Create' %> - or - <%= link_to 'Cancel', [@image, :crops] %>
+    </p>
+  </fieldset>
+<% end %>

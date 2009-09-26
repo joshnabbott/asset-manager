@@ -6,6 +6,7 @@
   <td class="actions">
     <%= link_to 'Show', image %> | 
     <%= link_to 'Edit', edit_image_path(image) %> | 
+    <%= "#{link_to 'Crops', [image, :crops]} | " if image.crop_definitions.count > 0 %>
     <%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %>
   </td>
 </tr>

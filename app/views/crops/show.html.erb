@@ -1,0 +1,33 @@
+<p>
+  <b>Image:</b>
+  <%=h @crop.image.file_file_name %>
+</p>
+
+<p>
+  <b>Crop definition:</b>
+  <%=h @crop.crop_definition.name %>
+</p>
+
+<p>
+  <b>Offset x:</b>
+  <%=h @crop.offset_x %>
+</p>
+
+<p>
+  <b>Offset y:</b>
+  <%=h @crop.offset_y %>
+</p>
+
+<p>
+  <b>Width:</b>
+  <%=h @crop.width %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%=h @crop.height %>
+</p>
+
+
+<%= link_to 'Edit', [:edit, @image, @crop] %> |
+<%= link_to 'Back', [@image, :crops] %>
