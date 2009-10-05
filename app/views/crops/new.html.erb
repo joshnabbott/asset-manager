@@ -1,5 +1,6 @@
 <%- content_for :stylesheets do -%>
 <%= stylesheet_link_tag '/jcrop/css/jquery.Jcrop.css' %>
+<%= stylesheet_link_tag('ui-lightness/jquery-ui-1.7.2.custom')%>
 <%- end -%>
 
 <%- content_for :javascripts do -%>
@@ -8,11 +9,23 @@
 <%- end -%>
 
 <%- content_for :document_ready do -%>
+// Crop definition selector
+$('#crop_crop_definition_id').change(function(){
+  $.ajax({
+    async: false,
+    data: $('#new_crop').serialize(),
+    dataType: 'script',
+    type: 'get',
+    url: "<%= url_for([:new, @image, :crop]) %>"
+  });
+})
+
+// JCrop
 jQuery('#jcrop-target').Jcrop({
-  aspectRatio: <%= @crop_definition.locked_ratio ? (@crop_definition.minimum_width.to_f / @crop_definition.minimum_height.to_f) : 0 %>,
-  bgColor: 'black',
+  aspectRatio: <%= @crop_definition.locked_ratio ? (@crop_definition.minimum_width.to_f / @crop_definition.minimum_height.to_f) : 1 %>,
+  bgColor: 'white',
   bgOpacity: '.5',
-  boxWidth: 800,
+  boxWidth: <%= @image.width * (params[:scale] ? (params[:scale].to_f / 100) : 0.25) %>,
   trueSize: [<%= @image.width %>, <%= @image.height %>],
   minSize: [<%= @crop_definition.minimum_width %>, <%= @crop_definition.minimum_height %>],
   setSelect: [<%= @crop_definition.x %>, <%= @crop_definition.y %>, <%= @crop_definition.x + @crop_definition.minimum_width %>, <%= @crop_definition.y + @crop_definition.minimum_height %>],
@@ -21,6 +34,23 @@ jQuery('#jcrop-target').Jcrop({
     $('#crop_offset_y').val(c.y);
     $('#crop_width').val(c.w);
     $('#crop_height').val(c.h);
+  }
+});
+
+// Slider
+$("#slider").slider({
+  animate: false,
+  value: 25,
+  step: 5,
+  change: function(event, slider) {
+    $('#scale').val(slider.value);
+    $.ajax({
+      async: false,
+      data: $('#new_crop').serialize(),
+      dataType: 'script',
+      type: 'get',
+      url: "<%= url_for([:new, @image, :crop]) %>"
+    });
   }
 });
 <%- end -%>

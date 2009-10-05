@@ -12,9 +12,9 @@ jQuery('#jcrop-target').Jcrop({
   bgColor: 'white',
   bgOpacity: '.5',
   boxHeight: 0,
-  boxWidth: 800,
+  boxWidth: <%= @image.width * (params[:scale] || 0.25) %>,
   trueSize: [<%= @image.width %>, <%= @image.height %>],
-  // minSize: [<%= @crop.width %>, <%= @crop.height %>],
+  minSize: [<%= @crop.crop_definition.minimum_width %>, <%= @crop.crop_definition.minimum_height %>],
   setSelect: [<%= @crop.offset_x %>, <%= @crop.offset_y %>, <%= @crop.offset_x + @crop.width %>, <%= @crop.offset_y + @crop.height %>],
   onChange: function(c) {
     $('#crop_offset_x').val(c.x);
