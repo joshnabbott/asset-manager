@@ -8,12 +8,12 @@
 <%- end -%>
 
 <%- content_for :document_ready do -%>
-$('#jcrop-target').Jcrop({
+jQuery('#jcrop-target').Jcrop({
   aspectRatio: <%= @crop_definition.locked_ratio ? (@crop_definition.minimum_width.to_f / @crop_definition.minimum_height.to_f) : 0 %>,
   bgColor: 'black',
   bgOpacity: '.5',
-  boxHeight: 0,
-  boxWidth: 0,
+  boxWidth: 800,
+  trueSize: [<%= @image.width %>, <%= @image.height %>],
   minSize: [<%= @crop_definition.minimum_width %>, <%= @crop_definition.minimum_height %>],
   setSelect: [<%= @crop_definition.x %>, <%= @crop_definition.y %>, <%= @crop_definition.x + @crop_definition.minimum_width %>, <%= @crop_definition.y + @crop_definition.minimum_height %>],
   onChange: function(c) {

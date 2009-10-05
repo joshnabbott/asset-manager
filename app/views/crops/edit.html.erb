@@ -9,11 +9,12 @@
 <%- content_for :document_ready do -%>
 jQuery('#jcrop-target').Jcrop({
   aspectRatio: <%= @crop.crop_definition.locked_ratio ? (@crop.crop_definition.minimum_width.to_f / @crop.crop_definition.minimum_height.to_f) : 0 %>,
-  bgColor: 'black',
+  bgColor: 'white',
   bgOpacity: '.5',
   boxHeight: 0,
-  boxWidth: 0,
-  minSize: [<%= @crop.width %>, <%= @crop.height %>],
+  boxWidth: 800,
+  trueSize: [<%= @image.width %>, <%= @image.height %>],
+  // minSize: [<%= @crop.width %>, <%= @crop.height %>],
   setSelect: [<%= @crop.offset_x %>, <%= @crop.offset_y %>, <%= @crop.offset_x + @crop.width %>, <%= @crop.offset_y + @crop.height %>],
   onChange: function(c) {
     $('#crop_offset_x').val(c.x);

@@ -4,18 +4,9 @@
 <%= f.collection_select :crop_definition_id, @image.crop_definitions, :id, :name %></div>
 <%= observe_field :crop_crop_definition_id, :url => new_image_crop_path(@image), :with => 'image[crop_definition_id]', :method => :get %>
 
-<div id="image">
-  <%= image_tag(@image.file.url, :id => 'jcrop-target') %>
-</div>
+<div id="image"><%= render :partial => 'image' %></div>
 
-<div class="fw"><%= f.label :offset_x %><br />
-<%= f.text_field :offset_x %></div>
-
-<div class="fw"><%= f.label :offset_y %><br />
-<%= f.text_field :offset_y %></div>
-
-<div class="fw"><%= f.label :width %><br />
-<%= f.text_field :width %></div>
-
-<div class="fw"><%= f.label :height %><br />
-<%= f.text_field :height %></div>
+<%= f.hidden_field :offset_x %>
+<%= f.hidden_field :offset_y %>
+<%= f.hidden_field :width %>
+<%= f.hidden_field :height %>

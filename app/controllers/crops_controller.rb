@@ -27,23 +27,24 @@ class CropsController < ApplicationController
   # GET /images/:image_id/crops/new.xml
   def new
     @crop = @image.crops.build
-    @crop_definition = if params[:image] && params[:image][:crop_definition_id]
-      CropDefinition.find(params[:image][:crop_definition_id])
+    if params[:image] && params[:image][:crop_definition_id]
+      @crop_definition = CropDefinition.find(params[:image][:crop_definition_id])
     else
-      @image.crop_definitions.first
+      @crop_definition = @image.crop_definitions.first
     end
 
     respond_to do |format|
       format.html # new.html.erb
       format.js do 
         render(:update) do |page|
+          page.replace_html 'image', :partial => 'image'
           page << <<-JS
-            $('#jcrop-target').Jcrop({
+            jQuery('#jcrop-target').Jcrop({
               aspectRatio: #{@crop_definition.locked_ratio ? (@crop_definition.minimum_width.to_f / @crop_definition.minimum_height.to_f) : 0},
               bgColor: 'black',
               bgOpacity: '.5',
-              boxHeight: 0,
-              boxWidth: 0,
+              boxWidth: 800,
+              trueSize: [#{@image.width}, #{@image.height}],
               minSize: [#{@crop_definition.minimum_width}, #{@crop_definition.minimum_height}],
               setSelect: [#{@crop_definition.x}, #{@crop_definition.y}, #{@crop_definition.x + @crop_definition.minimum_width}, #{@crop_definition.y + @crop_definition.minimum_height}],
               onChange: function(c) {
@@ -73,8 +74,8 @@ class CropsController < ApplicationController
               aspectRatio: #{@crop.crop_definition.locked_ratio ? (@crop.crop_definition.minimum_width.to_f / @crop.crop_definition.minimum_height.to_f) : 0},
               bgColor: 'black',
               bgOpacity: '.5',
-              boxHeight: 0,
-              boxWidth: 0,
+              boxWidth: 800,
+              trueSize: [#{@image.width}, #{@image.height}],
               minSize: [#{@crop.width}, #{@crop.height}],
               setSelect: [#{@crop.offset_x}, #{@crop.offset_y}, #{@crop.offset_x + @crop.width}, #{@crop.offset_y + @crop.height}],
               onChange: function(c) {
