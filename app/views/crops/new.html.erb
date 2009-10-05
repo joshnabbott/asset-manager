@@ -22,7 +22,9 @@ $('#crop_crop_definition_id').change(function(){
 
 // JCrop
 jQuery('#jcrop-target').Jcrop({
-  aspectRatio: <%= @crop_definition.locked_ratio ? (@crop_definition.minimum_width.to_f / @crop_definition.minimum_height.to_f) : 1 %>,
+  <%- if @crop_definition.locked_ratio -%>
+    aspectRatio: <%= @crop_definition.minimum_width.to_f / @crop_definition.minimum_height.to_f %>,
+  <%- end -%>
   bgColor: 'white',
   bgOpacity: '.5',
   boxWidth: <%= @image.width * (params[:scale] ? (params[:scale].to_f / 100) : 0.25) %>,
@@ -48,6 +50,7 @@ $("#slider").slider({
       async: false,
       data: $('#new_crop').serialize(),
       dataType: 'script',
+      min: 10,
       type: 'get',
       url: "<%= url_for([:new, @image, :crop]) %>"
     });

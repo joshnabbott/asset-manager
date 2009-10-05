@@ -30,7 +30,7 @@ class CropsController < ApplicationController
     if params[:crop] && params[:crop][:crop_definition_id]
       @crop_definition = CropDefinition.find(params[:crop][:crop_definition_id])
     else
-      @crop_definition = @image.crop_definitions.last
+      @crop_definition = @image.crop_definitions.first
     end
 
     respond_to do |format|
@@ -64,6 +64,11 @@ class CropsController < ApplicationController
   # GET /crops/1/edit
   def edit
     @crop = Crop.find(params[:id])
+    if params[:crop] && params[:crop][:crop_definition_id]
+      @crop_definition = CropDefinition.find(params[:crop][:crop_definition_id])
+    else
+      @crop_definition = @crop.crop_definition
+    end
 
     respond_to do |format|
       format.html
@@ -72,12 +77,12 @@ class CropsController < ApplicationController
           page.replace_html 'image', :partial => 'image'
           page << <<-JS
             jQuery('#jcrop-target').Jcrop({
-              aspectRatio: #{@crop.crop_definition.locked_ratio ? (@crop.crop_definition.minimum_width.to_f / @crop.crop_definition.minimum_height.to_f) : 0},
-              bgColor: 'black',
+              aspectRatio: #{@crop_definition.locked_ratio ? (@crop_definition.minimum_width.to_f / @crop_definition.minimum_height.to_f) : 1},
+              bgColor: 'white',
               bgOpacity: '.5',
-              boxWidth: #{@image.width * (params[:scale].to_f || 0.25)},
+              boxWidth: #{@image.width * (params[:scale] ? (params[:scale].to_f / 100) : 0.25)},
               trueSize: [#{@image.width}, #{@image.height}],
-              minSize: [#{@crop.crop_definition.minimum_width}, #{@crop.crop_definition.minimum_height}],
+              minSize: [#{@crop_definition.minimum_width}, #{@crop_definition.minimum_height}],
               setSelect: [#{@crop.offset_x}, #{@crop.offset_y}, #{@crop.offset_x + @crop.width}, #{@crop.offset_y + @crop.height}],
               onChange: function(c) {
                 $('#crop_offset_x').val(c.x);

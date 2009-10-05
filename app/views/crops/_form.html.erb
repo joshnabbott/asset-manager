@@ -3,7 +3,8 @@
 <div class="fw"><%= f.label :crop_definition_id, 'Crop definition' %><br />
 <%= f.collection_select :crop_definition_id, @image.crop_definitions, :id, :name %></div>
 
-<div id="slider" style="width: 250px">Slider</div>
+
+<div id="slider" style="display: block; width: 250px;"></div>
 <br/><br/>
 
 <div id="image"><%= render :partial => 'image' %></div>
