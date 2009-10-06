@@ -1,0 +1,62 @@
+$(window).load(function(){
+  // Crop definition selector
+  $('#crop_crop_definition_id').change(function(){
+    var url = "<%= url_for([:new, @image, :crop]) %>"
+    var data = $('#new_crop').serialize()
+    window.location = url + '?' + data
+    // $.ajax({
+    //   async: false,
+    //   data: $('#new_crop').serialize(),
+    //   dataType: 'script',
+    //   type: 'get',
+    //   url: "<%= url_for([:new, @image, :crop]) %>"
+    // });
+  });
+
+  var api = $.Jcrop('#jcrop-target', { 
+    bgColor: 'black',
+    bgOpacity: '.5',
+    boxWidth: <%= (@image.width * (params[:scale] ? params[:scale] : Crop::DEFAULT_IMAGE_SCALE).to_f / 100) %>,
+    minSize: [
+      <%= @crop.crop_definition.minimum_width * (params[:scale] ? (params[:scale].to_f / 100) : 0.25) %>,
+      <%= @crop.crop_definition.minimum_height * (params[:scale] ? (params[:scale].to_f / 100) : 0.25) %>
+    ],
+    trueSize: [<%= @image.width %>, <%= @image.height %>],
+    <%- if @crop.crop_definition.locked_ratio -%>
+    aspectRatio: <%= @crop.crop_definition.minimum_width.to_f / @crop.crop_definition.minimum_height.to_f %>,
+    <%- end -%>
+    onChange: function(c) {
+      $('#crop_offset_x').val(c.x);
+      $('#crop_offset_y').val(c.y);
+      $('#crop_width').val(c.w);
+      $('#crop_height').val(c.h);
+    }
+  });
+  // Immediately set selection (can also be set by options)
+  api.setSelect([
+    <%= @crop.crop_definition.x %>,
+    <%= @crop.crop_definition.y %>,
+    <%= @crop.crop_definition.x + @crop.crop_definition.minimum_width %>,
+    <%= @crop.crop_definition.y + @crop.crop_definition.minimum_height %>
+  ]);
+
+  // Slider
+  $("#slider").slider({
+    value: <%= params[:scale] ? params[:scale].to_f : Crop::DEFAULT_IMAGE_SCALE %>,
+    step: 5,
+    change: function(event, slider) {
+      $('#scale').val(slider.value);
+      var url = "<%= url_for([:new, @image, :crop]) %>"
+      var data = $('#new_crop').serialize()
+      window.location = url + '?' + data
+      // $.ajax({
+      //   async: false,
+      //   data: $('#new_crop').serialize(),
+      //   dataType: 'script',
+      //   min: 10,
+      //   type: 'get',
+      //   url: "<%= url_for([:new, @image, :crop]) %>"
+      // });
+    }
+  });
+});
