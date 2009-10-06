@@ -13,7 +13,7 @@ $(window).load(function(){
     // });
   });
 
-  var api = $.Jcrop('#jcrop-target', { 
+  var api = $.Jcrop('#crop-target', { 
     bgColor: 'black',
     bgOpacity: '.5',
     boxWidth: <%= (@image.width * (params[:scale] ? params[:scale] : Crop::DEFAULT_IMAGE_SCALE).to_f / 100) %>,

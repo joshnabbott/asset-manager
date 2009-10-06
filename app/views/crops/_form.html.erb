@@ -6,7 +6,7 @@
 <p>Image scale: <span id="scale-number"><%= params[:scale] || Crop::DEFAULT_IMAGE_SCALE %>%</span></p>
 <div id="slider"></div>
 
-<%= image_tag(@image.file.url, :id => 'jcrop-target') %>
+<%= image_tag(@image.file.url, :id => 'crop-target') %>
 
 <%= hidden_field_tag :scale, Crop::DEFAULT_IMAGE_SCALE %>
 <%= f.hidden_field :offset_x %>
