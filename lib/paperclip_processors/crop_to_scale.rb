@@ -1,4 +1,3 @@
-# TODO: Return scale image if it exists.
 require 'digest/md5'
 module Paperclip
   class Attachment

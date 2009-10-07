@@ -2,7 +2,7 @@
   <td><%= check_box_tag 'images[]', image.id %></td>
   <td><%= image.title %></td>
   <td><%= image.file_file_name %></td>
-  <td><%= image_tag(image.file.url, :width => 100) %></td>
+  <td><%= image_tag(image.file(:thumbnail)) %></td>
   <td class="actions">
     <%= link_to 'Show', image %> | 
     <%= link_to 'Edit', edit_image_path(image) %> | 

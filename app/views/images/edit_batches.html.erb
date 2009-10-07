@@ -6,11 +6,11 @@
       <tr>
         <%- images.each do |image| -%>
           <td width="25%">
+            <div><%= image_tag(image.file(:small), :height => 200) %></div>
             <div class="fw">
               <%= f.label :asset_category_ids, 'Asset Categories' %><br/>
               <%= f.collection_select :asset_category_ids, AssetCategory.all, :id, :name, {}, :multiple => true %>
             </div>
-            <div><%= image_tag(image.file.url, :height => 200) %></div>
             <div>
               <%= label_tag "image_title_#{image.id}", 'Title' %><br/>
               <%= text_field_tag 'image[title][]', image.title, :id => "image_title_#{image.id}" %>

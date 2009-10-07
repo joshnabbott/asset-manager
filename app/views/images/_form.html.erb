@@ -4,6 +4,8 @@
 <%= f.hidden_field :image_ids %>
 
 <%- unless @image.new_record? -%>
+  <div><%= image_tag(@image.file(:small), :height => 200) %></div>
+
   <div class="fw"><%= f.label :asset_category_ids, 'Asset Categories' %><br/>
   <%= f.collection_select :asset_category_ids, AssetCategory.all, :id, :name, {}, :multiple => true %></div>
 
