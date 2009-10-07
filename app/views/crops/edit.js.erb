@@ -6,6 +6,7 @@ $(window).load(function(){
     window.location = url + '?' + data
   });
 
+  // Jcrop instance
   var api = $.Jcrop('#crop-target', {
     bgColor: 'black',
     bgOpacity: '.5',
@@ -24,6 +25,7 @@ $(window).load(function(){
       $('#crop_height').val(c.h);
     },
   });
+  // Set select based on params if there are any, if not, based on crop attributes
   api.setSelect([
     <%- if params[:crop] -%>
       <%= params[:crop][:x1].to_i || @crop.x1 %>,
@@ -37,6 +39,7 @@ $(window).load(function(){
       <%= @crop.y2 %>
     <%- end -%>
   ]);
+  // Some additional setup based on crop definition
   api.setOptions({
     allowSelect: <%= @crop.crop_definition.selection_enabled %>,
     allowMove: <%= @crop.crop_definition.selection_moveable %>,
