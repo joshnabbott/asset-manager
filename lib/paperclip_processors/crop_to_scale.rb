@@ -3,8 +3,8 @@ require 'digest/md5'
 module Paperclip
   class Attachment
     def scale_to(scale_to)
-      file_extension = self.instance.file_file_name.split('.').last
-      file_name      = "#{Digest::MD5.hexdigest([self.instance.file_file_name, scale_to].join)}.#{file_extension}"
+      file_extension = File.extname(self.path)
+      file_name      = "#{Digest::MD5.hexdigest([self.instance.file_file_name, scale_to, file_extension].join)}"
       path           = File.join(RAILS_ROOT, 'public')
       url            = File.join('system', 'tmp')
       full_path      = [path, url, file_name].join('/')
