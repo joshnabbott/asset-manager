@@ -3,10 +3,7 @@ class CreateCrops < ActiveRecord::Migration
     create_table :crops do |t|
       t.belongs_to :image
       t.belongs_to :crop_definition
-      t.integer :offset_x
-      t.integer :offset_y
-      t.integer :width
-      t.integer :height
+      t.integer :x1, :x2, :y1, :y2, :width, :height
 
       t.timestamps
     end

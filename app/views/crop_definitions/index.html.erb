@@ -9,6 +9,9 @@
     <th>X</th>
     <th>Y</th>
     <th>Locked ratio</th>
+    <th>Selection Enabled</th>
+    <th>Selection Moveable</th>
+    <th>Selection Resizable</th>
   </tr>
 
 <% @crop_definitions.each do |crop_definition| %>
@@ -20,6 +23,9 @@
     <td><%=h crop_definition.x %></td>
     <td><%=h crop_definition.y %></td>
     <td><%=h crop_definition.locked_ratio %></td>
+    <td><%=h crop_definition.selection_enabled %></td>
+    <td><%=h crop_definition.selection_moveable %></td>
+    <td><%=h crop_definition.selection_resizable %></td>
     <td><%= link_to 'Show', crop_definition %></td>
     <td><%= link_to 'Edit', edit_crop_definition_path(crop_definition) %></td>
     <td><%= link_to 'Destroy', crop_definition, :confirm => 'Are you sure?', :method => :delete %></td>

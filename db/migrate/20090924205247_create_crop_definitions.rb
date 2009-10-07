@@ -7,7 +7,8 @@ class CreateCropDefinitions < ActiveRecord::Migration
       t.integer :minimum_height
       t.integer :x
       t.integer :y
-      t.boolean :locked_ratio
+      t.boolean :locked_ratio, :null => false, :default => false
+      t.boolean :selection_enabled, :selection_moveable, :selection_resizable, :null => false, :default => true
 
       t.timestamps
     end

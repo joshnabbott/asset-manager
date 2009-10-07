@@ -9,29 +9,40 @@ $(window).load(function(){
   var api = $.Jcrop('#crop-target', {
     bgColor: 'black',
     bgOpacity: '.5',
-    boxWidth: <%= (@image.width * (params[:scale] ? params[:scale] : Crop::DEFAULT_IMAGE_SCALE).to_f / 100) %>,
     minSize: [
       <%= @crop.crop_definition.minimum_width * (params[:scale] ? (params[:scale].to_f / 100) : 0.25) %>,
       <%= @crop.crop_definition.minimum_height * (params[:scale] ? (params[:scale].to_f / 100) : 0.25) %>
     ],
     trueSize: [<%= @image.width %>, <%= @image.height %>],
-    <%- if @crop.crop_definition.locked_ratio -%>
-    aspectRatio: <%= @crop.crop_definition.minimum_width.to_f / @crop.crop_definition.minimum_height.to_f %>,
-    <%- end -%>
+    aspectRatio: <%= @crop.crop_definition.locked_ratio ? @crop.crop_definition.minimum_width.to_f / @crop.crop_definition.minimum_height.to_f : 0 %>,
     onChange: function(c) {
-      $('#crop_offset_x').val(c.x);
-      $('#crop_offset_y').val(c.y);
+      $('#crop_x1').val(c.x);
+      $('#crop_x2').val(c.x2);
+      $('#crop_y1').val(c.y);
+      $('#crop_y2').val(c.y2);
       $('#crop_width').val(c.w);
       $('#crop_height').val(c.h);
-    }
+    },
   });
-  // Immediately set selection (can also be set by options)
   api.setSelect([
-    <%= @crop.offset_x %>,
-    <%= @crop.offset_y %>,
-    <%= @crop.offset_x + @crop.width %>,
-    <%= @crop.offset_y + @crop.height %>
+    <%- if params[:crop] -%>
+      <%= params[:crop][:x1].to_i || @crop.x1 %>,
+      <%= params[:crop][:y1].to_i || @crop.y1 %>,
+      <%= params[:crop][:x2].to_i || @crop.x2 %>,
+      <%= params[:crop][:y2].to_i || @crop.y2 %>
+    <%- else -%>
+      <%= @crop.x1 %>,
+      <%= @crop.y1 %>,
+      <%= @crop.x2 %>,
+      <%= @crop.y2 %>
+    <%- end -%>
   ]);
+  api.setOptions({
+    allowSelect: <%= @crop.crop_definition.selection_enabled %>,
+    allowMove: <%= @crop.crop_definition.selection_moveable %>,
+    allowResize: <%= @crop.crop_definition.selection_resizable %>
+  });
+  api.enable();
 
   // Slider
   $("#slider").slider({

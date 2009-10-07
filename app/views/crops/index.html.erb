@@ -4,8 +4,10 @@
   <tr>
     <th>Image</th>
     <th>Crop definition</th>
-    <th>Offset x</th>
-    <th>Offset y</th>
+    <th>x1</th>
+    <th>x2</th>
+    <th>y1</th>
+    <th>y2</th>
     <th>Width</th>
     <th>Height</th>
   </tr>
@@ -14,8 +16,10 @@
   <tr>
     <td><%=h crop.image.file_file_name %></td>
     <td><%=h crop.crop_definition.name %></td>
-    <td><%=h crop.offset_x %></td>
-    <td><%=h crop.offset_y %></td>
+    <td><%=h crop.x1 %></td>
+    <td><%=h crop.x2 %></td>
+    <td><%=h crop.y1 %></td>
+    <td><%=h crop.y2 %></td>
     <td><%=h crop.width %></td>
     <td><%=h crop.height %></td>
     <td><%= link_to 'Show', [@image, crop] %></td>
