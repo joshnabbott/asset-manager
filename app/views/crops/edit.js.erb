@@ -8,7 +8,7 @@ $(window).load(function(){
 
   // Jcrop instance
   var api = $.Jcrop('#crop-target', {
-    bgColor: 'black',
+    bgColor: 'white',
     bgOpacity: '.5',
     minSize: [
       <%= @crop.crop_definition.minimum_width * ((params[:scale] ? params[:scale] : Crop::DEFAULT_IMAGE_SCALE).to_f / 100) %>,
