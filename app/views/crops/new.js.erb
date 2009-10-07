@@ -11,8 +11,8 @@ $(window).load(function(){
     bgOpacity: '.5',
     // boxWidth: <%= (@image.width * (params[:scale] ? params[:scale] : Crop::DEFAULT_IMAGE_SCALE).to_f / 100) %>,
     minSize: [
-      <%= @crop.crop_definition.minimum_width * (params[:scale] ? (params[:scale].to_f / 100) : 0.25) %>,
-      <%= @crop.crop_definition.minimum_height * (params[:scale] ? (params[:scale].to_f / 100) : 0.25) %>
+      <%= @crop.crop_definition.minimum_width * ((params[:scale] ? params[:scale] : Crop::DEFAULT_IMAGE_SCALE).to_f / 100) %>,
+      <%= @crop.crop_definition.minimum_height * ((params[:scale] ? params[:scale] : Crop::DEFAULT_IMAGE_SCALE).to_f / 100) %>
     ],
     trueSize: [<%= @image.width %>, <%= @image.height %>],
     aspectRatio: <%= @crop.crop_definition.locked_ratio ? @crop.crop_definition.minimum_width.to_f / @crop.crop_definition.minimum_height.to_f : 0 %>,
