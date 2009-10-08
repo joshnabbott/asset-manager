@@ -4,15 +4,7 @@
   <tr>
     <th>Name</th>
   </tr>
-
-<% @asset_categories.each do |asset_category| %>
-  <tr>
-    <td><%=h asset_category.name %></td>
-    <td><%= link_to 'Show', asset_category %></td>
-    <td><%= link_to 'Edit', edit_asset_category_path(asset_category) %></td>
-    <td><%= link_to 'Destroy', asset_category, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <%= render @asset_categories %>
 </table>
 
 <br />
