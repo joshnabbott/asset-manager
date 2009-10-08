@@ -6,7 +6,7 @@
 <%- unless @image.new_record? -%>
   <div class="fw"><%= image_tag(@image.file(:edit)) %></div>
 
-  <div class="fw"><%= f.label :asset_category_ids, 'Asset Categories' %>
+  <div class="fw"><%= f.label :asset_category_ids, 'Asset categories' %>
   <%= f.collection_select :asset_category_ids, AssetCategory.all, :id, :name, {}, :multiple => true %></div>
 
   <div class="fw"><%= f.label :title %>

@@ -158,6 +158,11 @@ ul#global_toolbar {
 .bw {
 }
 
+.replacement_tokens {
+  padding: 0 20px;
+  float: right;
+}
+
 .clearfix {clear: both;}
 
 fieldset {
@@ -176,4 +181,8 @@ fieldset.batch_item {
 fieldset label {
   display: block;
   font-weight: bold;
+}
+
+.actions {
+  white-space: nowrap;
 }
