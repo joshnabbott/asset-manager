@@ -65,7 +65,7 @@ $(window).load(function(){
     allowMove: <%= @crop.crop_definition.selection_moveable %>,
     allowResize: <%= @crop.crop_definition.selection_resizable %>
   });
-  api.focus();
+  api.enable();
 
   // Slider
   $("#slider").slider({
