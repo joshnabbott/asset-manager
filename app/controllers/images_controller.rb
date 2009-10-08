@@ -101,7 +101,7 @@ class ImagesController < ApplicationController
       image.title              = params[:image]['title'][index]
       image.description        = params[:image]['description'][index]
       image.tag_list           = params[:image]['tag_list'][index]
-      image.asset_category_ids = params[:image]['asset_category_ids'][index]
+      image.asset_category_ids = params[:image]['asset_category_ids'][index] if params[:image]['asset_category_ids']
     end
 
     respond_to do |format|
