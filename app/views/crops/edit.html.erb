@@ -1,0 +1,20 @@
+<%- content_for :stylesheets do -%>
+<%= stylesheet_link_tag '/jcrop/css/jquery.Jcrop.css' %>
+<%= stylesheet_link_tag('smoothness/jquery-ui-1.7.2.custom')%>
+<%- end -%>
+
+<%- content_for :javascripts do -%>
+<%= javascript_include_tag '/jcrop/js/jquery.Jcrop.js' %>
+<%= javascript_include_tag edit_image_crop_path(@image, @crop, :format => :js, :params => params) %>
+<%- end -%>
+
+<h1>Editing crop</h1>
+
+<% form_for([@image, @crop]) do |f| %>
+  <fieldset>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <p>
+      <%= f.submit 'Update' %> - or - <%= link_to 'Cancel', [@image, :crops] %>
+    </p>
+  </fieldset>
+<% end %>

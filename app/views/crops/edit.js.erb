@@ -1,0 +1,64 @@
+$(window).load(function(){
+  // Crop definition selector
+  $('#crop_crop_definition_id').change(function(){
+    var url = "<%= url_for([:edit, @image, @crop]) %>"
+    var data = $("#edit_crop_<%= @crop.id %>").serialize()
+    window.location = url + '?' + data
+  });
+
+  // Jcrop instance
+  var api = $.Jcrop('#crop-target', {
+    bgColor: 'white',
+    bgOpacity: '.5',
+    minSize: [
+      <%= @crop.crop_definition.minimum_width * ((params[:scale] ? params[:scale] : Crop::DEFAULT_IMAGE_SCALE).to_f / 100) %>,
+      <%= @crop.crop_definition.minimum_height * ((params[:scale] ? params[:scale] : Crop::DEFAULT_IMAGE_SCALE).to_f / 100) %>
+    ],
+    trueSize: [<%= @image.width %>, <%= @image.height %>],
+    aspectRatio: <%= @crop.crop_definition.locked_ratio ? @crop.crop_definition.minimum_width.to_f / @crop.crop_definition.minimum_height.to_f : 0 %>,
+    allowSelect: <%= @crop.crop_definition.selection_enabled %>,
+    allowMove: <%= @crop.crop_definition.selection_moveable %>,
+    allowResize: <%= @crop.crop_definition.selection_resizable %>,
+    keySupport: false,
+    onChange: function(c) {
+      $('#crop_x1').val(c.x);
+      $('#crop_x2').val(c.x2);
+      $('#crop_y1').val(c.y);
+      $('#crop_y2').val(c.y2);
+      $('#crop_width').val(c.w);
+      $('#crop_height').val(c.h);
+    },
+  });
+  // Set select based on params if there are any, if not, based on crop attributes
+  api.setSelect([
+    <%- if params[:crop] -%>
+      <%= params[:crop][:x1].to_i || @crop.x1 %>,
+      <%= params[:crop][:y1].to_i || @crop.y1 %>,
+      <%= params[:crop][:x2].to_i || @crop.x2 %>,
+      <%= params[:crop][:y2].to_i || @crop.y2 %>
+    <%- else -%>
+      <%= @crop.x1 %>,
+      <%= @crop.y1 %>,
+      <%= @crop.x2 %>,
+      <%= @crop.y2 %>
+    <%- end -%>
+  ]);
+  api.enable();
+
+  // Slider
+  $("#slider").slider({
+    min: 5,
+    max: 200,
+    step: 5,
+    value: <%= params[:scale] ? params[:scale].to_f : Crop::DEFAULT_IMAGE_SCALE %>,
+    slide: function(event, slider) {
+      $('#scale-number').text(slider.value + '%');
+    },
+    change: function(event, slider) {
+      $('#scale').val(slider.value);
+      var url = "<%= url_for([:edit, @image, @crop]) %>"
+      var data = $("#edit_crop_<%= @crop.id %>").serialize()
+      window.location = url + '?' + data
+    }
+  });
+});

@@ -64,15 +64,14 @@ a:hover { color: #fff; background-color:#000; }
 #asset_list th { 
   background-color: #EEE; 
   padding: 5px; 
-  text-align: left; 
   border-right: 1px solid #EEE; 
 }
 
 #asset_list td { 
   padding: 5px;
-  text-align: left;
   border-top: 1px solid #EEE;
   border-right: 1px solid #EEE;
+  text-align: center;
 }
 
 #asset_list .even { 

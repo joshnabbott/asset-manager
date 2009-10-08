@@ -4,7 +4,7 @@
   <%= link_to 'Back', images_path %>
 </div>
 <div>
-  <%= image_tag(@image.file.url) %>
+  <%= image_tag(@image.file(:small)) %>
 </div>
 <p>
   <strong>File Name:</strong> <%= @image.file_file_name %>

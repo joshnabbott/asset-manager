@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090916180618) do
+ActiveRecord::Schema.define(:version => 20090924211017) do
+
+  create_table "asset_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "asset_categories_assets", :id => false, :force => true do |t|
+    t.integer "asset_id"
+    t.integer "asset_category_id"
+  end
 
   create_table "assets", :force => true do |t|
     t.integer  "owner_id"
@@ -32,15 +43,33 @@ ActiveRecord::Schema.define(:version => 20090916180618) do
     t.datetime "updated_at"
   end
 
-  create_table "sessions", :force => true do |t|
-    t.string   "session_id", :null => false
-    t.text     "data"
+  create_table "crop_definitions", :force => true do |t|
+    t.integer  "asset_category_id"
+    t.string   "name"
+    t.integer  "minimum_width"
+    t.integer  "minimum_height"
+    t.integer  "x"
+    t.integer  "y"
+    t.boolean  "locked_ratio",        :default => false, :null => false
+    t.boolean  "selection_enabled",   :default => true,  :null => false
+    t.boolean  "selection_moveable",  :default => true,  :null => false
+    t.boolean  "selection_resizable", :default => true,  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
-  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+  create_table "crops", :force => true do |t|
+    t.integer  "image_id"
+    t.integer  "crop_definition_id"
+    t.integer  "x1"
+    t.integer  "x2"
+    t.integer  "y1"
+    t.integer  "y2"
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"

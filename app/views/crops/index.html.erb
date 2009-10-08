@@ -1,0 +1,34 @@
+<h1>Listing crops</h1>
+
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Crop definition</th>
+    <th>x1</th>
+    <th>x2</th>
+    <th>y1</th>
+    <th>y2</th>
+    <th>Width</th>
+    <th>Height</th>
+  </tr>
+
+<% @crops.each do |crop| %>
+  <tr>
+    <td><%=h crop.image.file_file_name %></td>
+    <td><%=h crop.crop_definition.name %></td>
+    <td><%=h crop.x1 %></td>
+    <td><%=h crop.x2 %></td>
+    <td><%=h crop.y1 %></td>
+    <td><%=h crop.y2 %></td>
+    <td><%=h crop.width %></td>
+    <td><%=h crop.height %></td>
+    <td><%= link_to 'Show', [@image, crop] %></td>
+    <td><%= link_to 'Edit', [:edit, @image, crop] %></td>
+    <td><%= link_to 'Destroy', [@image, crop], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New crop', [:new, @image, :crop] %>

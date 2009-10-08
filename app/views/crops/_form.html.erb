@@ -1,0 +1,17 @@
+<%= f.error_messages %>
+
+<div class="fw"><%= f.label :crop_definition_id, 'Crop definition' %><br />
+<%= f.collection_select :crop_definition_id, @image.crop_definitions, :id, :name %></div>
+
+<p>Image scale: <span id="scale-number"><%= params[:scale] || Crop::DEFAULT_IMAGE_SCALE %>%</span></p>
+<div id="slider"></div>
+
+<%= image_tag(@image.file.scale_to(params[:scale] || Crop::DEFAULT_IMAGE_SCALE), :id => 'crop-target') %>
+
+<%= hidden_field_tag :scale, (params[:scale] || Crop::DEFAULT_IMAGE_SCALE) %>
+<%= f.hidden_field :x1 %>
+<%= f.hidden_field :x2 %>
+<%= f.hidden_field :y1 %>
+<%= f.hidden_field :y2 %>
+<%= f.hidden_field :width %>
+<%= f.hidden_field :height %>

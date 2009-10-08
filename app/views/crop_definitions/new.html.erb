@@ -1,0 +1,10 @@
+<h1>New crop_definition</h1>
+
+<% form_for(@crop_definition) do |f| %>
+  <fieldset>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <p>
+      <%= f.submit 'Create' %> - or - <%= link_to 'Cancel', crop_definitions_path %>
+    </p>
+  </fieldset>
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  image: 
+  crop_definition: 
+  offset_x: 1
+  offset_y: 1
+  width: 1
+  height: 1
+
+two:
+  image: 
+  crop_definition: 
+  offset_x: 1
+  offset_y: 1
+  width: 1
+  height: 1

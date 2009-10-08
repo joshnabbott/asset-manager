@@ -98,9 +98,10 @@ class ImagesController < ApplicationController
   def update_batches
     @images = Image.find(params[:ids])
     @images.each_with_index do |image, index|
-      image.title       = params[:image]['title'][index]
-      image.description = params[:image]['description'][index]
-      image.tag_list    = params[:image]['tag_list'][index]
+      image.title              = params[:image]['title'][index]
+      image.description        = params[:image]['description'][index]
+      image.tag_list           = params[:image]['tag_list'][index]
+      image.asset_category_ids = params[:image]['asset_category_ids'][index]
     end
 
     respond_to do |format|

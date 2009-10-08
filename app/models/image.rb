@@ -1,9 +1,20 @@
 # TODO: get_meta_data and santized_meta_data_for_yaml seem to be very out of place here.
 class Image < Asset
   attr_accessor :image_ids
-  has_attached_file :file, :url => "/system/images/:attachment/:id/:style/:filename"
+  has_attached_file :file, :url => "/system/images/:attachment/:id/:style/:filename", 
+    :styles => {
+      :thumbnail => "125x125>",
+      :small => "800x800>" }
+
   before_file_post_process :set_data_columns
   serialize :meta_data
+
+  # has_and_belongs_to_many :asset_categories, :join_table => :asset_categories_assets, :foreign_key => :asset_id
+  has_many :crops
+  has_many :crop_definitions, :finder_sql => 'SELECT `crop_definitions`.* FROM crop_definitions
+  INNER JOIN asset_categories ON `asset_categories`.`id` = `crop_definitions`.`asset_category_id`
+  INNER JOIN asset_categories_assets ON `asset_categories_assets`.`asset_category_id` = `crop_definitions`.`asset_category_id`
+  WHERE `asset_categories_assets`.`asset_id` = #{self.id}'
 
   validates_attachment_presence :file
   validates_attachment_content_type :file, :content_type => /image/

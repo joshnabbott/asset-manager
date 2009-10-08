@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  asset_category: 
+  name: MyString
+  minimum_width: 1
+  minimum_height: 1
+  x: 1
+  y: 1
+  locked_ratio: false
+
+two:
+  asset_category: 
+  name: MyString
+  minimum_width: 1
+  minimum_height: 1
+  x: 1
+  y: 1
+  locked_ratio: false
