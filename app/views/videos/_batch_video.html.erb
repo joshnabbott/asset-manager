@@ -5,15 +5,15 @@
       <strong>File Name:</strong> <%= batch_video.file_file_name %>
     </p>
     <div class="fw">
-      <%= label_tag "video_title_#{batch_video.id}", 'Title' %><br/>
+      <%= label_tag "video_title_#{batch_video.id}", 'Title' %>
       <%= text_field_tag 'video[title][]', batch_video.title, :id => "video_title_#{batch_video.id}" %>
     </div>
     <div class="fw">
-      <%= label_tag "video_description_#{batch_video.id}", 'Description' %><br/>
+      <%= label_tag "video_description_#{batch_video.id}", 'Description' %>
       <%= text_area_tag 'video[description][]', batch_video.description, :id => "video_description_#{batch_video.id}" %>
     </div>
     <div>
-      <%= label_tag "video_tag_list_#{batch_video.id}", 'Tags (separate tags with a comma)' %><br/>
+      <%= label_tag "video_tag_list_#{batch_video.id}", 'Tags (separate tags with a comma)' %>
       <%= text_field_tag 'video[tag_list][]', batch_video.tag_list, :id => "video_tag_list_#{batch_video.id}" %>
     </div>
   </fieldset>

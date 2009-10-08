@@ -1,0 +1,10 @@
+<h1>Editing Video Format</h1>
+
+<% form_for(@video_format) do |f| %>
+  <fieldset>
+  	<%= render :partial => 'form', :locals => { :f => f } %>
+  	<div class='bw'>
+    	<%= f.submit 'Update' %> - or - <%= link_to 'Cancel', video_formats_path %>
+  	</div>
+  </fieldset>
+<% end %>

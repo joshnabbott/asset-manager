@@ -1,0 +1,20 @@
+<h1>Listing Video Formats</h1>
+<div id="asset_nav"><%= link_to 'New Video Format', new_video_format_path %></div>
+<%- if @video_formats.length > 0 -%>
+<table id="asset_list">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Options</th>
+  </tr>
+  <%= render @video_formats %>
+</table>
+<%= will_paginate @video_formats %>
+<div id="asset_nav_footer">
+  <%= link_to 'New Video Format', new_video_format_path %>
+</div>
+<%- else -%>
+<div id="no_assets_message">
+  There are currently no video formats to display.
+</div>
+<% end %>

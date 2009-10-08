@@ -4,17 +4,17 @@
 <%= f.hidden_field :image_ids %>
 
 <%- unless @image.new_record? -%>
-  <div><%= image_tag(@image.file(:small), :height => 200) %></div>
+  <div class="fw"><%= image_tag(@image.file(:small), :height => 200) %></div>
 
-  <div class="fw"><%= f.label :asset_category_ids, 'Asset Categories' %><br/>
+  <div class="fw"><%= f.label :asset_category_ids, 'Asset Categories' %>
   <%= f.collection_select :asset_category_ids, AssetCategory.all, :id, :name, {}, :multiple => true %></div>
 
-  <div class="fw"><%= f.label :title %><br/>
+  <div class="fw"><%= f.label :title %>
   <%= f.text_field :title %></div>
 
-  <div class="fw"><%= f.label :description %><br/>
+  <div class="fw"><%= f.label :description %>
   <%= f.text_area :description %></div>
 
-  <div class="fw"><%= f.label :tag_list, 'Tags (separate tags with a comma)' %><br/>
+  <div class="fw"><%= f.label :tag_list, 'Tags (separate tags with a comma)' %>
   <%= f.text_field :tag_list %></div>
 <%- end -%>
