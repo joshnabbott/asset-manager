@@ -11,22 +11,7 @@
     <th>Width</th>
     <th>Height</th>
   </tr>
-
-<% @crops.each do |crop| %>
-  <tr>
-    <td><%=h crop.image.file_file_name %></td>
-    <td><%=h crop.crop_definition.name %></td>
-    <td><%=h crop.x1 %></td>
-    <td><%=h crop.x2 %></td>
-    <td><%=h crop.y1 %></td>
-    <td><%=h crop.y2 %></td>
-    <td><%=h crop.width %></td>
-    <td><%=h crop.height %></td>
-    <td><%= link_to 'Show', [@image, crop] %></td>
-    <td><%= link_to 'Edit', [:edit, @image, crop] %></td>
-    <td><%= link_to 'Destroy', [@image, crop], :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <%= render @crops %>
 </table>
 
 <br />
