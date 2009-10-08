@@ -16,6 +16,10 @@ $(window).load(function(){
     ],
     trueSize: [<%= @image.width %>, <%= @image.height %>],
     aspectRatio: <%= @crop.crop_definition.locked_ratio ? @crop.crop_definition.minimum_width.to_f / @crop.crop_definition.minimum_height.to_f : 0 %>,
+    allowSelect: <%= @crop.crop_definition.selection_enabled %>,
+    allowMove: <%= @crop.crop_definition.selection_moveable %>,
+    allowResize: <%= @crop.crop_definition.selection_resizable %>,
+    keySupport: false,
     onChange: function(c) {
       $('#crop_x1').val(c.x);
       $('#crop_x2').val(c.x2);
@@ -39,18 +43,17 @@ $(window).load(function(){
       <%= @crop.y2 %>
     <%- end -%>
   ]);
-  // Some additional setup based on crop definition
-  api.setOptions({
-    allowSelect: <%= @crop.crop_definition.selection_enabled %>,
-    allowMove: <%= @crop.crop_definition.selection_moveable %>,
-    allowResize: <%= @crop.crop_definition.selection_resizable %>
-  });
-  api.enable();
+  api.focus();
 
   // Slider
   $("#slider").slider({
-    value: <%= params[:scale] ? params[:scale].to_f : Crop::DEFAULT_IMAGE_SCALE %>,
+    min: 5,
+    max: 200,
     step: 5,
+    value: <%= params[:scale] ? params[:scale].to_f : Crop::DEFAULT_IMAGE_SCALE %>,
+    slide: function(event, slider) {
+      $('#scale-number').text(slider.value + '%');
+    },
     change: function(event, slider) {
       $('#scale').val(slider.value);
       var url = "<%= url_for([:edit, @image, @crop]) %>"

@@ -3,6 +3,7 @@
 <div class="fw"><%= f.label :crop_definition_id, 'Crop definition' %><br />
 <%= f.collection_select :crop_definition_id, @image.crop_definitions, :id, :name %></div>
 
+<div id="effed">nothing</div>
 <p>Image scale: <span id="scale-number"><%= params[:scale] || Crop::DEFAULT_IMAGE_SCALE %>%</span></p>
 <div id="slider"></div>
 
