@@ -4,6 +4,7 @@ class Image < Asset
   has_attached_file :file, :url => "/system/images/:attachment/:id/:style/:filename", 
     :styles => {
       :thumbnail => "125x125>",
+      :edit => "200x200>",
       :small => "800x800>" }
 
   before_file_post_process :set_data_columns

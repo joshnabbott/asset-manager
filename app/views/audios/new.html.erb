@@ -11,7 +11,6 @@
 <% form_for(@audio, :html => { :multipart => true }) do |f| %>
   <fieldset>
   	<%= render :partial => 'form', :locals => { :f => f } %>
-
     <div class='bw'>
       <%= f.submit 'Create Audio' %> - or - <%= link_to 'Cancel', audios_path %>
     </div>

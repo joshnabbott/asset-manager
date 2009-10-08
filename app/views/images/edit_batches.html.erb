@@ -1,32 +1,24 @@
-<h1>Batch editing images</h1>
+<% content_for :head do %>
+<!--[if IE]>
+<style type="text/css">
+  .clearfix {
+    zoom: 1;     /* triggers hasLayout */
+    display: block;     /* resets display for IE/Win */
+    }  /* Only IE can see inside the conditional comment
+    and read this CSS rule. Don't ever use a normal HTML
+    comment inside the CC or it will close prematurely. */
+</style>
+<![endif]-->
+<% end %>
+
+<h1>Batch Edit Images</h1>
 
 <%- form_for(@images, :url => update_batch_images_path(@images)) do |f| -%>
-  <table width="100%" id="edit_batch_images" border="1">
-    <%- @images.in_groups_of(3, false) do |images| -%>
-      <tr>
-        <%- images.each do |image| -%>
-          <td width="25%">
-            <div><%= image_tag(image.file(:small), :height => 200) %></div>
-            <div class="fw">
-              <%= f.label :asset_category_ids, 'Asset Categories' %><br/>
-              <%= f.collection_select :asset_category_ids, AssetCategory.all, :id, :name, {}, :multiple => true %>
-            </div>
-            <div>
-              <%= label_tag "image_title_#{image.id}", 'Title' %><br/>
-              <%= text_field_tag 'image[title][]', image.title, :id => "image_title_#{image.id}" %>
-            </div>
-            <div>
-              <%= label_tag "image_description_#{image.id}", 'Description' %><br/>
-              <%= text_area_tag 'image[description][]', image.description, :id => "image_description_#{image.id}" %>
-            </div>
-            <div>
-              <%= label_tag "image_tag_list_#{image.id}", 'Tags (separate tags with a comma)' %><br/>
-              <%= text_field_tag 'image[tag_list][]', image.tag_list, :id => "image_tag_list_#{image.id}" %>
-            </div>
-          </td>
-        <%- end -%>
-      </tr>
-    <%- end -%>
-  </table>
-  <p><%= f.submit 'Update All' %> - or - <%= link_to 'Cancel', images_path %></p>
+  <% @images.in_groups_of(3, false) do |images| %>
+  <div class="clearfix">
+    <%= render :partial => "images/batch_image", :collection => images, :locals => {:f => f} %>
+  </div>
+  <% end %>
+  <div class="asset_reset"></div>
+  <div class="bw"><%= f.submit 'Update All' %> - or - <%= link_to 'Cancel', images_path %></div>
 <%- end -%>

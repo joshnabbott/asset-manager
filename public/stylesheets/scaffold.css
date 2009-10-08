@@ -158,19 +158,15 @@ ul#global_toolbar {
 .bw {
 }
 
+.clearfix {clear: both;}
+
 fieldset {
   border: 1px solid #EEE;
   padding: 10px;
 }
 
-fieldset.batch_audio {
+fieldset.batch_item {
   width: 275px;
-  height: 250px;
-}
-
-fieldset.batch_video {
-  width: 275px;
-  height: 360px;
 }
 
 .pagination {

@@ -1,5 +1,5 @@
 <div class="batch_display_item">
-  <fieldset class="batch_video">
+  <fieldset class="batch_item">
     <div class="fw"><%= image_tag(batch_video.preview.url(:edit)) %></div>
     <p>
       <strong>File Name:</strong> <%= batch_video.file_file_name %>
@@ -12,7 +12,7 @@
       <%= label_tag "video_description_#{batch_video.id}", 'Description' %>
       <%= text_area_tag 'video[description][]', batch_video.description, :id => "video_description_#{batch_video.id}" %>
     </div>
-    <div>
+    <div class="fw">
       <%= label_tag "video_tag_list_#{batch_video.id}", 'Tags (separate tags with a comma)' %>
       <%= text_field_tag 'video[tag_list][]', batch_video.tag_list, :id => "video_tag_list_#{batch_video.id}" %>
     </div>
