@@ -1,0 +1,14 @@
+<h1>Show Video Format</h1>
+<div id="asset_nav">
+  <%= link_to 'Edit', edit_video_format_path(@video_format) %> |
+  <%= link_to 'Back', video_formats_path %>
+</div>
+<p>
+  <strong>Title:</strong> <%=h @video_format.title %>
+</p>
+<p>
+  <strong>Description:</strong> <%=h @video_format.description %>
+</p>
+<p>
+  <strong>Conversion Command:</strong> <%=h @video_format.conversion_command %>
+</p>

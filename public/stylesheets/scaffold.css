@@ -22,6 +22,10 @@ a:hover { color: #fff; background-color:#000; }
   display: table;
 }
 
+.fieldWithErrors label {
+  padding: 5px;
+}
+
 #errorExplanation {
   width: 400px;
   border: 2px solid red;
@@ -154,21 +158,31 @@ ul#global_toolbar {
 .bw {
 }
 
+.replacement_tokens {
+  padding: 0 20px;
+  float: right;
+}
+
+.clearfix {clear: both;}
+
 fieldset {
   border: 1px solid #EEE;
   padding: 10px;
 }
 
-fieldset.batch_audio {
+fieldset.batch_item {
   width: 275px;
-  height: 250px;
-}
-
-fieldset.batch_video {
-  width: 275px;
-  height: 360px;
 }
 
 .pagination {
   padding: 8px 0;
+}
+
+fieldset label {
+  display: block;
+  font-weight: bold;
+}
+
+.actions {
+  white-space: nowrap;
 }

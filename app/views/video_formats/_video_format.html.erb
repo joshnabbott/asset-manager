@@ -1,0 +1,8 @@
+<tr class="<%= cycle('even', 'odd') %>">
+  <td><%=h video_format.title %></td>
+  <td><%=h video_format.description %></td>
+  <td class="actions">
+    <%= link_to 'Show', video_format %> | 
+    <%= link_to 'Edit', edit_video_format_path(video_format) %> | 
+    <%= link_to 'Destroy', video_format, :confirm => 'Are you sure?', :method => :delete %></td>
+</tr>

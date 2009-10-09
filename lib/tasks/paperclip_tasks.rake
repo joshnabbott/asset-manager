@@ -1,0 +1,1 @@
+../../vendor/gems/thoughtbot-paperclip-2.3.1/tasks/paperclip_tasks.rake

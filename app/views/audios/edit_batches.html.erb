@@ -1,7 +1,24 @@
+<% content_for :head do %>
+<!--[if IE]>
+<style type="text/css">
+  .clearfix {
+    zoom: 1;     /* triggers hasLayout */
+    display: block;     /* resets display for IE/Win */
+    }  /* Only IE can see inside the conditional comment
+    and read this CSS rule. Don't ever use a normal HTML
+    comment inside the CC or it will close prematurely. */
+</style>
+<![endif]-->
+<% end %>
+
 <h1>Batch Edit Audio</h1>
 
 <%- form_for(@audios, :url => update_batch_audios_path(@audios)) do |f| -%>
-  <%= render :partial => "audios/batch_audio", :collection => @audios %>
+  <% @audios.in_groups_of(3, false) do |audios| %>
+  <div class="clearfix">
+    <%= render :partial => "audios/batch_audio", :collection => audios %>
+  </div>
+  <% end %>
   <div class="asset_reset"></div>
   <div class="bw"><%= f.submit 'Update All' %> - or - <%= link_to 'Cancel', audios_path %></div>
 <%- end -%>
