@@ -183,6 +183,11 @@ fieldset label {
   font-weight: bold;
 }
 
+fieldset label.inline {
+  display: inline;
+  font-weight: bold;
+}
+
 .actions {
   white-space: nowrap;
 }

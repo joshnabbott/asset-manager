@@ -1,16 +1,14 @@
-<h1>Editing asset_category</h1>
+<h1>Editing Asset Category</h1>
 
 <% form_for(@asset_category) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+  <fieldset>
+    <%= f.error_messages %>
+    <div class="fw">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="bw">
+      <%= f.submit 'Update' %> - or - <%= link_to 'Cancel', asset_categories_path %>
+    </div>
+  </fieldset>
 <% end %>
-
-<%= link_to 'Show', @asset_category %> |
-<%= link_to 'Back', asset_categories_path %>
