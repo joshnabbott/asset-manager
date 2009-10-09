@@ -33,3 +33,17 @@
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 }
+
+/* Rule of thirds for tracker */
+.horizontal-third {
+  height: 10000px;
+  width: 1px;
+  display: block;
+  float: left;
+  margin-left: 33%
+}
+.vertical-third {
+  height: 1px;
+  width: 10000px;
+  margin-top: 33%
+}

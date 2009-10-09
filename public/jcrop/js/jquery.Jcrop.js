@@ -65,6 +65,10 @@ $.Jcrop = function(obj,opt)
 		bgOpacity:			.6,
 		borderOpacity:		.4,
 		handleOpacity:		.5,
+		// Add rule of thirds grid to tracker
+		addGrid:        true,
+		gridColor:      'black',
+		gridOpacity:    .4,
 
 		handlePad:			5,
 		handleSize:			9,
@@ -618,6 +622,30 @@ $.Jcrop = function(obj,opt)
 				.css({ cursor: 'move', position: 'absolute', zIndex: 360 })
 
 		$img_holder.append($track);
+
+    // Add rule of thirds grid to tracker
+    if(options.addGrid) {
+		  $track.append($('<div></div>').css({
+		    'background-color': options.gridColor,
+		    opacity: options.gridOpacity
+		  }).addClass('horizontal-third'));
+
+  		$track.append($('<div></div>').css({
+  		  'background-color': options.gridColor,
+		    opacity: options.gridOpacity
+  		}).addClass('horizontal-third'));
+
+  		$track.append($('<div></div>').css({
+  		  'background-color': options.gridColor,
+		    opacity: options.gridOpacity
+  		}).addClass('vertical-third'));
+
+  		$track.append($('<div></div>').css({
+  		  'background-color': options.gridColor,
+		    opacity: options.gridOpacity
+  		}).addClass('vertical-third'));
+    }
+
 		disableHandles();
 
 		return {

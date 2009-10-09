@@ -39,7 +39,8 @@ module Paperclip
       if File.exist?(self.outfile_with_path(true))
         return self.outfile_with_path
       else
-        if self.scale! && self.add_grid!
+        # if self.scale! && self.add_grid!
+        if self.scale!
           return self.outfile_with_path
         else
           logger.debug("Attachment#scale_to failed with status code #{$CHILD_STATUS.exitstatus}")

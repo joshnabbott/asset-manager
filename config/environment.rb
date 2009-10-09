@@ -53,3 +53,7 @@ end
 
 # Add these paths manually since passenger won't sometimes.
 ENV['PATH'] = '/usr/local/bin:/opt/local/bin:' + ENV['PATH']
+
+Mime::Type.register "image/jpeg", :jpeg
+Mime::Type.register_alias "image/jpeg", :jpg
+Mime::Type.register "image/png", :png
