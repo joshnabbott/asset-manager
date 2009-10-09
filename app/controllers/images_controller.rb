@@ -18,6 +18,16 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.jpg do
+        send_file(@image.file.path, :filename => @image.file_file_name,
+        :disposition => 'inline',
+        :type => 'image/jpeg')
+      end
+      format.png do
+        send_file(@image.file.path, :filename => @image.file_file_name,
+        :disposition => 'inline',
+        :type => 'image/png')
+      end
       format.xml  { render :xml => @image }
     end
   end
@@ -101,7 +111,7 @@ class ImagesController < ApplicationController
       image.title              = params[:image]['title'][index]
       image.description        = params[:image]['description'][index]
       image.tag_list           = params[:image]['tag_list'][index]
-      image.asset_category_ids = params[:image]['asset_category_ids'][index]
+      image.asset_category_ids = params[:image]['asset_category_ids'][index] if params[:image]['asset_category_ids']
     end
 
     respond_to do |format|
