@@ -639,21 +639,25 @@ $.Jcrop = function(obj,opt)
     if(options.addGrid) {
       $track.append($('<div></div>').css({
         'background-color': options.gridColor,
+        // 'border-left': '1px dashed ' + options.gridColor,
         opacity: options.gridOpacity
       }).addClass('horizontal-third'));
 
       $track.append($('<div></div>').css({
         'background-color': options.gridColor,
+        // 'border-left': '1px dashed ' + options.gridColor,
         opacity: options.gridOpacity
       }).addClass('horizontal-third'));
 
       $track.append($('<div></div>').css({
         'background-color': options.gridColor,
+        // 'border-top': '1px dashed ' + options.gridColor,
         opacity: options.gridOpacity
       }).addClass('vertical-third'));
 
       $track.append($('<div></div>').css({
         'background-color': options.gridColor,
+        // 'border-top': '1px dashed ' + options.gridColor,
         opacity: options.gridOpacity
       }).addClass('vertical-third'));
     }

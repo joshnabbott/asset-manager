@@ -40,10 +40,12 @@
   width: 1px;
   display: block;
   float: left;
-  margin-left: 33%
+  margin-left: 33%;
+/*  background: white url('Jcrop.gif') top left repeat;*/
 }
 .vertical-third {
   height: 1px;
   width: 10000px;
-  margin-top: 33%
+  margin-top: 33%;
+/*  background: white url('Jcrop.gif') top left repeat;*/
 }
