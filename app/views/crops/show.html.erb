@@ -1,43 +1,36 @@
+<h1>Show Crop</h1>
+<div id="asset_nav">
+  <%= link_to 'Edit', [:edit, @image, @crop] %> |
+  <%= link_to 'Back', [@image, :crops] %>
+</div>
 <p>
-  <b>Image:</b>
-  <%=h @crop.image.file_file_name %>
+  <strong>Image:</strong> <%=h @crop.image.file_file_name %>
 </p>
 
 <p>
-  <b>Crop definition:</b>
-  <%=h @crop.crop_definition.name %>
+  <strong>Crop definition:</strong> <%=h @crop.crop_definition.name %>
 </p>
 
 <p>
-  <b>x1:</b>
-  <%=h @crop.x1 %>
+  <strong>x1:</strong> <%=h @crop.x1 %>
 </p>
 
 <p>
-  <b>x2:</b>
-  <%=h @crop.x2 %>
+  <strong>x2:</strong> <%=h @crop.x2 %>
 </p>
 
 <p>
-  <b>y1:</b>
-  <%=h @crop.y1 %>
+  <strong>y1:</strong> <%=h @crop.y1 %>
 </p>
 
 <p>
-  <b>y2:</b>
-  <%=h @crop.y2 %>
+  <strong>y2:</strong> <%=h @crop.y2 %>
 </p>
 
 <p>
-  <b>Width:</b>
-  <%=h @crop.width %>
+  <strong>Width:</strong> <%=h @crop.width %>
 </p>
 
 <p>
-  <b>Height:</b>
-  <%=h @crop.height %>
+  <strong>Height:</strong> <%=h @crop.height %>
 </p>
-
-
-<%= link_to 'Edit', [:edit, @image, @crop] %> |
-<%= link_to 'Back', [@image, :crops] %>

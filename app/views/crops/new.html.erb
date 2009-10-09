@@ -8,13 +8,13 @@
 <%= javascript_include_tag new_image_crop_path(@image, :format => :js, :params => params) %>
 <%- end -%>
 
-<h1>New crop</h1>
+<h1>New Crop</h1>
 
 <% form_for([@image, @crop]) do |f| %>
   <fieldset>
     <%= render :partial => 'form', :locals => { :f => f } %>
-    <p>
+    <div class="bw">
       <%= f.submit 'Create' %> - or - <%= link_to 'Cancel', [@image, :crops] %>
-    </p>
+    </div>
   </fieldset>
 <% end %>
