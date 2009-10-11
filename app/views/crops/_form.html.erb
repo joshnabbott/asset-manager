@@ -6,12 +6,14 @@
 <p>Image scale: <span id="scale-number"><%= params[:scale] || Crop::DEFAULT_IMAGE_SCALE %></span>%</p>
 <div id="scale-slider"></div>
 
+<p><%= link_to 'Change grid style', {}, :id => 'show-grid-options' %></p>
+
 <div id="grid-options">
   <p><label for="grid_style">Crosshair</label><br/>
   <%= check_box_tag :grid_style %></p>
 
   <p><label for="grid_color">Color</label><br/>
-  <%= select_tag :grid_color, options_for_select(['black', 'blue', 'green', 'red', 'white', 'yellow']) %></p>
+  <%= select_tag :grid_color, options_for_select(%w(black blue green red white yellow).collect { |color| [color.humanize, color] }) %></p>
 
   <p>Opacity: <span id="grid-opacity-number">40</span>%</p>
   <div id="grid-opacity-slider"></div>

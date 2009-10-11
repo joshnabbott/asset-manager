@@ -77,6 +77,22 @@ $(window).load(function(){
   });
   api.enable();
 
+  // Grid options
+  $('#grid-options').hide();
+  $('#grid-options').dialog({
+    title: 'Grid style',
+    bgiframe: true,
+    autoOpen: false,
+    height: 'auto',
+    width: 'auto',
+    modal: false,
+    resizable: false
+  });
+  $('#show-grid-options').click(function(){
+    $('#grid-options').dialog('open');
+    return false;
+  });
+
   // Grid opacity Slider
   $("#grid-opacity-slider").slider({
     min: 0,
