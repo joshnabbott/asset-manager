@@ -9,6 +9,9 @@ ActionController::Routing::Routes.draw do |map|
 
   # Routes for images, this includes custom routes for batch options
   map.resources :images, :has_many => [ :crops ]
+  # Path for crop
+  map.cropped_image '/images/:id/:name.:format', :controller => 'images', :action => 'show', :requirements => { :name => /[0-9a-z]{32}/ }
+
   map.edit_batch_images 'images/*ids/edit', :controller => 'images', :action => 'edit_batches', :conditions => { :method => :get }
   map.update_batch_images 'images/*ids', :controller => 'images', :action => 'update_batches', :conditions => { :method => :put }
   map.destroy_batch_images 'images/*ids', :controller => 'images', :action => 'destroy_batches', :conditions => { :method => :delete }

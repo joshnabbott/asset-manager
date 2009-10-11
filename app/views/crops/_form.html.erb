@@ -3,8 +3,19 @@
 <div class="fw"><%= f.label :crop_definition_id, 'Crop definition' %><br />
 <%= f.collection_select :crop_definition_id, @image.crop_definitions, :id, :name %></div>
 
-<p>Image scale: <span id="scale-number"><%= params[:scale] || Crop::DEFAULT_IMAGE_SCALE %>%</span></p>
-<div id="slider"></div>
+<p>Image scale: <span id="scale-number"><%= params[:scale] || Crop::DEFAULT_IMAGE_SCALE %></span>%</p>
+<div id="scale-slider"></div>
+
+<div id="grid-options">
+  <p><label for="grid_style">Crosshair</label><br/>
+  <%= check_box_tag :grid_style %></p>
+
+  <p><label for="grid_color">Color</label><br/>
+  <%= select_tag :grid_color, options_for_select(['black', 'blue', 'green', 'red', 'white', 'yellow']) %></p>
+
+  <p>Opacity: <span id="grid-opacity-number">40</span>%</p>
+  <div id="grid-opacity-slider"></div>
+</div>
 
 <%= image_tag(@image.file.scale_to(params[:scale] || Crop::DEFAULT_IMAGE_SCALE), :id => 'crop-target') %>
 

@@ -35,7 +35,7 @@
 }
 
 /* Rule of thirds for tracker */
-.horizontal-third {
+.grid.horizontal {
   height: 10000px;
   width: 1px;
   display: block;
@@ -43,7 +43,7 @@
   margin-left: 33%;
 /*  background: white url('Jcrop.gif') top left repeat;*/
 }
-.vertical-third {
+.grid.vertical {
   height: 1px;
   width: 10000px;
   margin-top: 33%;

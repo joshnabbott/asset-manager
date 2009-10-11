@@ -70,6 +70,7 @@ $.Jcrop = function(obj,opt)
     addGrid:        true,
     gridColor:      'black',
     gridOpacity:    .4,
+    gridStyle:      'rule-of-thirds',
 
     handlePad:      5,
     handleSize:      9,
@@ -549,8 +550,18 @@ $.Jcrop = function(obj,opt)
     // Grid
     function updateGrid() {
       if(options.addGrid) {
-        $('.horizontal-third').css({'margin-left': '33%'});
-        $('.vertical-third').css({'margin-top': Math.floor($track.height() / 3)});
+        var divisor = (options.gridStyle == 'rule-of-thirds' ? 3 : 2);
+
+        $('.grid.horizontal').css({
+          'margin-left': Math.floor($track.width() / divisor),
+          'background-color': options.gridColor,
+          opacity: options.gridOpacity
+        });
+        $('.grid.vertical').css({
+          'margin-top': Math.floor($track.height() / divisor),
+          'background-color': options.gridColor,
+          opacity: options.gridOpacity
+        });
       }
     }
 
@@ -630,38 +641,42 @@ $.Jcrop = function(obj,opt)
     };
     /*}}}*/
 
+    // Grid
+    function drawGrid(tracker) {
+      if(options.addGrid) {
+        tracker.append($('<div></div>').css({
+          'background-color': options.gridColor,
+          // 'border-left': '1px dashed ' + options.gridColor,
+          opacity: options.gridOpacity
+        }).addClass('grid horizontal'));
+
+        tracker.append($('<div></div>').css({
+          'background-color': options.gridColor,
+          // 'border-left': '1px dashed ' + options.gridColor,
+          opacity: options.gridOpacity
+        }).addClass('grid horizontal'));
+
+        tracker.append($('<div></div>').css({
+          'background-color': options.gridColor,
+          // 'border-top': '1px dashed ' + options.gridColor,
+          opacity: options.gridOpacity
+        }).addClass('grid vertical'));
+
+        tracker.append($('<div></div>').css({
+          'background-color': options.gridColor,
+          // 'border-top': '1px dashed ' + options.gridColor,
+          opacity: options.gridOpacity
+        }).addClass('grid vertical'));
+        return tracker;
+      }
+    }
     var $track = newTracker().mousedown(createDragger('move'))
         .css({ cursor: 'move', position: 'absolute', zIndex: 360 })
 
     $img_holder.append($track);
 
     // Grid
-    if(options.addGrid) {
-      $track.append($('<div></div>').css({
-        'background-color': options.gridColor,
-        // 'border-left': '1px dashed ' + options.gridColor,
-        opacity: options.gridOpacity
-      }).addClass('horizontal-third'));
-
-      $track.append($('<div></div>').css({
-        'background-color': options.gridColor,
-        // 'border-left': '1px dashed ' + options.gridColor,
-        opacity: options.gridOpacity
-      }).addClass('horizontal-third'));
-
-      $track.append($('<div></div>').css({
-        'background-color': options.gridColor,
-        // 'border-top': '1px dashed ' + options.gridColor,
-        opacity: options.gridOpacity
-      }).addClass('vertical-third'));
-
-      $track.append($('<div></div>').css({
-        'background-color': options.gridColor,
-        // 'border-top': '1px dashed ' + options.gridColor,
-        opacity: options.gridOpacity
-      }).addClass('vertical-third'));
-    }
-
+    drawGrid($track);
     disableHandles();
 
     return {

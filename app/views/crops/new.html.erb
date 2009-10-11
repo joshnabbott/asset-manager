@@ -1,10 +1,10 @@
 <%- content_for :stylesheets do -%>
-<%= stylesheet_link_tag '/jcrop/css/jquery.Jcrop.css' %>
+<%= stylesheet_link_tag '/jcrop/css/jquery.jcrop.css' %>
 <%= stylesheet_link_tag('smoothness/jquery-ui-1.7.2.custom')%>
 <%- end -%>
 
 <%- content_for :javascripts do -%>
-<%= javascript_include_tag '/jcrop/js/jquery.Jcrop.js' %>
+<%= javascript_include_tag '/jcrop/js/jquery.jcrop.js' %>
 <%= javascript_include_tag new_image_crop_path(@image, :format => :js, :params => params) %>
 <%- end -%>
 

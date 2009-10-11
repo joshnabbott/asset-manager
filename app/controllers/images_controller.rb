@@ -23,11 +23,12 @@ class ImagesController < ApplicationController
         :disposition => 'inline',
         :type => 'image/jpeg')
       end
-      format.png do
-        send_file(@image.file.path, :filename => @image.file_file_name,
-        :disposition => 'inline',
-        :type => 'image/png')
-      end
+      format.png
+      # do
+      #   send_file(@image.file.path, :filename => @image.file_file_name,
+      #   :disposition => 'inline',
+      #   :type => 'image/png')
+      # end
       format.xml  { render :xml => @image }
     end
   end
