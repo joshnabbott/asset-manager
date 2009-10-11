@@ -1,31 +1,31 @@
 <%= f.error_messages %>
 
-<div class="fw"><%= f.label :asset_category_id, 'Asset Category' %><br />
+<div class="fw"><%= f.label :asset_category_id, 'Asset Category' %>
 <%= f.collection_select :asset_category_id, AssetCategory.all, :id, :name %></div>
 
-<div class="fw"><%= f.label :name %><br />
+<div class="fw"><%= f.label :name %>
 <%= f.text_field :name %></div>
 
-<div class="fw"><%= f.label :minimum_width %><br />
+<div class="fw"><%= f.label :minimum_width %>
 <%= f.text_field :minimum_width %></div>
 
-<div class="fw"><%= f.label :minimum_height %><br />
+<div class="fw"><%= f.label :minimum_height %>
 <%= f.text_field :minimum_height %></div>
 
-<div class="fw"><%= f.label :x %><br />
+<div class="fw"><%= f.label :x %>
 <%= f.text_field :x %></div>
 
-<div class="fw"><%= f.label :y %><br />
+<div class="fw"><%= f.label :y %>
 <%= f.text_field :y %></div>
 
-<div class="fw"><%= f.label :locked_ratio %><br />
+<div class="fw"><%= f.label :locked_ratio, {}, :class => "inline" %>
 <%= f.check_box :locked_ratio %></div>
 
-<div class="fw"><%= f.label :selection_enabled %><br />
+<div class="fw"><%= f.label :selection_enabled, {}, :class => "inline" %>
 <%= f.check_box :selection_enabled %></div>
 
-<div class="fw"><%= f.label :selection_moveable %><br />
+<div class="fw"><%= f.label :selection_moveable, {}, :class => "inline" %>
 <%= f.check_box :selection_moveable %></div>
 
-<div class="fw"><%= f.label :selection_resizable %><br />
+<div class="fw"><%= f.label :selection_resizable, {}, :class => "inline" %>
 <%= f.check_box :selection_resizable %></div>

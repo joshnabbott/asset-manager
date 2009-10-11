@@ -31,6 +31,7 @@ module Paperclip
 
     def scale!
       system("`which convert` #{self.path} -strip -resize #{@scale_to}% #{self.outfile_with_path(true)}")
+      logger.info system(`which convert`)
       return $CHILD_STATUS.exitstatus == 0 ? true : false
     end
 

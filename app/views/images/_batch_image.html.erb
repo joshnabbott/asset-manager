@@ -1,0 +1,24 @@
+<div class="batch_display_item">
+  <fieldset class="batch_item">
+    <div class="fw"><%= image_tag(batch_image.file(:edit)) %></div>
+    <p>
+      <strong>File Name:</strong> <%= batch_image.file_file_name %>
+    </p>
+    <div class="fw">
+      <%= f.label :asset_category_ids, 'Asset Categories' %>
+      <%= f.collection_select :asset_category_ids, AssetCategory.all, :id, :name, {}, :multiple => true %>
+    </div>
+    <div class="fw">
+      <%= label_tag "image_title_#{batch_image.id}", 'Title' %>
+      <%= text_field_tag 'image[title][]', batch_image.title, :id => "image_title_#{batch_image.id}" %>
+    </div>
+    <div class="fw">
+      <%= label_tag "image_description_#{batch_image.id}", 'Description' %>
+      <%= text_area_tag 'image[description][]', batch_image.description, :id => "image_description_#{batch_image.id}" %>
+    </div>
+    <div class="fw">
+      <%= label_tag "image_tag_list_#{batch_image.id}", 'Tags (separate tags with a comma)' %>
+      <%= text_field_tag 'image[tag_list][]', batch_image.tag_list, :id => "image_tag_list_#{batch_image.id}" %>
+    </div>
+  </fieldset>
+</div>

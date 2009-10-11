@@ -1,6 +1,4 @@
 <tr class="<%= cycle('even', 'odd') %>">
   <td><%=h asset_category.name %></td>
-  <td><%= link_to 'Show', asset_category %></td>
-  <td><%= link_to 'Edit', edit_asset_category_path(asset_category) %></td>
-  <td><%= link_to 'Destroy', asset_category, :confirm => 'Are you sure?', :method => :delete %></td>
+  <td><%= link_to 'Show', asset_category %> | <%= link_to 'Edit', edit_asset_category_path(asset_category) %> | <%= link_to 'Destroy', asset_category, :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>

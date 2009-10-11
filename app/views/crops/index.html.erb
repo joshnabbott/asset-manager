@@ -1,19 +1,21 @@
-<h1>Listing crops</h1>
-
-<table>
+<h1>Listing Crops</h1>
+<div id="asset_nav"><%= link_to 'New Crop', [:new, @image, :crop] %></div>
+<%- if @crops.length > 0 %>
+<table id="asset_list">
   <tr>
     <th>Image</th>
     <th>Crop definition</th>
-    <th>x1</th>
-    <th>x2</th>
-    <th>y1</th>
-    <th>y2</th>
     <th>Width</th>
     <th>Height</th>
+    <th>Options</th>
   </tr>
   <%= render @crops %>
 </table>
-
-<br />
-
-<%= link_to 'New crop', [:new, @image, :crop] %>
+<div id="asset_nav_footer">
+  <%= link_to 'New Crop', new_image_path %>
+</div>
+<% else %>
+<div id="no_assets_message">
+  There are currently no crops to display.
+</div>
+<% end %>

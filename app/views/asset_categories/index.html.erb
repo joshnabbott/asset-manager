@@ -1,12 +1,19 @@
-<h1>Listing asset_categories</h1>
+<h1>Listing Asset Categories</h1>
+<div id="asset_nav"><%= link_to 'New Asset Category', new_asset_category_path %></div>
 
-<table>
+<%- if @asset_categories.length > 0 -%>
+<table id="asset_list">
   <tr>
     <th>Name</th>
+    <th>Options</th>
   </tr>
   <%= render @asset_categories %>
 </table>
-
-<br />
-
-<%= link_to 'New asset_category', new_asset_category_path %>
+<div id="asset_nav_footer">
+  <%= link_to 'New Asset Category', new_asset_category_path %>
+</div>
+<%- else -%>
+<div id="no_assets_message">
+  There are currently no asset categories to display.
+</div>
+<%- end -%>

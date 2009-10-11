@@ -1,0 +1,11 @@
+<h1>New Video Format</h1>
+
+<%= render :partial => 'replacement_tokens' %>
+<% form_for(@video_format) do |f| %>
+  <fieldset>
+  	<%= render :partial => 'form', :locals => { :f => f } %>
+    <div class='bw'>
+      <%= f.submit 'Create Video Format' %> - or - <%= link_to 'Cancel', video_formats_path %>
+    </div>
+  </fieldset>
+<% end %>

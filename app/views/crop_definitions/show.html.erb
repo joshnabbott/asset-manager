@@ -1,38 +1,26 @@
+<h1>Show Crop Definition</h1>
+<div id="asset_nav">
+  <%= link_to 'Edit', edit_crop_definition_path(@crop_definition) %> |
+  <%= link_to 'Back', crop_definitions_path %>
+</div>
 <p>
-  <b>Asset category:</b>
-  <%=h @crop_definition.asset_category.name %>
+  <strong>Asset category:</strong> <%=h @crop_definition.asset_category.name %>
 </p>
-
 <p>
-  <b>Name:</b>
-  <%=h @crop_definition.name %>
-</p>
-
+  <strong>Name:</strong> <%=h @crop_definition.name %>
+</p> 
 <p>
-  <b>Minimum width:</b>
-  <%=h @crop_definition.minimum_width %>
+  <strong>Minimum width:</strong> <%=h @crop_definition.minimum_width %>
 </p>
-
 <p>
-  <b>Minimum height:</b>
-  <%=h @crop_definition.minimum_height %>
+  <strong>Minimum height:</strong> <%=h @crop_definition.minimum_height %>
 </p>
-
 <p>
-  <b>X:</b>
-  <%=h @crop_definition.x %>
+  <strong>X:</strong> <%=h @crop_definition.x %>
 </p>
-
 <p>
-  <b>Y:</b>
-  <%=h @crop_definition.y %>
+  <strong>Y:</strong> <%=h @crop_definition.y %>
 </p>
-
 <p>
-  <b>Locked ratio:</b>
-  <%=h @crop_definition.locked_ratio %>
+  <strong>Locked ratio:</strong> <%=h @crop_definition.locked_ratio %>
 </p>
-
-
-<%= link_to 'Edit', edit_crop_definition_path(@crop_definition) %> |
-<%= link_to 'Back', crop_definitions_path %>

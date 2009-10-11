@@ -8,13 +8,13 @@
 <%= javascript_include_tag edit_image_crop_path(@image, @crop, :format => :js, :params => params) %>
 <%- end -%>
 
-<h1>Editing crop</h1>
+<h1>Editing Crop</h1>
 
 <% form_for([@image, @crop]) do |f| %>
   <fieldset>
     <%= render :partial => 'form', :locals => { :f => f } %>
-    <p>
+    <div class="bw">
       <%= f.submit 'Update' %> - or - <%= link_to 'Cancel', [@image, :crops] %>
-    </p>
+    </div>
   </fieldset>
 <% end %>

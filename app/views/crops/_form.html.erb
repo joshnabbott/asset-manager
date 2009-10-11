@@ -19,7 +19,9 @@
   <div id="grid-opacity-slider"></div>
 </div>
 
-<%= image_tag(@image.file.scale_to(params[:scale] || Crop::DEFAULT_IMAGE_SCALE), :id => 'crop-target') %>
+<div class="fw">
+  <%= image_tag(@image.file.scale_to(params[:scale] || Crop::DEFAULT_IMAGE_SCALE), :id => 'crop-target') %>
+</div>
 
 <%= hidden_field_tag :scale, (params[:scale] || Crop::DEFAULT_IMAGE_SCALE) %>
 <%= f.hidden_field :x1 %>

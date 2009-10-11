@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :video_formats
+
   map.resources :asset_categories
   map.resources :crop_definitions
 
