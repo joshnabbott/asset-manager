@@ -2,6 +2,17 @@
 	<td><%= check_box_tag 'videos[]', video.id %></td>
 	<td><%= image_tag(video.preview.url(:icon)) %></td>
 	<td><%= video.title %></td>
+	<td>
+	  <% if video.encoded_videos.length > 0 %>
+      <ul>
+      <% for encoded_video in video.encoded_videos %>
+        <li><%=h encoded_video.video_format.title %></li>
+      <% end %>
+    </ul>
+    <% else %>
+    None
+    <% end %>
+	</td>
 	<td><%= video.file_file_name %></td>
 	<td class="actions">
 		<%= link_to 'Show', video %> | 

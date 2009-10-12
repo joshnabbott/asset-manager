@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091008172609) do
+ActiveRecord::Schema.define(:version => 20091009204741) do
 
   create_table "asset_categories", :force => true do |t|
     t.string   "name"
@@ -67,6 +67,16 @@ ActiveRecord::Schema.define(:version => 20091008172609) do
     t.integer  "y2"
     t.integer  "width"
     t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "encoded_videos", :force => true do |t|
+    t.integer  "video_id"
+    t.integer  "video_format_id"
+    t.string   "file_file_path"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
