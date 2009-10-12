@@ -12,7 +12,7 @@
   <%= render @crops %>
 </table>
 <div id="asset_nav_footer">
-  <%= link_to 'New Crop', new_image_path %>
+  <%= link_to 'New Crop', [:new, @image, :crop] %>
 </div>
 <% else %>
 <div id="no_assets_message">
