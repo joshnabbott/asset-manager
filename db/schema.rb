@@ -77,6 +77,12 @@ ActiveRecord::Schema.define(:version => 20091009204741) do
     t.string   "file_file_path"
     t.string   "file_content_type"
     t.integer  "file_file_size"
+    t.string   "preview_file_path"
+    t.string   "preview_content_type"
+    t.integer  "preview_file_size"
+    t.integer  "width"
+    t.integer  "height"
+    t.float    "aspect_ratio"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -112,6 +118,8 @@ ActiveRecord::Schema.define(:version => 20091009204741) do
     t.string   "title"
     t.text     "description"
     t.text     "conversion_command"
+    t.string   "resolution"
+    t.string   "output_file_extension"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -20,6 +20,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Routes for videos, this includes custom routes for batch options
   map.resources :videos
+  map.encode 'videos/:id/encode', :controller => 'videos', :action => 'encode'
   map.edit_batch_videos 'videos/*ids/edit', :controller => 'videos', :action => 'edit_batches', :conditions => { :method => :get }
   map.update_batch_videos 'videos/*ids', :controller => 'videos', :action => 'update_batches', :conditions => { :method => :put }
   map.detroy_batch_videos 'videos/*ids', :controller => 'videos', :action => 'destroy_batches', :conditions => { :method => :delete }

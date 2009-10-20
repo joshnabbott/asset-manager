@@ -53,6 +53,21 @@ class Video < Asset
     return ext.uniq
   end
   
+  # Create encoded videos
+  def encode_video
+    formats = VideoFormat.find(:all)
+    current_encode_ids = self.encoded_videos.map { |id| id }
+    for format in formats
+      # Check to see if video encode exists
+      unless (current_encode_ids.include?(format.id))
+        new_enc = EncodedVideo.new
+        new_enc.video = self
+        new_enc.video_format = format
+        new_enc.process_video
+      end
+    end
+  end
+  
   # Create easy hooks for rvideo data, go go gadget method_missing
   def method_missing(m, *args, &block)
     begin

@@ -110,6 +110,12 @@ class VideosController < ApplicationController
       end
     end
   end
+  
+  # Encode videos
+  def encode
+    @video = Video.find(params[:id])
+    @video.encode_video
+  end
 
   # DELETE /videos/1
   # DELETE /videos/1.xml
