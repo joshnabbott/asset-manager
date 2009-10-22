@@ -34,6 +34,9 @@ class Video < Asset
     self.width = image.try(:width)
     self.aspect_ratio = image.try(:aspect)
     self.preview_offset = milliseconds
+    for encoded_video in self.encoded_videos
+      encoded_video.destroy
+    end
   end
   
   # Embed tag for easy use
@@ -44,7 +47,7 @@ class Video < Asset
   # Get valid mime-type extensions
   def extensions
     mime_types = []
-    MIME::Types[/^video/].each do |t|
+    MIME::Types[/video/].each do |t|
       mime_types.push t
     end
     ext = []
