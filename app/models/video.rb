@@ -8,7 +8,14 @@ class Video < Asset
   validates_attachment_content_type :file, :content_type => /video/
   has_many :encoded_videos, :dependent => :destroy
   
-  before_file_post_process :create_preview
+  before_file_post_process :create_preview, :cleanup_encodes
+  
+  # Remove encoded videos when video is edited
+  def cleanup_encodes
+    for encoded_video in self.encoded_videos
+      encoded_video.destroy
+    end
+  end
   
   # Create preview for the video
   def create_preview(milliseconds=2000)
@@ -34,9 +41,6 @@ class Video < Asset
     self.width = image.try(:width)
     self.aspect_ratio = image.try(:aspect)
     self.preview_offset = milliseconds
-    for encoded_video in self.encoded_videos
-      encoded_video.destroy
-    end
   end
   
   # Embed tag for easy use
