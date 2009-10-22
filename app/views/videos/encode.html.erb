@@ -1,3 +1,7 @@
+<h1>Video Encoding Status</h1>
+<div id="asset_nav">
+  <%= link_to 'Back', videos_path %>
+</div>
 <% if @video.errors.size > 0 %>
   Encode has failed. Errors for each failed Video Format are below.
   <% for error in @video.errors.on_base %>
