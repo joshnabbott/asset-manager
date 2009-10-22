@@ -1,0 +1,14 @@
+<h1>Show Previews</h1>
+<div id="asset_nav">
+  <%= link_to 'Back', videos_path %>
+</div>
+<h2>Original</h2>
+<p>
+  <%= image_tag(@video.preview.url(:original)) %>
+</p>
+<%- for encoded_video in @video.encoded_videos -%>
+<h2><%= encoded_video.video_format.title %></h2>
+<p>
+  <%= image_tag(encoded_video.preview.url(:original)) %>
+</p>
+<%- end -%>

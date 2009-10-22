@@ -116,6 +116,19 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     @video.encode_video
   end
+  
+  # Generate preview
+  def preview
+    @video = Video.find(params[:id])
+    if request.put?
+      @video.create_preview(params[:offset].to_i)
+      @video.save
+      for encoded_video in @video.encoded_videos
+        encoded_video.create_preview
+        encoded_video.save
+      end
+    end
+  end
 
   # DELETE /videos/1
   # DELETE /videos/1.xml

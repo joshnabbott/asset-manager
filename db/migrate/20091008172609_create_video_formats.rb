@@ -4,7 +4,6 @@ class CreateVideoFormats < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.text :conversion_command
-      t.string :resolution
       t.string :output_file_extension
 
       t.timestamps

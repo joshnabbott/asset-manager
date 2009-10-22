@@ -1,5 +1,8 @@
-<% if @video.errors.length > 0 %>
-  <%= @video.errors %>
+<% if @video.errors.size > 0 %>
+  Encode has failed. Errors for each failed Video Format are below.
+  <% for error in @video.errors.on_base %>
+    <p><%= error %></p>
+  <% end %>
 <% else %>
-  Encode completed.
+  Encode has completed.
 <% end %>

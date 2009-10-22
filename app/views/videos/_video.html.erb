@@ -4,11 +4,9 @@
 	<td><%= video.title %></td>
 	<td>
 	  <% if video.encoded_videos.length > 0 %>
-      <ul>
-      <% for encoded_video in video.encoded_videos %>
-        <li><%=h encoded_video.video_format.title %></li>
-      <% end %>
-    </ul>
+    <% for encoded_video in video.encoded_videos %>
+    <%=link_to (h encoded_video.video_format.title), encoded_video_path(encoded_video) %><br />
+    <% end %>
     <% else %>
     None
     <% end %>
@@ -17,6 +15,7 @@
 	<td class="actions">
 		<%= link_to 'Show', video %> | 
 		<%= link_to 'Encode', {:controller => "videos", :action => "encode", :id => video } %> | 
+		<%= link_to 'Previews', {:controller => "videos", :action => "preview", :id => video } %> | 
 		<%= link_to 'Edit', edit_video_path(video) %> | 
  		<%= link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete %>
 	</td>

@@ -13,7 +13,7 @@ class Video < Asset
   # Create preview for the video
   def create_preview(milliseconds=2000)
     # Make sure we use the right file, self.file.path doesn't exist before a save
-    # This method is public and can be called outside of before_file_post_process
+    # This method is public and can be called outside of before_file_post_process    
     if self.file.queued_for_write[:original].present?
       current_file = self.file.queued_for_write[:original].path
     else 
@@ -33,6 +33,7 @@ class Video < Asset
     self.height = image.try(:height)
     self.width = image.try(:width)
     self.aspect_ratio = image.try(:aspect)
+    self.preview_offset = milliseconds
   end
   
   # Embed tag for easy use
@@ -56,7 +57,7 @@ class Video < Asset
   # Create encoded videos
   def encode_video
     formats = VideoFormat.find(:all)
-    current_encode_ids = self.encoded_videos.map { |id| id }
+    current_encode_ids = self.encoded_videos.map { |video| video.video_format_id }
     for format in formats
       # Check to see if video encode exists
       unless (current_encode_ids.include?(format.id))

@@ -10,12 +10,15 @@ class EncodedVideo < ActiveRecord::Base
   has_attached_file :file, :url => "/system/encodedvideos/:attachment/:id/:style/:filename"
   has_attached_file :preview, :url => "/system/encodedvideos/:attachment/:id/:style/:filename", :styles => {:icon => "100x100>", :edit => "200x200>", :master => "500x500>"}
   validates_attachment_presence :file
-  validates_attachment_content_type :file, :content_type => /video/
   
   before_file_post_process :create_preview
   
   # Create preview for the video
   def create_preview(milliseconds=2000)
+    if self.video.preview_offset
+      milliseconds = self.video.preview_offset
+    end
+
     # Make sure we use the right file, self.file.path doesn't exist before a save
     # This method is public and can be called outside of before_file_post_process
     if self.file.queued_for_write[:original].present?
@@ -44,38 +47,34 @@ class EncodedVideo < ActiveRecord::Base
   	"<embed height=\"#{self.height + 16}\" width=\"#{self.width}\" src=\"#{self.file.url}\" type=\"video/quicktime\" autoplay=\"false\" pluginspage=\"http://www.apple.com/quicktime/download\" enablejavascript=\"true\" id=\"#{id}\" />"
   end
   
-  # Get valid mime-type extensions
-  def extensions
-    mime_types = []
-    MIME::Types[/^video/].each do |t|
-      mime_types.push t
-    end
-    ext = []
-    for mime_type in mime_types
-      ext.concat mime_type.extensions
-    end
-    return ext.uniq
-  end
-  
   # Create encoded video
   def process_video
     ffmpeg_command = self.video_format.conversion_command.gsub("%%FFMPEG%%", Video.find(self.video_id).ffmpeg_binary).gsub("%%INPUTFILE%%", "$input_file$")
     ffmpeg_command = ffmpeg_command.gsub("%%OUTPUTFILE%%", "$output_file$" )
-    ffmpeg_command = ffmpeg_command.gsub("%%RESOLUTION%%", "$resolution$")
     transcoder = RVideo::Transcoder.new
     recipe = ffmpeg_command
-    logger.info self.video.file.path
-    logger.info (RAILS_ROOT + "/tmp/" + self.video.file.basename + "-" + self.video_format.title + "." + self.video_format.output_file_extension )
-    logger.info self.video_format.resolution
+    outputfile = Pathname.new(RAILS_ROOT + "/public/system/tmp/" + self.video.file.basename + "-" + self.video_format.title.gsub(" ", "") + "." + self.video_format.output_file_extension)
+    processing_valid = true
     begin
+      puts "Encoding #{self.video.title == "" ? self.video.title : self.video.file_file_name} in #{self.video_format.title} Format\n"
       transcoder.execute(recipe, {
         :input_file => self.video.file.path,
-        :output_file => (RAILS_ROOT + "/tmp/" + self.video.file.basename + "-" + self.video_format.title + "." + self.video_format.output_file_extension ),
-        :resolution => self.video_format.resolution
+        :output_file => outputfile.to_s
       })
     rescue RVideo::TranscoderError => e
-      logger.error "Unable to transcode file: #{e.class} - #{e.message}"
+      processing_valid = false
+      puts "Transcode has failed: #{e.class} - #{e}\n"
+      self.video.errors.add_to_base "<strong>#{self.video_format.title}</strong><br />Transcode has failed: #{e.class} - #{e}"
     end
+    if processing_valid
+      # Set encoded video into paperclip file
+      File.open(outputfile, 'r') do |f|
+        self.file = f
+      end
+      self.save!
+      puts "Transcode successful\n"
+    end
+    outputfile.unlink
   end
   
   # Create easy hooks for rvideo data, go go gadget method_missing

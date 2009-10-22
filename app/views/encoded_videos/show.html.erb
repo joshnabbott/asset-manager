@@ -1,0 +1,10 @@
+<h1>Show Encoded Video</h1>
+<div id="asset_nav">
+  <%= link_to 'Back', videos_path %>
+</div>
+<div>
+  <%= @video.embed %>
+</div>
+<p>
+  <strong>File Name:</strong> <%= @video.file_file_name %>
+</p>

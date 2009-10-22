@@ -5,6 +5,11 @@
 </div>
 <div>
   <%= @video.embed %>
+  <br />
+  <% form_for @video, :url => {:controller => "videos", :action => "preview", :id => @video } do |f|-%>
+  	<%= hidden_field_tag 'offset' %>
+  	<%= submit_tag 'Update Preview', :onclick => "$('#offset').val(((document.getElementById('movie').GetTime() / document.getElementById('movie').GetTimeScale()) * 1000));" %>
+  <% end %>
 </div>
 <p>
   <strong>File Name:</strong> <%= @video.file_file_name %>
@@ -16,3 +21,4 @@
   <strong>Tags:</strong> <%=h @video.tag_list %>
 </p>
 <%= textilize @video.description %>
+

@@ -7,6 +7,7 @@ class CreateAssets < ActiveRecord::Migration
       t.integer :file_file_size
       t.string :preview_file_name, :preview_content_type
       t.integer :preview_file_size
+      t.integer :preview_offset
       t.datetime :file_updated_at
       t.string :title
       t.text :description
