@@ -1,4 +1,5 @@
 <%-
-  image = Magick::Read(@image.file_path).first
-  logger.debug(image)
--%>
+  format = Mime::Type.lookup_by_extension(request.format.to_s).to_s
+  @controller.response.content_type = format
+  return @controller.send(:send_file, @image.file.path, :filename => @image.file_file_name, :disposition => 'inline', :type => format)
+%>

@@ -1,10 +1,5 @@
 module AssetsHelper
   require 'md5'
-
-  def asset_tag(asset, options = {})
-    
-  end
-
   # USAGE:
   # <%= @image = Image.first %>
   # SIMPLE:
@@ -37,68 +32,68 @@ module AssetsHelper
   # <%= asset_tag(@image, :size => '250x250', :from => '25x25', :resize_to => '100x100', :exact => true) %>
   # Will return an image cropped at the offset specified by +from+ at the size of +size+, resized (not cropped) to +resize_to+
   # and then padded where needed to make the exact dimensions of +resize_to+.
-#   def build_options_for_asset_tag(asset, options={})
-#     raise "You must pass an asset into asset_tag." unless asset
-#     options.reverse_merge!(default_options_for_asset_tag)
-#     options.reverse_merge!(:alt => asset.name)
-# 
-#     crop_name = options.delete(:crop)
-# 
-#     if crop_name
-#       crop_definition = find_crop_definition_by_name(crop_name)
-#       raise ActiveRecord::RecordNotFound, "Crop Definition does not exist: #{crop_name}" unless crop_definition
-# 
-#       crop = Crop.find(:first, :conditions => { :image_id => asset.id, :crop_definition_id => crop_definition.id })
-#       options.update(options_for_image(crop || crop_definition))
-#     end
-# 
-#     from      = options.delete(:from)
-#     size      = options.delete(:size)
-#     resize_to = options.delete(:resize_to)
-#     exact     = options.delete(:exact)
-#     format    = options.delete(:format)
-#     name      = MD5.hexdigest([from, size, resize_to, exact].join.to_s)
-# 
-#     options.merge!(:asset_options => {:name => name, :from => from, :size => size, :resize_to => resize_to, :exact => exact, :format => format})
-#   end
-# 
-#   def asset_path(asset, options = {})
-#     options = build_options_for_asset_tag(asset, options).delete(:asset_options)
-#     cropped_image_path(asset, options)
-#   end
-# 
-#   def asset_tag(asset, options = {})
-#     options       = build_options_for_asset_tag(asset, options)
-#     asset_options = options.delete(:asset_options)
-#     image_tag(asset_path(asset, asset_options), options)
-#   end
-# 
-# private
-#   def default_options_for_asset_tag
-#     {
-#       :exact => false,
-#       :from => '0x0',
-#       :size => '400x400',
-#       :resize_to => nil,
-#       :format => :png
-#     }
-#   end
-# 
-#   def find_crop_definition_by_name(name)
-#     crop_definition = if name =~ /::/
-#       parts = name.split('::')
-#       asset_category = AssetCategory.find_by_name(parts.first)
-#       raise ActiveRecord::RecordNotFound, "You specified an asset category of #{parts.first} (#{name}), but there is no AssetCategory by that name." unless asset_category
-#       asset_category.crop_definitions.find_by_name(parts.last)
-#     else
-#       CropDefinition.find_by_name(name)
-#     end
-#   end
-# 
-#   def options_for_image(crop_or_crop_definition)
-#     {
-#       :from => "#{crop_or_crop_definition.x}x#{crop_or_crop_definition.y}",
-#       :size => "#{crop_or_crop_definition.width}x#{crop_or_crop_definition.height}"
-#     }
-#   end
+  def build_options_for_asset_tag(asset, options={})
+    raise "You must pass an asset into asset_tag." unless asset
+    options.reverse_merge!(default_options_for_asset_tag)
+    options.reverse_merge!(:alt => asset.file_file_name)
+
+    crop_name = options.delete(:crop)
+
+    if crop_name
+      crop_definition = find_crop_definition_by_name(crop_name)
+      raise ActiveRecord::RecordNotFound, "Crop Definition does not exist: #{crop_name}" unless crop_definition
+
+      crop = Crop.find(:first, :conditions => { :image_id => asset.id, :crop_definition_id => crop_definition.id })
+      options.update(options_for_image(crop || crop_definition))
+    end
+
+    from      = options.delete(:from)
+    size      = options.delete(:size)
+    resize_to = options.delete(:resize_to)
+    exact     = options.delete(:exact)
+    format    = options.delete(:format)
+    name      = MD5.hexdigest([from, size, resize_to, exact].join.to_s)
+
+    options.merge!(:asset_options => {:name => name, :from => from, :size => size, :resize_to => resize_to, :exact => exact, :format => format})
+  end
+
+  def asset_path(asset, options = {})
+    options = build_options_for_asset_tag(asset, options).delete(:asset_options)
+    cropped_image_path(asset, options)
+  end
+
+  def asset_tag(asset, options = {})
+    options       = build_options_for_asset_tag(asset, options)
+    asset_options = options.delete(:asset_options)
+    image_tag(asset_path(asset, asset_options), options)
+  end
+
+private
+  def default_options_for_asset_tag
+    {
+      :exact => false,
+      :from => '0x0',
+      :size => '400x400',
+      :resize_to => nil,
+      :format => :png
+    }
+  end
+
+  def find_crop_definition_by_name(name)
+    crop_definition = if name =~ /::/
+      parts = name.split('::')
+      asset_category = AssetCategory.find_by_name(parts.first)
+      raise ActiveRecord::RecordNotFound, "You specified an asset category of #{parts.first} (#{name}), but there is no AssetCategory by that name." unless asset_category
+      asset_category.crop_definitions.find_by_name(parts.last)
+    else
+      CropDefinition.find_by_name(name)
+    end
+  end
+
+  def options_for_image(crop_or_crop_definition)
+    {
+      :from => "#{crop_or_crop_definition.x}x#{crop_or_crop_definition.y}",
+      :size => "#{crop_or_crop_definition.width}x#{crop_or_crop_definition.height}"
+    }
+  end
 end
