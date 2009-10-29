@@ -1,35 +1,41 @@
 <%-
   # setup
-  offset_x = params[:x].to_i || 0
-  offset_y = params[:y].to_i || 0
-  width    = params[:width].to_i
-  height   = params[:height].to_i
+  original_image = Magick::Image.read(@image.file.path).first
 
-  image = Magick::Image.read(@image.file.path).first
+  gravity            = params[:position]         || 'top_left'
+  offset_x           = params[:x].to_i           || 0
+  offset_y           = params[:y].to_i           || 0
+  width              = params[:width].to_i       || original_image.columns
+  height             = params[:height].to_i      || original_image.rows
+  @@background_color = params[:background_color] || 'white'
 
   # Performs cropping
-  image.crop!(offset_x, offset_y, width, height, true) if width && height
+  original_image.crop!(offset_x, offset_y, width, height, true) if width && height
 
   # Performs the resizing
-  image.change_geometry!(params[:resize_to]) do |cols, rows, img|
-    img.resize!(cols, rows)
+  original_image.change_geometry!(params[:resize_to]) do |cols, rows, image|
+    image.resize!(cols, rows)
   end if params[:resize_to]
 
-  # Makes image fit exact dimensions of :size or :resize_to if :exact => true
-  if params[:resize_to] && params[:exact]
-    border_color = params[:background_color] || 'white'
-    resize_to_x, resize_to_y = params[:resize_to].split('x').first.to_i, params[:resize_to].split('x').last.to_i
-    x_border = [0, (resize_to_x - image.columns + 1) / 2].max
-    y_border = [0, (resize_to_y - image.rows + 1) / 2].max
-    image.border!(x_border, y_border, border_color)
-  end
+  new_image_cols = params[:exact] ? params[:resize_to].split('x').first.to_i : original_image.columns
+  new_image_rows = params[:exact] ? params[:resize_to].split('x').last.to_i : original_image.rows
 
-  image.background_color = params[:background_color] if params[:background_color]
+  new_image = Magick::Image.new(new_image_cols, new_image_rows) {
+    self.background_color = @@background_color
+    self.format           = 'png'
+  }
 
-  return @controller.send(:send_data, image.to_blob,
+  # overlay the original image
+  new_image.composite!(original_image, gravities[gravity.to_sym], Magick::OverCompositeOp)
+
+  return @controller.send(:send_data, new_image.to_blob,
     :filename => @image.file_file_name,
     :disposition => 'inline',
     :type => Mime::Type.lookup_by_extension(request.format.to_s).to_s)
+
+  # free up the memory
+  original_image.destroy!
+  new_image.destroy!
 
   # Start garbage collection after every read
   GC.start

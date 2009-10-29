@@ -1,4 +1,3 @@
-require 'RMagick'
 class ImagesController < ApplicationController
   # GET /images
   # GET /images.xml
@@ -19,7 +18,6 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.jpg
       format.png
       format.xml  { render :xml => @image }
     end
