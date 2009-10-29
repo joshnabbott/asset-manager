@@ -30,6 +30,7 @@ Rails::Initializer.run do |config|
   config.gem 'mbleigh-acts-as-taggable-on', :lib => 'acts-as-taggable-on'
   config.gem 'RedCloth', :lib => 'redcloth'
   config.gem 'mislav-will_paginate', :lib => 'will_paginate'
+  config.gem 'rmagick', :lib => 'RMagick'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -57,3 +58,5 @@ ENV['PATH'] = '/usr/local/bin:/opt/local/bin:' + ENV['PATH']
 Mime::Type.register "image/jpeg", :jpeg
 Mime::Type.register_alias "image/jpeg", :jpg
 Mime::Type.register "image/png", :png
+
+RMAGICK_ENABLE_MAGICK_MEMORY = true unless defined?(RMAGICK_ENABLE_MAGICK_MEMORY)

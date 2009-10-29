@@ -18,6 +18,7 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.jpg  # show.jpg.erb
       format.png  # show.png.erb
       format.xml  { render :xml => @image }
     end

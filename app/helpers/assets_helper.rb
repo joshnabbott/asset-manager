@@ -59,7 +59,7 @@ module AssetsHelper
     width            = options.delete(:width)
     x                = options.delete(:x)
     y                = options.delete(:y)
-    name             = MD5.hexdigest([background_color, exact, height, position, resize_to, width, x, y].join.to_s)
+    name             = MD5.hexdigest(options.to_s)
 
     options.merge!(:asset_options => {:name => name, :x => x, :y => y, :width => width, :height => height, :resize_to => resize_to, :exact => exact, :format => format, :position => position, :background_color => background_color})
   end
