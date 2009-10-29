@@ -6,6 +6,9 @@ RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
+require 'rubygems'
+require 'desert'
+
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -14,7 +17,7 @@ Rails::Initializer.run do |config|
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
   %w(middleware).each do |dir|
-    config.load_paths << "#{RAILS_ROOT}/app/#{dir}" 
+    config.load_paths << "#{RAILS_ROOT}/vendor/plugins/asset_manager/app/#{dir}" 
   end
 
   # Specify gems that this application depends on and have them installed with rake gems:install
@@ -22,7 +25,6 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem 'thoughtbot-paperclip',        :lib => 'paperclip'
   config.gem 'greatseth-rvideo',            :lib => 'rvideo'
   config.gem 'mime-types',                  :lib => 'mime/types'
   config.gem 'git',                         :lib => 'git'
@@ -52,11 +54,10 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
-# Add these paths manually since passenger won't sometimes.
-ENV['PATH'] = '/usr/local/bin:/opt/local/bin:' + ENV['PATH']
-
 Mime::Type.register "image/jpeg", :jpeg
 Mime::Type.register_alias "image/jpeg", :jpg
 Mime::Type.register "image/png", :png
 
 RMAGICK_ENABLE_MAGICK_MEMORY = true unless defined?(RMAGICK_ENABLE_MAGICK_MEMORY)
+
+ENV['PATH'] = '/usr/local/bin:/opt/local/bin:' + ENV['PATH']
