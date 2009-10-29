@@ -1,5 +1,36 @@
 <%-
-  format = Mime::Type.lookup_by_extension(request.format.to_s).to_s
-  @controller.response.content_type = format
-  return @controller.send(:send_file, @image.file.path, :filename => @image.file_file_name, :disposition => 'inline', :type => format)
+  # setup
+  offset_x = params[:x].to_i || 0
+  offset_y = params[:y].to_i || 0
+  width    = params[:width].to_i
+  height   = params[:height].to_i
+
+  image = Magick::Image.read(@image.file.path).first
+
+  # Performs cropping
+  image.crop!(offset_x, offset_y, width, height, true) if width && height
+
+  # Performs the resizing
+  image.change_geometry!(params[:resize_to]) do |cols, rows, img|
+    img.resize!(cols, rows)
+  end if params[:resize_to]
+
+  # Makes image fit exact dimensions of :resize_to if :exact => true
+  if params[:exact]
+    border_color = params[:background_color] || 'white'
+    resize_to_x, resize_to_y = params[:resize_to].split('x').first.to_i, params[:resize_to].split('x').last.to_i
+    x_border = [0, (resize_to_x - image.columns + 1) / 2].max
+    y_border = [0, (resize_to_y - image.rows + 1) / 2].max
+    image.border!(x_border, y_border, border_color)
+  end
+
+  # image.background_color = params[:background_color] if params[:background_color]
+
+  return @controller.send(:send_data, image.to_blob,
+    :filename => @image.file_file_name,
+    :disposition => 'inline',
+    :type => Mime::Type.lookup_by_extension(request.format.to_s).to_s)
+
+  # Start garbage collection after every read
+  GC.start
 %>

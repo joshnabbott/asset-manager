@@ -1,3 +1,4 @@
+require 'RMagick'
 class ImagesController < ApplicationController
   # GET /images
   # GET /images.xml
@@ -18,17 +19,8 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.jpg do
-        send_file(@image.file.path, :filename => @image.file_file_name,
-        :disposition => 'inline',
-        :type => 'image/jpeg')
-      end
+      format.jpg
       format.png
-      # do
-      #   send_file(@image.file.path, :filename => @image.file_file_name,
-      #   :disposition => 'inline',
-      #   :type => 'image/png')
-      # end
       format.xml  { render :xml => @image }
     end
   end
