@@ -1,5 +1,5 @@
 <tr class="<%= cycle('even', 'odd') %>">
-  <td><%=h crop.image.file_file_name %></td>
+  <td><%= asset_tag(crop.image, :crop => crop.crop_definition.name, :resize_to => 125) %></td>
   <td><%=h crop.crop_definition.name %></td>
   <td><%=h crop.width %></td>
   <td><%=h crop.height %></td>

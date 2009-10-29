@@ -1,9 +1,12 @@
+# FIXME: Documentation needs to be updated to reflect that :size is now :width, :height and :from is now :x, :y
 module AssetsHelper
   require 'md5'
+  class CropNotFoundError < StandardError; end
+
   # USAGE:
   # <%= @image = Image.first %>
   # SIMPLE:
-  # <%= asset_tag(@image, :size => '400x0') %>
+  # <%= asset_tag(@image) %>
   # Will return an img tag with @image, sized at max 400px wide or height, depending on which is greater.
   # Possible options are:
   # +crop+ - Passes the name of a crop. Crops may have identical names across asset categories. You can specify a crop within
@@ -47,14 +50,18 @@ module AssetsHelper
       options.update(options_for_image(crop || crop_definition))
     end
 
-    from      = options.delete(:from)
-    size      = options.delete(:size)
-    resize_to = options.delete(:resize_to)
-    exact     = options.delete(:exact)
-    format    = options.delete(:format)
-    name      = MD5.hexdigest([from, size, resize_to, exact].join.to_s)
+    background_color = options.delete(:background_color)
+    exact            = options.delete(:exact)
+    format           = options.delete(:format)
+    height           = options.delete(:height)
+    position         = options.delete(:position)
+    resize_to        = options.delete(:resize_to)
+    width            = options.delete(:width)
+    x                = options.delete(:x)
+    y                = options.delete(:y)
+    name             = MD5.hexdigest([background_color, exact, height, position, resize_to, width, x, y].join.to_s)
 
-    options.merge!(:asset_options => {:name => name, :from => from, :size => size, :resize_to => resize_to, :exact => exact, :format => format})
+    options.merge!(:asset_options => {:name => name, :x => x, :y => y, :width => width, :height => height, :resize_to => resize_to, :exact => exact, :format => format, :position => position, :background_color => background_color})
   end
 
   def asset_path(asset, options = {})
@@ -71,11 +78,13 @@ module AssetsHelper
 private
   def default_options_for_asset_tag
     {
-      :exact => false,
-      :from => '0x0',
-      :size => '400x400',
-      :resize_to => nil,
-      :format => :png
+      :exact            => false,
+      :x                => 0,
+      :y                => 0,
+      :resize_to        => nil,
+      :format           => 'png',
+      :position         => 'center',
+      :background_color => 'none'
     }
   end
 
@@ -92,8 +101,10 @@ private
 
   def options_for_image(crop_or_crop_definition)
     {
-      :from => "#{crop_or_crop_definition.x}x#{crop_or_crop_definition.y}",
-      :size => "#{crop_or_crop_definition.width}x#{crop_or_crop_definition.height}"
+      :x      => crop_or_crop_definition.x1,
+      :y      => crop_or_crop_definition.y1,
+      :width  => crop_or_crop_definition.width,
+      :height => crop_or_crop_definition.height
     }
   end
 end

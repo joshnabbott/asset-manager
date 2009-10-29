@@ -60,7 +60,7 @@ class CropsController < ApplicationController
     respond_to do |format|
       if @crop.save
         flash[:notice] = 'Crop was successfully created.'
-        format.html { redirect_to([@image, @crop]) }
+        format.html { redirect_to([@image, :crops]) }
         format.xml  { render :xml => @crop, :status => :created, :location => @crop }
       else
         format.html { render :action => "new" }
@@ -77,7 +77,7 @@ class CropsController < ApplicationController
     respond_to do |format|
       if @crop.update_attributes(params[:crop])
         flash[:notice] = 'Crop was successfully updated.'
-        format.html { redirect_to([@image, @crop]) }
+        format.html { redirect_to([@image, :crops]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -1,13 +1,17 @@
 <%-
+  # FIXME: this shouldn't be an erb template but just ruby. Need to figure out how to get rails to return the result of a ruby script as a view
+  # FIXME: Move what can be moved to a helper.
+  # FIXME: Create a defaults hash for things like what's in setup
+
   # setup
   original_image = Magick::Image.read(@image.file.path).first
 
-  gravity            = params[:position]         || 'top_left'
-  offset_x           = params[:x].to_i           || 0
-  offset_y           = params[:y].to_i           || 0
-  width              = params[:width].to_i       || original_image.columns
-  height             = params[:height].to_i      || original_image.rows
-  @@background_color = params[:background_color] || 'white'
+  gravity          = params[:position]         || 'top_left'
+  offset_x         = params[:x].to_i           || 0
+  offset_y         = params[:y].to_i           || 0
+  width            = params[:width].to_i       || original_image.columns
+  height           = params[:height].to_i      || original_image.rows
+  background_color = params[:background_color] || 'white'
 
   # Performs cropping
   original_image.crop!(offset_x, offset_y, width, height, true) if width && height
@@ -17,11 +21,14 @@
     image.resize!(cols, rows)
   end if params[:resize_to]
 
-  new_image_cols = params[:exact] ? params[:resize_to].split('x').first.to_i : original_image.columns
-  new_image_rows = params[:exact] ? params[:resize_to].split('x').last.to_i : original_image.rows
+  if params[:exact] && params[:resize_to]
+    new_image_cols, new_image_rows = params[:resize_to].split('x').first.to_i, params[:resize_to].split('x').last.to_i
+  else
+    new_image_cols, new_image_rows = original_image.columns, original_image.rows
+  end
 
   new_image = Magick::Image.new(new_image_cols, new_image_rows) {
-    self.background_color = @@background_color
+    self.background_color = background_color
     self.format           = 'png'
   }
 

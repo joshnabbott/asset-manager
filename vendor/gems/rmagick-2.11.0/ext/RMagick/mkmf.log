@@ -1,0 +1,2106 @@
+checking for Ruby version >= 1.8.5... -------------------- yes
+
+--------------------
+
+find_executable: checking for gcc... -------------------- yes
+
+--------------------
+
+find_executable: checking for Magick-config... -------------------- yes
+
+--------------------
+
+checking for ImageMagick version >= 6.3.5... -------------------- yes
+
+--------------------
+
+checking for HDRI disabled version of ImageMagick... -------------------- yes
+
+--------------------
+
+have_header: checking for stdint.h... -------------------- yes
+
+"gcc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick   conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <stdint.h>
+/* end */
+
+--------------------
+
+have_header: checking for sys/types.h... -------------------- yes
+
+"gcc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick   conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <sys/types.h>
+/* end */
+
+--------------------
+
+have_header: checking for wand/MagickWand.h... -------------------- yes
+
+"gcc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick   conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <wand/MagickWand.h>
+/* end */
+
+--------------------
+
+have_library: checking for InitializeMagick() in -lMagickCore... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))InitializeMagick; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for snprintf() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))snprintf; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for AcquireImage() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))AcquireImage; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for AffinityImage() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))AffinityImage; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for AffinityImages() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))AffinityImages; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for BlueShiftImage() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- no
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘BlueShiftImage’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))BlueShiftImage; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+Undefined symbols:
+  "_BlueShiftImage", referenced from:
+      _t in ccK2t7VP.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { BlueShiftImage(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for DeskewImage() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))DeskewImage; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for EncipherImage() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))EncipherImage; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for EqualizeImageChannel() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))EqualizeImageChannel; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for FloodfillPaintImage() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))FloodfillPaintImage; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for GetAuthenticIndexQueue() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))GetAuthenticIndexQueue; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for GetAuthenticPixels() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))GetAuthenticPixels; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for GetImageAlphaChannel() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))GetImageAlphaChannel; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for GetVirtualPixels() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))GetVirtualPixels; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for LevelImageColors() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))LevelImageColors; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for LevelizeImageChannel() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))LevelizeImageChannel; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for LiquidRescaleImage() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))LiquidRescaleImage; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for OpaquePaintImageChannel() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))OpaquePaintImageChannel; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for QueueAuthenticPixels() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))QueueAuthenticPixels; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for RemapImage() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))RemapImage; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for RemoveImageArtifact() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))RemoveImageArtifact; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SelectiveBlurImageChannel() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- no
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:13: error: ‘SelectiveBlurImageChannel’ undeclared (first use in this function)
+conftest.c:13: error: (Each undeclared identifier is reported only once
+conftest.c:13: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))SelectiveBlurImageChannel; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+Undefined symbols:
+  "_SelectiveBlurImageChannel", referenced from:
+      _t in ccZRFz2a.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { SelectiveBlurImageChannel(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SetImageAlphaChannel() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))SetImageAlphaChannel; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SetImageArtifact() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))SetImageArtifact; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SetMagickMemoryMethods() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))SetMagickMemoryMethods; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SparseColorImage() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))SparseColorImage; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SyncAuthenticPixels() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))SyncAuthenticPixels; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for TransparentPaintImage() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))TransparentPaintImage; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for TransparentPaintImageChroma() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int t() { void ((*volatile p)()); p = (void ((*)()))TransparentPaintImageChroma; return 0; }
+/* end */
+
+--------------------
+
+checking for QueryMagickColorname() new signature... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() {
+13:   MagickBooleanType okay;
+14:   Image *image;
+15:   MagickPixelPacket *color;
+16:   char *name;
+17:   ExceptionInfo *exception;
+18:   okay = QueryMagickColorname(image, color, SVGCompliance, name, exception);
+19:   return 0;
+20:   }
+/* end */
+
+--------------------
+
+have_struct_member: checking for Image.type in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int s = (char *)&((Image*)0)->type - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for DrawInfo.kerning in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int s = (char *)&((DrawInfo*)0)->kerning - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for DrawInfo.interword_spacing in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { return 0; }
+13: int s = (char *)&((DrawInfo*)0)->interword_spacing - (char *)0;
+/* end */
+
+--------------------
+
+have_type: checking for DitherMethod in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: typedef DitherMethod conftest_type;
+13: static conftest_type conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_type: checking for ImageLayerMethod in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: typedef ImageLayerMethod conftest_type;
+13: static conftest_type conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_type: checking for long double in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,stdint.h,sys/types.h,wand/MagickWand.h... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: typedef long double conftest_type;
+13: static conftest_type conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_enum_value: checking for AlphaChannelType.CopyAlphaChannel... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { AlphaChannelType t = CopyAlphaChannel; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for AlphaChannelType.BackgroundAlphaChannel... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘BackgroundAlphaChannel’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { AlphaChannelType t = BackgroundAlphaChannel; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for CompositeOperator.BlurCompositeOp... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘BlurCompositeOp’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { CompositeOperator t = BlurCompositeOp; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for CompositeOperator.DistortCompositeOp... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘DistortCompositeOp’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { CompositeOperator t = DistortCompositeOp; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for CompositeOperator.LinearBurnCompositeOp... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘LinearBurnCompositeOp’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { CompositeOperator t = LinearBurnCompositeOp; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for CompositeOperator.LinearDodgeCompositeOp... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘LinearDodgeCompositeOp’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { CompositeOperator t = LinearDodgeCompositeOp; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for CompositeOperator.MathematicsCompositeOp... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘MathematicsCompositeOp’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { CompositeOperator t = MathematicsCompositeOp; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for CompositeOperator.PegtopLightCompositeOp... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘PegtopLightCompositeOp’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { CompositeOperator t = PegtopLightCompositeOp; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for CompositeOperator.PinLightCompositeOp... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘PinLightCompositeOp’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { CompositeOperator t = PinLightCompositeOp; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for CompositeOperator.VividLightCompositeOp... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘VividLightCompositeOp’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { CompositeOperator t = VividLightCompositeOp; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for CompressionType.DXT1Compression... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { CompressionType t = DXT1Compression; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for CompressionType.DXT3Compression... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { CompressionType t = DXT3Compression; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for CompressionType.DXT5Compression... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { CompressionType t = DXT5Compression; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for DistortImageMethod.BarrelDistortion... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { DistortImageMethod t = BarrelDistortion; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for DistortImageMethod.BarrelInverseDistortion... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { DistortImageMethod t = BarrelInverseDistortion; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for DistortImageMethod.BilinearForwardDistortion... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘BilinearForwardDistortion’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { DistortImageMethod t = BilinearForwardDistortion; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for DistortImageMethod.BilinearReverseDistortion... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘BilinearReverseDistortion’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { DistortImageMethod t = BilinearReverseDistortion; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for DistortImageMethod.DePolarDistortion... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { DistortImageMethod t = DePolarDistortion; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for DistortImageMethod.PolarDistortion... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { DistortImageMethod t = PolarDistortion; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for DistortImageMethod.PolynomialDistortion... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { DistortImageMethod t = PolynomialDistortion; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for DistortImageMethod.ShepardsDistortion... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { DistortImageMethod t = ShepardsDistortion; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for DitherMethod.NoDitherMethod... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { DitherMethod t = NoDitherMethod; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for FilterTypes.KaiserFilter... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { FilterTypes t = KaiserFilter; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for FilterTypes.WelshFilter... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { FilterTypes t = WelshFilter; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for FilterTypes.ParzenFilter... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { FilterTypes t = ParzenFilter; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for FilterTypes.LagrangeFilter... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { FilterTypes t = LagrangeFilter; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for FilterTypes.BohmanFilter... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { FilterTypes t = BohmanFilter; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for FilterTypes.BartlettFilter... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { FilterTypes t = BartlettFilter; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for FilterTypes.SentinelFilter... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { FilterTypes t = SentinelFilter; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.PowEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = PowEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.LogEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = LogEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.ThresholdEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = ThresholdEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.ThresholdBlackEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = ThresholdBlackEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.ThresholdWhiteEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = ThresholdWhiteEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.GaussianNoiseEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = GaussianNoiseEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.ImpulseNoiseEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = ImpulseNoiseEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.LaplacianNoiseEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = LaplacianNoiseEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.MultiplicativeNoiseEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = MultiplicativeNoiseEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.PoissonNoiseEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = PoissonNoiseEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.UniformNoiseEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = UniformNoiseEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.CosineEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = CosineEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.SineEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = SineEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for MagickEvaluateOperator.AddModulusEvaluateOperator... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { MagickEvaluateOperator t = AddModulusEvaluateOperator; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for ImageLayerMethod.FlattenLayer... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { ImageLayerMethod t = FlattenLayer; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for ImageLayerMethod.MergeLayer... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { ImageLayerMethod t = MergeLayer; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for ImageLayerMethod.MosaicLayer... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { ImageLayerMethod t = MosaicLayer; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for ImageLayerMethod.TrimBoundsLayer... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { ImageLayerMethod t = TrimBoundsLayer; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for VirtualPixelMethod.HorizontalTileVirtualPixelMethod... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { VirtualPixelMethod t = HorizontalTileVirtualPixelMethod; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for VirtualPixelMethod.VerticalTileVirtualPixelMethod... -------------------- yes
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { VirtualPixelMethod t = VerticalTileVirtualPixelMethod; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for VirtualPixelMethod.HorizontalTileEdgeVirtualPixelMethod... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘HorizontalTileEdgeVirtualPixelMethod’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { VirtualPixelMethod t = HorizontalTileEdgeVirtualPixelMethod; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for VirtualPixelMethod.VerticalTileEdgeVirtualPixelMethod... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘VerticalTileEdgeVirtualPixelMethod’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { VirtualPixelMethod t = VerticalTileEdgeVirtualPixelMethod; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_enum_value: checking for VirtualPixelMethod.CheckerTileVirtualPixelMethod... -------------------- no
+
+"gcc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick    -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:12: error: ‘CheckerTileVirtualPixelMethod’ undeclared (first use in this function)
+conftest.c:12: error: (Each undeclared identifier is reported only once
+conftest.c:12: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include <assert.h>
+ 2: #include <ctype.h>
+ 3: #include <stdio.h>
+ 4: #include <stdlib.h>
+ 5: #include <math.h>
+ 6: #include <time.h>
+ 7: #include <stdint.h>
+ 8: #include <sys/types.h>
+ 9: #include <wand/MagickWand.h>
+10: 
+11: /*top*/
+12: int main() { VirtualPixelMethod t = CheckerTileVirtualPixelMethod; t = t; return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for ruby/io.h... -------------------- no
+
+"gcc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick   conftest.c -o conftest.i"
+conftest.c:1:21: error: ruby/io.h: No such file or directory
+checked program was:
+/* begin */
+1: #include <ruby/io.h>
+/* end */
+
+--------------------
+
+have_func: checking for rb_frame_this_func() in ruby.h,rubyio.h... -------------------- no
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘rb_frame_this_func’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include <ruby.h>
+2: #include <rubyio.h>
+3: 
+4: /*top*/
+5: int main() { return 0; }
+6: int t() { void ((*volatile p)()); p = (void ((*)()))rb_frame_this_func; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I.  -I/opt/local/include/ImageMagick  -I/opt/local/include/ImageMagick  conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib  -L/opt/local/lib -L/opt/local/lib -L/usr/X11/lib -R/usr/X11/lib -L/opt/local/lib -lfreetype -lz -L/opt/local/lib    -L/opt/local/lib -lMagickCore -ltiff -lfreetype -ljpeg -L/opt/local/lib -lfontconfig -lexpat -lfreetype -lz -lXext -lSM -lICE -lX11 -lXt -lbz2 -lz -lm -lpthread -lltdl -lMagickCore  -lruby -lMagickCore  -lpthread -ldl -lm  "
+Undefined symbols:
+  "_rb_frame_this_func", referenced from:
+      _t in cc9St50Y.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: #include <ruby.h>
+2: #include <rubyio.h>
+3: 
+4: /*top*/
+5: int main() { return 0; }
+6: int t() { rb_frame_this_func(); return 0; }
+/* end */
+
+--------------------
+
+
+
+======================================================================
+Thu 29Oct09 10:38:16
+This installation of RMagick 2.11.0 is configured for
+Ruby 1.8.6 (universal-darwin9.0) and ImageMagick 6.4.8 Q8 
+======================================================================
+
+
