@@ -15,8 +15,8 @@
     img.resize!(cols, rows)
   end if params[:resize_to]
 
-  # Makes image fit exact dimensions of :resize_to if :exact => true
-  if params[:exact]
+  # Makes image fit exact dimensions of :size or :resize_to if :exact => true
+  if params[:resize_to] && params[:exact]
     border_color = params[:background_color] || 'white'
     resize_to_x, resize_to_y = params[:resize_to].split('x').first.to_i, params[:resize_to].split('x').last.to_i
     x_border = [0, (resize_to_x - image.columns + 1) / 2].max
@@ -24,7 +24,7 @@
     image.border!(x_border, y_border, border_color)
   end
 
-  # image.background_color = params[:background_color] if params[:background_color]
+  image.background_color = params[:background_color] if params[:background_color]
 
   return @controller.send(:send_data, image.to_blob,
     :filename => @image.file_file_name,
