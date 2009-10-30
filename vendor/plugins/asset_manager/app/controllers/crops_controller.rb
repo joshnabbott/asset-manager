@@ -1,5 +1,6 @@
 class CropsController < ApplicationController
   before_filter :find_image
+  helper :assets
 
   # GET /images/:image_id/crops
   # GET /images/:image_id//crops.xml

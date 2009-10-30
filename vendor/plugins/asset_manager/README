@@ -1,0 +1,35 @@
+== Asset Manager Desert Plugin
+
+Gives your application full asset capabilities including
+- Multi upload using Uploadify
+- Support 3 media types: images, audio, video
+- Video encoding
+- Custom image cropping
+- asset_tag helper method to automatically detect and embed the requested media type in a RESTful way.
+
+
+== Dependencies
+The asset manager plugin is to be used with the desert gem (http://github.com/pivotal/desert) to provide (almost) out of the box functionality.
+
+Other dependencies not included are:
+- paperclip (http://github.com/thoughtbot/paperclip/) - installed as a plugin
+- jrails - http://github.com/aaronchi/jrails/
+
+And these gems specified in vendor/plugins/asset_manager/config/environment.rb:
+- greatseth-rvideo
+- mime-types
+- git
+- jeweler
+- mbleigh-acts-as-taggable-on
+- RedCloth
+- mislav-will_paginate
+- rmagick
+
+
+== Installation
+
+- script/plugin install <plugin url>
+- Copy vendor/plugins/public/* content to public/ (Please note: you may want to copy the files one directory at a time so you don't entirely overwrite your existing javascripts and stylesheets directories.)
+- Open vender/plugins/asset_manager/config/environment.rb.example and copy and paste the specified lines into config/environment.rb
+- Follow the desert gem setup instructions here: http://github.com/pivotal/desert
+- Fire up the app and navigate to localhost:3000/asset_manager/images

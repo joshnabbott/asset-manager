@@ -37,7 +37,7 @@ $(document).ready(function($) {
     },
     "onAllComplete" : function(event, data) {
       $('#status_message').show();
-      $('#status_message').html('<strong>Finished!</strong> Next: <a href="/images' + $('#image_image_ids').val() + '/edit">Add titles and descriptions</a>? (Or just <%= link_to "go back", images_path %>)');
+      $('#status_message').html('<strong>Finished!</strong> Next: <a href="/asset_manager/images' + $('#image_image_ids').val() + '/edit">Add titles and descriptions</a>? (Or just <%= link_to "go back", images_path %>)');
     }
   });
 })

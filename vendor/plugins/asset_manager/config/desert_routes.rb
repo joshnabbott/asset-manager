@@ -3,7 +3,7 @@
 
 # resources :asset_managers
 
-with_options(:path_prefix => "") do |am|
+with_options(:path_prefix => "asset_manager") do |am|
   am.resources :video_formats
 
   am.resources :asset_categories
