@@ -28,7 +28,7 @@ And these gems specified in vendor/plugins/asset_manager/config/environment.rb:
 
 == Installation
 
-- script/plugin install <plugin url>
+- script/plugin install git@github.com:joshnabbott/asset_manager.git
 - Copy vendor/plugins/public/* content to public/ (Please note: you may want to copy the files one directory at a time so you don't entirely overwrite your existing javascripts and stylesheets directories.)
 - Open vender/plugins/asset_manager/config/environment.rb.example and copy and paste the specified lines into config/environment.rb
 - Follow the desert gem setup instructions here: http://github.com/pivotal/desert
