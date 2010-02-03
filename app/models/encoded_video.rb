@@ -47,10 +47,28 @@ class EncodedVideo < ActiveRecord::Base
   	"<embed height=\"#{self.height + 16}\" width=\"#{self.width}\" src=\"#{self.file.url}\" type=\"video/quicktime\" autoplay=\"false\" pluginspage=\"http://www.apple.com/quicktime/download\" enablejavascript=\"true\" id=\"#{id}\" controller=\"true\" />"
   end
   
-  # Create encoded video
+  # Create encoded video, make sure padding is setup correctly for all aspect ratios
   def process_video
     ffmpeg_command = self.video_format.conversion_command.gsub("%%FFMPEG%%", Video.find(self.video_id).ffmpeg_binary).gsub("%%INPUTFILE%%", "$input_file$")
     ffmpeg_command = ffmpeg_command.gsub("%%OUTPUTFILE%%", "$output_file$" )
+    ffmpeg_command =~ /-s[ ](([0-9][0-9]?[0-9]?[0-9]?)x([0-9][0-9]?[0-9]?[0-9]?))/
+    encoding_dimensions = $1
+    encoding_width = $2.to_i
+    encoding_height = $3.to_i
+    pad_details = "" 
+    if self.video.aspect_ratio >= 1
+      new_height = (encoding_width / self.video.aspect_ratio)
+      pad_size = ((encoding_height - new_height) / 2).round
+      pad_details = "-padtop #{pad_size} -padbottom #{pad_size}"
+      correct_dimensions = "#{encoding_width}x#{encoding_height - (pad_size * 2)}"
+    else
+      new_width = (encoding_height / self.video.aspect_ratio)
+      pad_size = ((encoding_width - new_width) / 2).round
+      pad_details = "-padleft #{pad_size} -padright #{pad_size}"
+      correct_dimensions = "#{encoding_width - (pad_size * 2)}x#{encoding_height}"
+    end
+    ffmpeg_command = ffmpeg_command.gsub("$output_file$", "#{pad_details} $output_file$")
+    ffmpeg_command = ffmpeg_command.gsub(encoding_dimensions, correct_dimensions)
     transcoder = RVideo::Transcoder.new
     recipe = ffmpeg_command
     outputfile = Pathname.new(RAILS_ROOT + "/public/system/tmp/" + self.video.file.basename + "-" + self.video_format.title.gsub(" ", "") + "." + self.video_format.output_file_extension)
