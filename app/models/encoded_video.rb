@@ -67,14 +67,24 @@ class EncodedVideo < ActiveRecord::Base
       self.video.errors.add_to_base "<strong>#{self.video_format.title}</strong><br />Transcode has failed: #{e.class} - #{e}"
     end
     if processing_valid
-      # Set encoded video into paperclip file
-      File.open(outputfile, 'r') do |f|
-        self.file = f
+      # Make sure that qt-faststart is run on the file.
+      qtoutputfile = Pathname.new(RAILS_ROOT + "/public/system/tmp/" + self.video.file.basename + "-" + self.video_format.title.gsub(" ", "") + "-qt." + self.video_format.output_file_extension)
+      if (system "`which qt-faststart` #{outputfile.to_s} #{qtoutputfile.to_s}")
+        # Set qt-faststart encoded video into paperclip file
+        File.open(qtoutputfile, 'r') do |f|
+          self.file = f
+        end
+      else
+        # Set encoded video into paperclip file
+        File.open(outputfile, 'r') do |f|
+          self.file = f
+        end
       end
       self.save!
       puts "Transcode successful\n"
     end
     outputfile.unlink
+    qtoutputfile.unlink
   end
   
   # Create easy hooks for rvideo data, go go gadget method_missing
