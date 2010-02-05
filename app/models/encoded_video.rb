@@ -51,20 +51,28 @@ class EncodedVideo < ActiveRecord::Base
   def process_video
     ffmpeg_command = self.video_format.conversion_command.gsub("%%FFMPEG%%", Video.find(self.video_id).ffmpeg_binary).gsub("%%INPUTFILE%%", "$input_file$")
     ffmpeg_command = ffmpeg_command.gsub("%%OUTPUTFILE%%", "$output_file$" )
-    ffmpeg_command =~ /-s[ ](([0-9][0-9]?[0-9]?[0-9]?)x([0-9][0-9]?[0-9]?[0-9]?))/
+    # Regexp that grabs the current encoding size
+    ffmpeg_command =~ /-s[ ](([0-9][0-9]?[0-9]?[0-9]?[0-9]?)x([0-9][0-9]?[0-9]?[0-9]?[0-9]?))/
     encoding_dimensions = $1
     encoding_width = $2.to_i
     encoding_height = $3.to_i
+    # Get aspect ratios
     encoding_aspect_ratio = (encoding_width.to_f / encoding_height.to_f)
-    pad_details = "" 
+    flipped_ratio = (self.video.height.to_f / self.video.width.to_f)
+    pad_details = ""
+    # Calculate if padding must be applied on top/bottom or left/right
     if self.video.aspect_ratio >= encoding_aspect_ratio
       new_height = (encoding_width / self.video.aspect_ratio).round
+      # Make sure frame size is divisible by 2, or ffmpeg chokes.
+      new_height = ((new_height % 2) == 0) ? new_height : (new_height + 1)
       pad_top = ((encoding_height - new_height) / 2).round
       pad_bottom = encoding_height - new_height - pad_top
       pad_details = "-padtop #{pad_top} -padbottom #{pad_bottom}"
       correct_dimensions = "#{encoding_width}x#{encoding_height - (pad_top + pad_bottom)}"
     else
-      new_width = (encoding_height / self.video.aspect_ratio).round
+      new_width = (encoding_height / flipped_ratio).round
+      # Make sure frame size is divisible by 2, or ffmpeg chokes.
+      new_height = ((new_width % 2) == 0) ? new_width : (new_width + 1)
       pad_left = ((encoding_width - new_width) / 2).round
       pad_right = encoding_width - new_width - pad_left
       pad_details = "-padleft #{pad_left} -padright #{pad_right}"
