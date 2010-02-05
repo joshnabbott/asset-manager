@@ -55,17 +55,20 @@ class EncodedVideo < ActiveRecord::Base
     encoding_dimensions = $1
     encoding_width = $2.to_i
     encoding_height = $3.to_i
+    encoding_aspect_ratio = (encoding_width.to_f / encoding_height.to_f)
     pad_details = "" 
-    if self.video.aspect_ratio >= 1
-      new_height = (encoding_width / self.video.aspect_ratio)
-      pad_size = ((encoding_height - new_height) / 2).round
-      pad_details = "-padtop #{pad_size} -padbottom #{pad_size}"
-      correct_dimensions = "#{encoding_width}x#{encoding_height - (pad_size * 2)}"
+    if self.video.aspect_ratio >= encoding_aspect_ratio
+      new_height = (encoding_width / self.video.aspect_ratio).round
+      pad_top = ((encoding_height - new_height) / 2).round
+      pad_bottom = encoding_height - new_height - pad_top
+      pad_details = "-padtop #{pad_top} -padbottom #{pad_bottom}"
+      correct_dimensions = "#{encoding_width}x#{encoding_height - (pad_top + pad_bottom)}"
     else
-      new_width = (encoding_height / self.video.aspect_ratio)
-      pad_size = ((encoding_width - new_width) / 2).round
-      pad_details = "-padleft #{pad_size} -padright #{pad_size}"
-      correct_dimensions = "#{encoding_width - (pad_size * 2)}x#{encoding_height}"
+      new_width = (encoding_height / self.video.aspect_ratio).round
+      pad_left = ((encoding_width - new_width) / 2).round
+      pad_right = encoding_width - new_width - pad_left
+      pad_details = "-padleft #{pad_left} -padright #{pad_right}"
+      correct_dimensions = "#{encoding_width - (pad_left + pad_right)}x#{encoding_height}"
     end
     ffmpeg_command = ffmpeg_command.gsub("$output_file$", "#{pad_details} $output_file$")
     ffmpeg_command = ffmpeg_command.gsub(encoding_dimensions, correct_dimensions)
