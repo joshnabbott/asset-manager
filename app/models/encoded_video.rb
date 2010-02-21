@@ -63,16 +63,21 @@ class EncodedVideo < ActiveRecord::Base
     # Calculate if padding must be applied on top/bottom or left/right
     if self.video.aspect_ratio >= encoding_aspect_ratio
       new_height = (encoding_width / self.video.aspect_ratio).round
-      # Make sure frame size is divisible by 2, or ffmpeg chokes.
-      new_height = ((new_height % 2) == 0) ? new_height : (new_height + 1)
+      # Now check that height is divisible by 8 to prevent encode artifacts.
+      height_remainder = (new_height % 8)
+      new_height = new_height - height_remainder
+      new_width = encoding_width - (height_remainder * self.video.aspect_ratio).round
+      new_width = ((new_width % 2) == 0) ? new_width : (new_width - 1)
+      pad_left = ((encoding_width - new_width) / 2).round
+      pad_right = encoding_width - new_width - pad_left
       pad_top = ((encoding_height - new_height) / 2).round
       pad_bottom = encoding_height - new_height - pad_top
-      pad_details = "-padtop #{pad_top} -padbottom #{pad_bottom}"
-      correct_dimensions = "#{encoding_width}x#{encoding_height - (pad_top + pad_bottom)}"
+      pad_details = "-padleft #{pad_left} -padright #{pad_right} -padtop #{pad_top} -padbottom #{pad_bottom}"
+      correct_dimensions = "#{encoding_width - (pad_left + pad_right)}x#{encoding_height - (pad_top + pad_bottom)}"
     else
       new_width = (encoding_height / flipped_ratio).round
       # Make sure frame size is divisible by 2, or ffmpeg chokes.
-      new_height = ((new_width % 2) == 0) ? new_width : (new_width + 1)
+      new_width = ((new_width % 2) == 0) ? new_width : (new_width - 1)
       pad_left = ((encoding_width - new_width) / 2).round
       pad_right = encoding_width - new_width - pad_left
       pad_details = "-padleft #{pad_left} -padright #{pad_right}"
