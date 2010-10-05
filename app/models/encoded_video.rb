@@ -72,7 +72,8 @@ class EncodedVideo < ActiveRecord::Base
       pad_right = encoding_width - new_width - pad_left
       pad_top = ((encoding_height - new_height) / 2).round
       pad_bottom = encoding_height - new_height - pad_top
-      pad_details = "-padleft #{pad_left} -padright #{pad_right} -padtop #{pad_top} -padbottom #{pad_bottom}"
+      #pad_details = "-padleft #{pad_left} -padright #{pad_right} -padtop #{pad_top} -padbottom #{pad_bottom}"
+      pad_details = "-vf pad=#{encoding_width}:#{encoding_height}:#{pad_left}:#{pad_top}"      
       correct_dimensions = "#{encoding_width - (pad_left + pad_right)}x#{encoding_height - (pad_top + pad_bottom)}"
     else
       new_width = (encoding_height / flipped_ratio).round
@@ -80,7 +81,8 @@ class EncodedVideo < ActiveRecord::Base
       new_width = ((new_width % 2) == 0) ? new_width : (new_width - 1)
       pad_left = ((encoding_width - new_width) / 2).round
       pad_right = encoding_width - new_width - pad_left
-      pad_details = "-padleft #{pad_left} -padright #{pad_right}"
+      #pad_details = "-padleft #{pad_left} -padright #{pad_right}"
+      pad_details = "-vf pad=#{encoding_width}:#{encoding_height}:#{pad_left}:0"      
       correct_dimensions = "#{encoding_width - (pad_left + pad_right)}x#{encoding_height}"
     end
     ffmpeg_command = ffmpeg_command.gsub("$output_file$", "#{pad_details} $output_file$")
@@ -117,8 +119,8 @@ class EncodedVideo < ActiveRecord::Base
       self.save!
       puts "Transcode successful\n"
     end
-    outputfile.unlink
-    qtoutputfile.unlink
+    outputfile.unlink rescue nil
+    qtoutputfile.unlink rescue nil
   end
   
   # Create easy hooks for rvideo data, go go gadget method_missing
